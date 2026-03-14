@@ -1,5 +1,7 @@
 {
-    "completed": [],
-    "unfinished": [],
-    "hints_used": {}
+  "completed": [
+    "hackropole_babel_web"
+  ],
+  "unfinished": [],
+  "hints_used": {}
 }

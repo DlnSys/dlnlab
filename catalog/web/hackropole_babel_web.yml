@@ -1,0 +1,27 @@
+name: hackropole_babel_web
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-babel-web/
+
+theme: web
+category: web
+difficulty: easy
+
+description: >
+  An audit of a website under construction is requested to find a flag.
+  The target is accessible via http://localhost:8000/.
+
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+
+flag:
+  format: FCSC{...}
+  value: a061095c06bc5a7f89fcdf5762f9f3c253dfe4952e9fd296f0e5921bd8f668c0
+
+hints:
+  - "Inspecte les différentes pages et ressources du site."
+  - "Cherche des fichiers ou endpoints non listés."
+
+writeup: writeups/hackropole_babel_web.md
+
+enabled: true
