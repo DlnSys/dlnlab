@@ -1,4 +1,5 @@
 import random
+import os
 
 from InquirerPy import inquirer
 
@@ -95,6 +96,10 @@ def launch_challenges(challenge):
 
     if runtime_info.get("target"):
         print(f"  Target     : {BOLD}{runtime_info['target']}{RESET}")
+    if runtime_info.get("workspace"):
+        files = runtime_info.get("files", [])
+        files_str = ", ".join(os.path.basename(f) for f in files)
+        print(f"  Workspace  : {BOLD}{runtime_info['workspace']}{RESET}  ({files_str})")
 
     print(f"  Flag format: {challenge.get('flag', {}).get('format', '???')}")                                                                                                                                   
     print()                                                                                                                                                                                                     

@@ -62,3 +62,17 @@ def stop_runtime(current, cleanup=False):
             override_path = os.path.join(compose_dir, "docker-compose.override.yml")
             if os.path.exists(override_path):
                 os.remove(override_path)
+    elif Runtime == "file" and cleanup:
+        config = load_config()
+        workspace = os.path.expanduser(config.get("workspace_dir", "~/dlnlab/workspace"))
+        name = current.get("name", "")
+        from scripts.catalog import load_catalog
+        catalog = load_catalog()
+        challenge = next((c for c in catalog if c ["name"] == name), None)
+        if challenge:
+            file_field = challenge.get("file", "")
+            files = file_field if isinstance(file_field, list) else [file_field]
+            for filename in files:
+                dst = os.path.join(workspace, filename)
+                if os.path.exists(dst):
+                    os.remove(dst)

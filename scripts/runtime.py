@@ -77,10 +77,27 @@ def get_container_port(compose_dir, service):
     
 
 def launch_file(challenge, config):
+    import shutil
     challenges_dir = os.path.join(os.path.dirname(__file__), "..", config["challenges_dir"])
-    file_path = os.path.join(challenges_dir, challenge.get("file", ""))
-    print(f"\n  File : {file_path}")
-    return {}
+    category = challenge.get("category", "misc")
+    name = challenge.get("name", "")
+    file_field = challenge.get("file", "")
+    files = file_field if isinstance(file_field, list) else [file_field]
+
+    workspace = os.path.expanduser(config.get("workspace_dir", "~/dlnlab/workspace"))
+    os.makedirs(workspace, exist_ok=True)
+
+    copied = []
+    for filename in files:
+        src = os.path.join(challenges_dir, category, name, filename)
+        dst = os.path.join(workspace, filename)
+        if os.path.exists(src):
+            shutil.copy2(src, dst)
+            copied.append(dst)
+        else:
+            print(f"    Warning: file not found: {src}")
+        
+    return {"workspace": workspace, "files": copied}
 
 
 def launch_docker(challenge, boxes_dir, config):
