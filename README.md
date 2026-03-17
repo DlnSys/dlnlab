@@ -19,7 +19,7 @@ Les métadonnées des challenges Hackropole incluses dans ce dépôt sont publi�
 ## Installation
 
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/DlnSys/dlnlab/main/install.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/DlnSys/dlnlab/refs/heads/master/install.sh)
 ```
 
 Le script vérifie et installe automatiquement les prérequis suivants :
