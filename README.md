@@ -220,7 +220,7 @@ dlnlab/
 
 ## Contact
 
-Une question, un bug, une idée ? Envoie un mail à : [contact@example.com](mailto:contact@example.com)
+Une question, un bug, une idée ? Envoie un mail à : [admin@dlnsys.ovh](mailto:admin@dlnsys.ovh)
 
 ---
 
