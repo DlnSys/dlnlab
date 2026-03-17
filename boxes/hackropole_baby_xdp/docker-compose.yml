@@ -1,5 +1,0 @@
-services:
-  baby-xdp:
-    image: anssi/fcsc2025-misc-baby-xdp:latest
-    ports:
-      - "4000:4000"

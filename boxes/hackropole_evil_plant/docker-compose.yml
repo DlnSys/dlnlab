@@ -1,5 +1,0 @@
-services:
-  evil-plant:
-    image: anssi/fcsc2023-misc-evil-plant:latest
-    ports:
-      - "4841:4841"

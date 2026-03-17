@@ -1,5 +1,0 @@
-services:
-  tes-lent:
-    image: anssi/fcsc2023-web-tes-lent:latest
-    ports:
-      - 8000:8000

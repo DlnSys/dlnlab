@@ -1,6 +1,0 @@
-services:
-  snake:
-    image: anssi/fcsc2021-misc-snake:latest
-    read_only: true
-    ports:
-      - "4000:4000"

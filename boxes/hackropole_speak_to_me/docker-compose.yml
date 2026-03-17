@@ -1,5 +1,0 @@
-services:
-  speak-to-me:
-    image: anssi/fcsc2025-hardware-speak-to-me:latest
-    ports:
-      - "4000:4000"

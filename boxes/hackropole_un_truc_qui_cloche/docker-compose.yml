@@ -1,5 +1,0 @@
-services:
-  un-truc-qui-cloche:
-    image: anssi/fcsc2023-hardware-un-truc-qui-cloche:latest
-    ports:
-      - "4000:4000"

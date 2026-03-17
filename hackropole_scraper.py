@@ -5,18 +5,18 @@ hackropole_scraper.py — DLNLab V2
 Scrape hackropole.fr et génère le catalogue DLNLab complet.
 
 Structure générée :
-  dlnlab/
+  <output-dir>/
     catalog/{category}/{name}.yml
     boxes/{name}/docker-compose.yml     (runtime docker/netcat)
-    challenges/{category}/{name}/       (runtime file)
+    challenges/{category}/{name}/       (fichiers statiques)
 
 Usage :
   python hackropole_scraper.py [OPTIONS]
 
 Options :
-  --output-dir DIR    Racine du projet DLNLab (défaut: ./dlnlab)
+  --output-dir DIR    Racine du projet DLNLab (défaut: .)
   --category CAT      Filtrer : web, crypto, pwn, reverse, forensics, misc, hardware
-  --difficulty DIFF   Filtrer : intro, star, starstar, starstarstar
+  --difficulty DIFF   Filtrer : easy, medium, hard
   --limit N           Limiter à N challenges (test)
   --dry-run           Affiche sans télécharger ni écrire
   --delay FLOAT       Pause entre requêtes en secondes (défaut: 0.5)
@@ -33,25 +33,11 @@ import urllib.error
 from pathlib import Path
 
 import yaml
-
-try:
-    from bs4 import BeautifulSoup
-    HAS_BS4 = True
-except ImportError:
-    HAS_BS4 = False
+from bs4 import BeautifulSoup
 
 BASE_URL = "https://hackropole.fr"
 CHALLENGES_LIST_URL = f"{BASE_URL}/fr/challenges/"
 
-# Difficulté Hackropole → DLNLab
-DIFFICULTY_MAP = {
-    "intro":       "easy",
-    "star":        "medium",
-    "starstar":    "hard",
-    "starstarstar": "hard",
-}
-
-# Tag principal → catégorie dossier DLNLab
 CATEGORY_MAP = {
     "web":       "web",
     "crypto":    "crypto",
@@ -92,6 +78,7 @@ def fetch(url: str, retries: int = 3, delay: float = 1.0) -> str | None:
 
 
 def download_binary(url: str, dest: Path, retries: int = 3) -> bool:
+    dest.parent.mkdir(parents=True, exist_ok=True)
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers=HEADERS)
@@ -112,12 +99,6 @@ def download_binary(url: str, dest: Path, retries: int = 3) -> bool:
 # ── Parsing liste des challenges ──────────────────────────────────────────────
 
 def parse_challenge_list(html: str) -> list[dict]:
-    if HAS_BS4:
-        return _parselist_bs4(html)
-    return _parselist_regex(html)
-
-
-def _parselist_bs4(html: str) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")
     results = []
     for row in soup.select("table tr"):
@@ -134,62 +115,54 @@ def _parselist_bs4(html: str) -> list[dict]:
             continue
         challenge_id = m.group(1)
         full_href = href if href.startswith("http") else BASE_URL + href
-        diff_raw = cells[2].get_text(strip=True).lower()
         fcsc_link = cells[3].find("a")
         fcsc = fcsc_link.get_text(strip=True) if fcsc_link else ""
         tags = [a.get_text(strip=True).lower() for a in cells[4].find_all("a")]
         results.append({
-            "id":         challenge_id,
-            "title":      title,
-            "difficulty": diff_raw,
-            "fcsc":       fcsc,
-            "tags":       tags,
-            "page_url":   full_href.rstrip("/") + "/",
-        })
-    return results
-
-
-def _parselist_regex(html: str) -> list[dict]:
-    results = []
-    rows = re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.DOTALL)
-    for row in rows:
-        cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.DOTALL)
-        if len(cells) < 5:
-            continue
-        m = re.search(r'href="(/fr/challenges/(?:[^/"]+/)?([^/"]+)/)"', cells[1])
-        if not m:
-            continue
-        href_rel, challenge_id = m.group(1), m.group(2)
-        title    = re.sub(r"<[^>]+>", "", cells[1]).strip()
-        diff_raw = re.sub(r"<[^>]+>", "", cells[2]).strip().lower()
-        fcsc_m   = re.search(r">([^<]+)", cells[3])
-        fcsc     = fcsc_m.group(1).strip() if fcsc_m else ""
-        tags     = [t.lower() for t in re.findall(r">([^<]+)", cells[4])]
-        results.append({
-            "id":         challenge_id,
-            "title":      title,
-            "difficulty": diff_raw,
-            "fcsc":       fcsc,
-            "tags":       tags,
-            "page_url":   BASE_URL + href_rel,
+            "id":       challenge_id,
+            "title":    title,
+            "fcsc":     fcsc,
+            "tags":     tags,
+            "page_url": full_href.rstrip("/") + "/",
         })
     return results
 
 
 # ── Parsing page individuelle ─────────────────────────────────────────────────
 
+def count_stars(soup) -> int:
+    """Compte les éléments SVG #star-fill pour déterminer la difficulté."""
+    count = 0
+    for use in soup.find_all("use"):
+        href = use.get("href", "") or use.get("xlink:href", "")
+        if "#star-fill" in href:
+            count += 1
+    return count
+
+
+def stars_to_difficulty(n: int) -> str:
+    if n <= 1:
+        return "easy"
+    elif n == 2:
+        return "medium"
+    else:
+        return "hard"
+
+
 def parse_challenge_page(html: str) -> dict:
     """
     Extrait depuis la page HTML d'un challenge :
-      - description
-      - hash SHA256 du flag
-      - liste des fichiers publics [(filename, url), ...]
-      - compose_url (docker-compose)
-      - runtime : docker / netcat / file
-      - port exposé
+      - description   : paragraphes du div .col-md-8.markdown
+      - difficulty    : comptage #star-fill SVG
+      - flag_hash     : attribut data-flags-hash sur l'input
+      - files         : section "Fichiers" (français)
+      - compose_url   : lien <a href="...docker-compose.public.yml">
+      - runtime       : docker / netcat / file
+      - port          : port exposé
     """
     info = {
         "description": "",
+        "difficulty":  "easy",
         "flag_hash":   "",
         "files":       [],
         "compose_url": None,
@@ -197,98 +170,60 @@ def parse_challenge_page(html: str) -> dict:
         "port":        None,
     }
 
-    if HAS_BS4:
-        soup      = BeautifulSoup(html, "html.parser")
-        full_text = soup.get_text(" ")
+    soup = BeautifulSoup(html, "html.parser")
+    full_text = soup.get_text(" ")
 
-        # Description
-        desc_tag = soup.find(["h2", "h3"], string=re.compile(r"description", re.I))
-        if desc_tag:
-            parts = []
-            for sib in desc_tag.find_next_siblings():
-                if sib.name and sib.name.startswith("h"):
-                    break
-                t = sib.get_text(" ", strip=True)
-                if t:
-                    parts.append(t)
-            info["description"] = " ".join(parts).strip()
+    # Difficulté via comptage #star-fill
+    n_stars = count_stars(soup)
+    info["difficulty"] = stars_to_difficulty(n_stars)
 
-        # Hash SHA256 du flag
-        for code in soup.find_all("code"):
-            m = re.search(r"possible output:\s*([a-f0-9]{64})", code.get_text())
-            if m:
-                info["flag_hash"] = m.group(1)
-                break
+    # Description : tous les <p> du div .col-md-8.markdown
+    desc_div = soup.find("div", class_=lambda c: c and "col-md-8" in c and "markdown" in c)
+    if desc_div:
+        paragraphs = [p.get_text(" ", strip=True) for p in desc_div.find_all("p")]
+        info["description"] = "\n".join(p for p in paragraphs if p)
 
-        # Fichiers publics (section "Files")
-        files_tag = soup.find(["h2", "h3"], string=re.compile(r"^files?$", re.I))
-        if files_tag:
-            ul = files_tag.find_next("ul")
-            if ul:
-                for a in ul.find_all("a"):
-                    href = a.get("href", "")
-                    if not href:
-                        continue
-                    url      = href if href.startswith("http") else BASE_URL + href
-                    filename = a.get_text(strip=True) or url.split("/")[-1]
-                    if "docker-compose" not in filename:
-                        info["files"].append((filename, url))
+    # Flag hash via attribut data-flags-hash
+    flag_input = soup.find(attrs={"data-flags-hash": True})
+    if flag_input:
+        info["flag_hash"] = flag_input.get("data-flags-hash", "")
 
-        # docker-compose URL
-        m = re.search(
-            r"curl (https://hackropole\.fr/challenges/[^\s]+/docker-compose\.public\.yml)",
-            full_text,
-        )
-        if m:
-            info["compose_url"] = m.group(1)
+    # docker-compose URL via lien <a href="...docker-compose.public.yml">
+    compose_link = soup.find("a", href=re.compile(r"docker-compose\.public\.yml"))
+    if compose_link:
+        href = compose_link.get("href", "")
+        info["compose_url"] = href if href.startswith("http") else BASE_URL + href
 
-        # Port
-        m_port = re.search(r"http://localhost:(\d{2,5})", full_text)
-        if m_port:
-            info["port"] = int(m_port.group(1))
-        else:
-            m_nc = re.search(r"nc localhost (\d{2,5})", full_text)
-            if m_nc:
-                info["port"] = int(m_nc.group(1))
+    # Fichiers statiques : section "Fichiers" (français)
+    files_tag = soup.find(["h2", "h3"], string=re.compile(r"^fichiers?$", re.I))
+    if files_tag:
+        ul = files_tag.find_next("ul")
+        if ul:
+            for a in ul.find_all("a"):
+                href = a.get("href", "")
+                if not href or "docker-compose" in href:
+                    continue
+                url = href if href.startswith("http") else BASE_URL + href
+                filename = a.get_text(strip=True) or url.split("/")[-1]
+                info["files"].append((filename, url))
 
-        # Runtime
-        if info["compose_url"]:
-            if "nc localhost" in full_text or "netcat" in full_text.lower():
-                info["runtime"] = "netcat"
-            else:
-                info["runtime"] = "docker"
-        elif info["files"]:
-            info["runtime"] = "file"
-
+    # Port exposé
+    m_port = re.search(r"http://localhost:(\d{2,5})", full_text)
+    if m_port:
+        info["port"] = int(m_port.group(1))
     else:
-        # Fallback regex
-        m = re.search(r"possible output:\s*([a-f0-9]{64})", html)
-        if m:
-            info["flag_hash"] = m.group(1)
+        m_nc = re.search(r"nc localhost (\d{2,5})", full_text)
+        if m_nc:
+            info["port"] = int(m_nc.group(1))
 
-        m = re.search(
-            r"curl (https://hackropole\.fr/challenges/[^\s]+/docker-compose\.public\.yml)",
-            html,
-        )
-        if m:
-            info["compose_url"] = m.group(1)
-            info["runtime"] = "netcat" if "nc localhost" in html else "docker"
-
-        m_port = re.search(r"http://localhost:(\d{2,5})", html)
-        if m_port:
-            info["port"] = int(m_port.group(1))
+    # Runtime : priorité au compose, sinon file
+    if info["compose_url"]:
+        if "nc localhost" in full_text or "netcat" in full_text.lower():
+            info["runtime"] = "netcat"
         else:
-            m_nc = re.search(r"nc localhost (\d{2,5})", html)
-            if m_nc:
-                info["port"] = int(m_nc.group(1))
-
-        for m in re.finditer(
-            r'href="(https://hackropole\.fr/challenges/[^"]+/public/([^"]+))"',
-            html,
-        ):
-            info["files"].append((m.group(2), m.group(1)))
-        if info["files"]:
-            info["runtime"] = "file"
+            info["runtime"] = "docker"
+    elif info["files"]:
+        info["runtime"] = "file"
 
     return info
 
@@ -302,23 +237,28 @@ def get_category(tags: list[str]) -> str:
     return "misc"
 
 
-def normalize_difficulty(raw: str) -> str:
-    raw = raw.lower().strip()
-    for key, val in DIFFICULTY_MAP.items():
-        if key in raw:
-            return val
-    return "medium"
-
-
 def make_name(challenge_id: str) -> str:
-    """fcsc2020-web-babel-web → hackropole_babel_web"""
+    """fcsc2020-web-babel-web → babel_web"""
     name = re.sub(r"fcsc\d{4}-[a-z]+-", "", challenge_id)
     if name == challenge_id:
         name = re.sub(r"fcsc\d{4}-", "", challenge_id)
-    return f"hackropole_{name.replace('-', '_')}"
+    return name.replace("-", "_")
 
 
-def build_yaml(chall: dict, page: dict, name: str, category: str) -> dict:
+def get_service_name(compose_path: Path) -> str | None:
+    """Lit le docker-compose.yml et retourne le premier nom de service."""
+    try:
+        with open(compose_path, encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+        services = data.get("services", {})
+        if services:
+            return next(iter(services))
+    except Exception:
+        pass
+    return None
+
+
+def build_yaml(chall: dict, page: dict, name: str, category: str, service: str | None) -> dict:
     theme = chall["tags"][0] if chall["tags"] else category
 
     data = {
@@ -327,21 +267,24 @@ def build_yaml(chall: dict, page: dict, name: str, category: str) -> dict:
         "url":         chall["page_url"],
         "theme":       theme,
         "category":    category,
-        "difficulty":  normalize_difficulty(chall["difficulty"]),
+        "difficulty":  page["difficulty"],
         "description": page["description"] or f"Challenge {chall['title']} — {chall['fcsc']}",
         "runtime":     page["runtime"],
     }
 
-    if page["runtime"] in ("docker", "netcat"):
+    if page["compose_url"]:
         data["compose"] = "docker-compose.yml"
+        if service:
+            data["service"] = service
         if page["port"]:
             data["port"] = page["port"]
         if page["runtime"] == "netcat":
             data["host"] = "127.0.0.1"
-    elif page["runtime"] == "file":
-        if page["files"]:
-            filenames = [fn for fn, _ in page["files"]]
-            data["file"] = filenames[0] if len(filenames) == 1 else filenames
+
+    # Fichiers statiques — indépendant du runtime (runtime mixte supporté)
+    if page["files"]:
+        filenames = [fn for fn, _ in page["files"]]
+        data["file"] = filenames[0] if len(filenames) == 1 else filenames
 
     data["flag"] = {
         "format": "FCSC{...}",
@@ -360,9 +303,9 @@ def build_yaml(chall: dict, page: dict, name: str, category: str) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(description="Hackropole → DLNLab V2 scraper")
-    parser.add_argument("--output-dir",  default="./dlnlab")
-    parser.add_argument("--category",    default=None)
-    parser.add_argument("--difficulty",  default=None)
+    parser.add_argument("--output-dir",  default=".")
+    parser.add_argument("--category",    default=None, help="web, crypto, pwn, reverse, forensics, misc")
+    parser.add_argument("--difficulty",  default=None, help="easy, medium, hard")
     parser.add_argument("--limit",       type=int,   default=None)
     parser.add_argument("--dry-run",     action="store_true")
     parser.add_argument("--delay",       type=float, default=0.5)
@@ -380,16 +323,11 @@ def main():
     challenges = parse_challenge_list(html)
     print(f"[+] {len(challenges)} challenges trouvés")
 
-    # ── 2. Filtres ────────────────────────────────────────────────────────────
+    # ── 2. Filtre catégorie (sur les tags de la liste) ─────────────────────
     if args.category:
         cat = args.category.lower()
         challenges = [c for c in challenges if cat in c["tags"]]
         print(f"[*] Filtre '{cat}' → {len(challenges)} challenges")
-
-    if args.difficulty:
-        diff = args.difficulty.lower()
-        challenges = [c for c in challenges if diff in c["difficulty"]]
-        print(f"[*] Filtre difficulté '{diff}' → {len(challenges)} challenges")
 
     if args.limit:
         challenges = challenges[: args.limit]
@@ -399,22 +337,22 @@ def main():
     stats = {"docker": 0, "netcat": 0, "file": 0, "skip": 0, "error": 0}
 
     for i, chall in enumerate(challenges, 1):
-        name      = make_name(chall["id"])
-        category  = get_category(chall["tags"])
+        name     = make_name(chall["id"])
+        category = get_category(chall["tags"])
 
-        print(f"\n[{i:3}/{len(challenges)}] {chall['title']}")
-        print(f"  cat={category}  diff={chall['difficulty']}")
+        print(f"\n[{i:3}/{len(challenges)}] {chall['title']}  →  {name}")
+        print(f"  cat={category}")
 
         catalog_dir    = root / "catalog" / category
         boxes_dir      = root / "boxes" / name
         challenges_dir = root / "challenges" / category / name
 
         if args.dry_run:
-            print(f"  [dry-run] → catalog/{category}/{name}.yml")
+            print(f"  [dry-run] catalog/{category}/{name}.yml")
             stats["skip"] += 1
             continue
 
-        # Skip si déjà fait
+        # Skip si déjà traité
         yaml_path = catalog_dir / f"{name}.yml"
         if yaml_path.exists():
             print(f"  déjà présent, skip")
@@ -422,25 +360,32 @@ def main():
             time.sleep(args.delay)
             continue
 
-        # Fetch page
+        # Fetch page individuelle
         page_html = fetch(chall["page_url"], delay=args.delay)
-        if not page_html:
-            alt_url   = f"{BASE_URL}/fr/challenges/{chall['id']}/"
-            page_html = fetch(alt_url, delay=args.delay)
-
         if not page_html:
             print(f"  [!] Page inaccessible, skip")
             stats["error"] += 1
             time.sleep(args.delay)
             continue
 
-        page     = parse_challenge_page(page_html)
-        flag_ok  = "✓" if page["flag_hash"] else "✗"
-        print(f"  runtime={page['runtime']}  port={page['port']}  "
-              f"files={len(page['files'])}  flag={flag_ok}")
+        page = parse_challenge_page(page_html)
+
+        # Filtre difficulté (après parsing de la page via les étoiles)
+        if args.difficulty and page["difficulty"] != args.difficulty.lower():
+            print(f"  skip (difficulté={page['difficulty']})")
+            stats["skip"] += 1
+            time.sleep(args.delay)
+            continue
+
+        flag_ok = "✓" if page["flag_hash"] else "✗"
+        print(f"  runtime={page['runtime']}  difficulty={page['difficulty']}  "
+              f"port={page['port']}  files={len(page['files'])}  flag={flag_ok}")
 
         # ── Téléchargements ───────────────────────────────────────────────────
-        if page["runtime"] in ("docker", "netcat") and page["compose_url"]:
+        service = None
+
+        # Docker-compose (docker ou netcat)
+        if page["compose_url"]:
             boxes_dir.mkdir(parents=True, exist_ok=True)
             dest = boxes_dir / "docker-compose.yml"
             if not dest.exists():
@@ -448,9 +393,10 @@ def main():
                 print(f"  boxes/{name}/docker-compose.yml → {'✓' if ok else '✗'}")
             else:
                 print(f"  docker-compose déjà présent")
+            service = get_service_name(boxes_dir / "docker-compose.yml")
 
-        elif page["runtime"] == "file" and page["files"]:
-            challenges_dir.mkdir(parents=True, exist_ok=True)
+        # Fichiers statiques — indépendant du compose (runtime mixte)
+        if page["files"]:
             for filename, url in page["files"]:
                 dest = challenges_dir / filename
                 if not dest.exists():
@@ -461,7 +407,7 @@ def main():
 
         # ── Écriture YAML ─────────────────────────────────────────────────────
         catalog_dir.mkdir(parents=True, exist_ok=True)
-        yaml_data = build_yaml(chall, page, name, category)
+        yaml_data = build_yaml(chall, page, name, category, service)
 
         with open(yaml_path, "w", encoding="utf-8") as f:
             yaml.dump(

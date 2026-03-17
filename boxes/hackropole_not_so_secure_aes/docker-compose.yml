@@ -1,5 +1,0 @@
-services:
-  not-so-secure-aes:
-    image: anssi/fcsc2022-hardware-not-so-secure-aes:latest
-    ports:
-      - "4000:4000"

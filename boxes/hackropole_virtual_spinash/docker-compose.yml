@@ -1,5 +1,0 @@
-services:
-  sesame:
-    image: anssi/fcsc2024-hardware-virtual-spinash:latest
-    ports:
-      - "4000:4000"

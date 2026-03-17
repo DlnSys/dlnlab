@@ -1,5 +1,0 @@
-services:
-  au-boolot:
-    image: anssi/fcsc2023-hardware-au-boolot:latest
-    ports:
-      - "4000:4000"

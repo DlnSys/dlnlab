@@ -1,5 +1,0 @@
-services:
-  baby-dpdk:
-    image: anssi/fcsc2025-misc-baby-dpdk:latest
-    ports:
-      - "4000:4000"

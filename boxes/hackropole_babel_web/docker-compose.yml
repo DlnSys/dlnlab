@@ -1,5 +1,0 @@
-services:
-  babel-web:
-    image: anssi/fcsc2020-web-babel-web:latest
-    ports:
-      - "8000:80"

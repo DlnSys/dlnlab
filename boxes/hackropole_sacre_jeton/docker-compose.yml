@@ -1,5 +1,0 @@
-services:
-  sacre-jeton:
-    image: anssi/fcsc2021-web-sacre-jeton:latest
-    ports:
-      - "8000:8000"

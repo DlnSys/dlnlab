@@ -1,5 +1,0 @@
-services:
-  pippin:
-    image: anssi/fcsc2020-crypto-pippin:latest
-    ports:
-      - "4000:4000"

@@ -1,5 +1,0 @@
-services:
-  factorial:
-    image: anssi/fcsc2019-misc-factorial:latest
-    ports:
-      - "4000:4000"

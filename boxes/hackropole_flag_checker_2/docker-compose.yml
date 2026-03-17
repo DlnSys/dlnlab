@@ -1,5 +1,0 @@
-services:
-  flag-checker-2:
-    image: anssi/fcsc2020-reverse-flag-checker-2:latest
-    ports:
-      - "8000:80"

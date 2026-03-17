@@ -1,5 +1,0 @@
-services:
-  voila:
-    image: anssi/fcsc2025-misc-voila:latest
-    ports:
-      - "4000:4000"

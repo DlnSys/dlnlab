@@ -1,5 +1,0 @@
-services:
-  le-rustique:
-    image: anssi/fcsc2020-misc-le-rustique:latest
-    ports:
-      - "8000:8000"
