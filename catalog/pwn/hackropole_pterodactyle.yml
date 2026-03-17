@@ -1,0 +1,14 @@
+name: hackropole_pterodactyle
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2023-pwn-pterodactyle/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Ptérodactyle — '
+runtime: file
+file: pterodactyle
+flag:
+  format: FCSC{...}
+  value: b166c6bcdf03785002109b8731c04ba77ea47e56e3da7c80286996fe0b2ddb49
+writeup: writeups/hackropole_pterodactyle.md
+enabled: true

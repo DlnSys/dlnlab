@@ -2,6 +2,15 @@
   "completed": [
     "hackropole_babel_web"
   ],
-  "unfinished": [],
-  "hints_used": {}
+  "unfinished": [
+    ""
+  ],
+  "hints_used": {},
+  "history": [
+    {
+      "name": "hackropole_babel_web",
+      "completed_at": "2026-03-17T11:26:15.740811",
+      "time": "0m 18s"
+    }
+  ]
 }

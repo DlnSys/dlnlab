@@ -1,0 +1,14 @@
+name: hackropole_android_r5d4
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2022-forensics-android-r5d4/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge R5-D4 — '
+runtime: file
+file: emulator-howto.pdf
+flag:
+  format: FCSC{...}
+  value: a31be3f2ffc7706d57f2ef85e7afc173b88f4fdf6985bccd6dd79f5e64abe9c1
+writeup: writeups/hackropole_android_r5d4.md
+enabled: true

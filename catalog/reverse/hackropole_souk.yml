@@ -1,0 +1,14 @@
+name: hackropole_souk
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2022-reverse-souk/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Souk — '
+runtime: file
+file: souk
+flag:
+  format: FCSC{...}
+  value: 8450bc97e3099ae5f45d97f617f5b0e703cc7773ccfb2e3a2e34f350fc9e005d
+writeup: writeups/hackropole_souk.md
+enabled: true

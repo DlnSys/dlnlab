@@ -1,0 +1,44 @@
+
+services:
+ rainbowpages2_db:
+  container_name: rainbowpages2_db
+  image: anssi/fcsc2020-web-rainbow-pages-2-db:latest
+  environment:
+   POSTGRES_USER: postgres
+   POSTGRES_PASSWORD: Mee2deey4iesuj0quieve3aeWeeKoome
+   POSTGRES_DATABASE: fcsc2020
+  expose:
+   - 5432
+  networks:
+   - rainbowpages2_network
+
+ rainbowpages2_graphql:
+  container_name: rainbowpages2_graphql
+  image: graphile/postgraphile:4.13.0
+  depends_on:
+   - rainbowpages2_db
+  expose:
+   - 5000
+  entrypoint: []
+  command: |
+    sh -c "yarn add postgraphile postgraphile-plugin-connection-filter && \
+    ./cli.js --connection postgres://postgres:Mee2deey4iesuj0quieve3aeWeeKoome@rainbowpages_db:5432/fcsc2020 --host 0.0.0.0 --port 5000 --schema rainbowpages2 --export-schema-graphql /root/schema.graphql --retry-on-init-fail --disable-default-mutations --graphiql false --append-plugins postgraphile-plugin-connection-filter"
+  networks:
+   - rainbowpages2_network
+
+ rainbowpages2_web:
+  container_name: rainbowpages2_web
+  image: anssi/fcsc2020-web-rainbow-pages-2-web:latest
+  depends_on:
+   - rainbowpages2_graphql
+  environment:
+   GRAPHQL_URL: "http://rainbowpages2_graphql:5000/graphql"
+  expose:
+   - 80
+  ports:
+   - 8000:80
+  networks:
+   - rainbowpages2_network
+
+networks:
+  rainbowpages2_network:

@@ -1,0 +1,16 @@
+name: hackropole_robot
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2023-pwn-robot/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Robot — '
+runtime: file
+file:
+- robot
+- robot.c
+flag:
+  format: FCSC{...}
+  value: 32b15ea460663163a62dc117bc9ea34b74538226bce4b44930f9894a48b76a1b
+writeup: writeups/hackropole_robot.md
+enabled: true

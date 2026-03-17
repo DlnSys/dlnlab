@@ -1,0 +1,14 @@
+name: hackropole_habemus_clavem_corrumpere
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2020-crypto-habemus-clavem-corrumpere/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Habemus Clavem Corrumpere — '
+runtime: file
+file: mempage.bin
+flag:
+  format: FCSC{...}
+  value: ff488172d0f6db681a5ddc8933826a48e6dafcc86a4eccb173a834ece4968a90
+writeup: writeups/hackropole_habemus_clavem_corrumpere.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_jakarta
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2021-reverse-jakarta/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Jakarta — '
+runtime: file
+file: jakarta.apk
+flag:
+  format: FCSC{...}
+  value: fe81c87aacb97068990d100441beac1596ca2257ade1f7e72288c43723eaa4d1
+writeup: writeups/hackropole_jakarta.md
+enabled: true

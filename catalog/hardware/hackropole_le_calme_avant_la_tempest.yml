@@ -1,0 +1,13 @@
+name: hackropole_le_calme_avant_la_tempest
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-le-calme-avant-la-tempest/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Le calme avant la tempest — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: dbf9ecdda0d93abadaf7f9488b503fabf1abf73a05822be66f429fbbe7d9ee52
+writeup: writeups/hackropole_le_calme_avant_la_tempest.md
+enabled: true

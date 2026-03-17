@@ -1,0 +1,20 @@
+name: hackropole_ptsd_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-ptsd-1/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge PTSD - Init — '
+runtime: file
+file:
+- server
+- libcrypto.so.3
+- libssl.so.3
+- data/keys.db
+- data/lv1.flag
+- data/lv2.flag
+flag:
+  format: FCSC{...}
+  value: 3af19814c09d3e93c80a381a2110483ea9cce4a4375649a2cca1beabbfa27b51
+writeup: writeups/hackropole_ptsd_1.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_ne_pas_jeter_leponge
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2022-hardware-ne-pas-jeter-leponge/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge Ne pas jeter l&#39;éponge — '
+runtime: file
+file: circuit.png
+flag:
+  format: FCSC{...}
+  value: 4bc6c242e070f66e9265e8500d2b747a008d6a0bf33025f6cf5daf8843619fad
+writeup: writeups/hackropole_ne_pas_jeter_leponge.md
+enabled: true

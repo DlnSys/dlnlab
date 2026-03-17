@@ -1,0 +1,16 @@
+name: hackropole_rsace
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-rsace/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge RsaCE — '
+runtime: file
+file:
+- RsaCE
+- signed_id
+flag:
+  format: FCSC{...}
+  value: 43cefda2138c6710af85afd646286a9d06ab9653fad05d4e5015103a51c9a1aa
+writeup: writeups/hackropole_rsace.md
+enabled: true

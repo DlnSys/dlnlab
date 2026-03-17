@@ -1,0 +1,5 @@
+services:
+  lipogrammeurs:
+    image: anssi/fcsc2020-web-lipogrammeurs:latest
+    ports:
+      - "8000:80"

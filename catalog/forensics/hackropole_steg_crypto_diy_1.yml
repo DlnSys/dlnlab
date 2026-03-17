@@ -1,0 +1,16 @@
+name: hackropole_steg_crypto_diy_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2019-crypto-steg-crypto-diy-1/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge StegCryptoDIY - PNG — '
+runtime: file
+file:
+- leHACK19_chall.png
+- leHACK19_ref.png
+flag:
+  format: FCSC{...}
+  value: 4a1ae48b6e968a96f382ff4013b97bd813351e15e7cca6d064663eb250b30786
+writeup: writeups/hackropole_steg_crypto_diy_1.md
+enabled: true

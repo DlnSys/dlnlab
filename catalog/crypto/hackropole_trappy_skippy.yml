@@ -1,0 +1,18 @@
+name: hackropole_trappy_skippy
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2021-crypto-trappy-skippy/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Trappy Skippy — '
+runtime: file
+file:
+- skippy.py
+- skippy.txt
+- skippy.txt.enc
+- flag.txt.enc
+flag:
+  format: FCSC{...}
+  value: a003e0b9a4f8d4078505b868ca767036de27419dee23ade0e3fe33fa28c9ab11
+writeup: writeups/hackropole_trappy_skippy.md
+enabled: true

@@ -1,0 +1,17 @@
+name: hackropole_integration_par_parties
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-integration-par-parties/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge Intégration par parties — '
+runtime: file
+file:
+- integration-par-parties.py
+- shared_value.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 38b860a8a94d5840ef1c6e54233b61b3f0e24ccab0c2c890c42afea154b24108
+writeup: writeups/hackropole_integration_par_parties.md
+enabled: true

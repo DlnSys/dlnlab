@@ -1,0 +1,14 @@
+name: hackropole_el_gamal_fait_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-el-gamal-fait-1/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge El Gamal Fait 1/2 — '
+runtime: file
+file: el-gamal-fait-1.py
+flag:
+  format: FCSC{...}
+  value: e19e109387909f60f1800bd83ac32a310291e6235c2eaff193e4b12e89f3541e
+writeup: writeups/hackropole_el_gamal_fait_1.md
+enabled: true

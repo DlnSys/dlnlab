@@ -1,0 +1,14 @@
+name: hackropole_bashi_bouzouk
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-bashi-bouzouk/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge BASHi Bouzouk — '
+runtime: docker
+compose: docker-compose.yml
+flag:
+  format: FCSC{...}
+  value: 76cb2ddb782af1b6e15f73fe623e1a0f33716ebbc0aca2ae7f3afee510f69be3
+writeup: writeups/hackropole_bashi_bouzouk.md
+enabled: true

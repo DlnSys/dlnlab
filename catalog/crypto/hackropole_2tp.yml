@@ -1,0 +1,16 @@
+name: hackropole_2tp
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-2tp/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge 2tp — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: a0e80f1089a29600d80240fbff1dfb1b0f13be2f10d79a58758d13cb70ec0e1b
+writeup: writeups/hackropole_2tp.md
+enabled: true

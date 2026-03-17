@@ -1,0 +1,16 @@
+name: hackropole_mechanical_display
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-mechanical-display/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Mechanical Display — '
+runtime: file
+file:
+- mechanical-display.vcd
+- mechanical-display-datasheet.pdf
+flag:
+  format: FCSC{...}
+  value: d5bee3a636719d2d376036ef73742947074a3d2144e2050dee87f69047717f13
+writeup: writeups/hackropole_mechanical_display.md
+enabled: true

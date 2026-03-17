@@ -1,0 +1,5 @@
+services:
+  push-it-to-the-limit:
+    image: anssi/fcsc2021-web-push-it-to-the-limit:latest
+    ports:
+      - "8000:8000"

@@ -1,0 +1,14 @@
+name: hackropole_103_spx
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2019-forensics-103-spx/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge 103_spx — '
+runtime: file
+file: 103_spx.zip
+flag:
+  format: FCSC{...}
+  value: edfa9eb488c52fe75da3370a416f954185d2dbb8da8f19ab1c987d357e94480c
+writeup: writeups/hackropole_103_spx.md
+enabled: true

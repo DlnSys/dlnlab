@@ -1,0 +1,15 @@
+name: hackropole_televerseur_nuagique
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2021-web-televerseur-nuagique/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Téléverseur nuagique — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 0535637ab100ae2c300f28d40cd39e2c49173d22e61f2376dc2143c589c1967c
+writeup: writeups/hackropole_televerseur_nuagique.md
+enabled: true

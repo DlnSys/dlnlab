@@ -1,0 +1,16 @@
+name: hackropole_battle_chip
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-battle-chip/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Battle Chip — '
+runtime: file
+file:
+- VM.png
+- emulator.zip
+flag:
+  format: FCSC{...}
+  value: d4bc678c30d4606ecb12ebd51e945da5d68f68221526b5090489e58778866014
+writeup: writeups/hackropole_battle_chip.md
+enabled: true

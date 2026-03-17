@@ -1,0 +1,16 @@
+name: hackropole_tight_schedule
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-tight-schedule/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Tight Schedule — '
+runtime: file
+file:
+- tight-schedule.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 996864b3b014f0d9c1777dad799faeb200858f48f7dfc2b998ea71a8e929f6eb
+writeup: writeups/hackropole_tight_schedule.md
+enabled: true

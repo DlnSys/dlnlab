@@ -1,0 +1,5 @@
+services:
+  scully-1:
+    image: anssi/fcsc2019-web-scully-1:latest
+    ports:
+      - "8000:8000"

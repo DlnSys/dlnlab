@@ -1,0 +1,16 @@
+name: hackropole_ventriglisse
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-ventriglisse/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Ventriglisse — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: d8d5fcc2ef1980df44d6494d0b0d29247a4988e85453ce34378cc98775cd686a
+writeup: writeups/hackropole_ventriglisse.md
+enabled: true

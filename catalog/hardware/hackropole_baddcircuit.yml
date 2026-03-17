@@ -1,0 +1,16 @@
+name: hackropole_baddcircuit
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-baddcircuit/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge Badd Circuit — '
+runtime: file
+file:
+- baddcircuit.pdf
+- baddcircuit.png
+flag:
+  format: FCSC{...}
+  value: e195d58f6a0051d538d5086a58e5726a1ab380b652c89ad98d363afd6d612990
+writeup: writeups/hackropole_baddcircuit.md
+enabled: true

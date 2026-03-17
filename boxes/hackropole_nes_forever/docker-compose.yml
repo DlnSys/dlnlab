@@ -1,0 +1,5 @@
+services:
+  nes-forever:
+    image: anssi/fcsc2020-web-nes-forever:latest
+    ports:
+      - "8000:80"

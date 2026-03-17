@@ -1,0 +1,15 @@
+name: hackropole_scully_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2019-web-scully-2/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Scully 2 — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 33be5688c8dcfed0305326da9066887234679c5ed23d57ad7fe10b0c3228c9b3
+writeup: writeups/hackropole_scully_2.md
+enabled: true

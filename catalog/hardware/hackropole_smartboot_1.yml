@@ -1,0 +1,14 @@
+name: hackropole_smartboot_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2022-hardware-smartboot-1/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Smartboot 1/2 — '
+runtime: file
+file: schema.png
+flag:
+  format: FCSC{...}
+  value: c457e9903b5df9423ef7b3d92b6c9a8d3f35a2cbfeaee1cb05ae84300e6ac6dc
+writeup: writeups/hackropole_smartboot_1.md
+enabled: true

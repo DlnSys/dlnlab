@@ -1,0 +1,5 @@
+services:
+  a-l-envers:
+    image: anssi/fcsc2022-misc-a-l-envers:latest
+    ports:
+      - "4000:4000"

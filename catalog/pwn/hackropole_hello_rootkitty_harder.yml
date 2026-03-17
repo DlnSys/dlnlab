@@ -1,0 +1,17 @@
+name: hackropole_hello_rootkitty_harder
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-hello-rootkitty-harder/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Hello Rootkitty (Harder) — '
+runtime: file
+file:
+- bzImage
+- initramfs.example.cpio
+- ecsc.ko
+flag:
+  format: FCSC{...}
+  value: 7643cafef8286d2137c7a7323232c78a5e44437d91ce601118c4293a90dc811f
+writeup: writeups/hackropole_hello_rootkitty_harder.md
+enabled: true

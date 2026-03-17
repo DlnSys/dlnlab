@@ -1,0 +1,16 @@
+name: hackropole_fftea
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-fftea/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge FFTea — '
+runtime: file
+file:
+- fftea
+- craft_signal.py
+flag:
+  format: FCSC{...}
+  value: 8629015c1204c30b02b0f23554b0fcc6d3750e805246a187b8f45c6efe2a699c
+writeup: writeups/hackropole_fftea.md
+enabled: true

@@ -1,0 +1,5 @@
+services:
+  vice-versa:
+    image: anssi/fcsc2021-web-vice-versa:latest
+    ports:
+      - "8000:8000"

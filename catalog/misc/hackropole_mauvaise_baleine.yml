@@ -1,0 +1,14 @@
+name: hackropole_mauvaise_baleine
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2023-misc-mauvaise-baleine/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Mauvaise baleine — '
+runtime: file
+file: mauvaise-baleine.tar.gz
+flag:
+  format: FCSC{...}
+  value: 8584b40ebd660274f84e7c3b97866161473a7337aeee0f671752ffad19714745
+writeup: writeups/hackropole_mauvaise_baleine.md
+enabled: true

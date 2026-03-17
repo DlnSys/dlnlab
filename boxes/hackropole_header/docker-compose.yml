@@ -1,0 +1,5 @@
+services:
+  header:
+    image: anssi/fcsc2022-web-header:latest
+    ports:
+      - "8000:8000"

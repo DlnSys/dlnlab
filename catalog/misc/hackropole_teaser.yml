@@ -1,0 +1,14 @@
+name: hackropole_teaser
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2023-misc-teaser/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Prechall FCSC 2023 — '
+runtime: file
+file: fcsc2023_teaser.png
+flag:
+  format: FCSC{...}
+  value: acb7d7c6d64f9f3f4d475f6a9729a1988f7ef3f5cfbfcf811984b1171a3ec37f
+writeup: writeups/hackropole_teaser.md
+enabled: true

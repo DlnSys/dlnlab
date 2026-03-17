@@ -1,0 +1,14 @@
+name: hackropole_histoire_sans_fin_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-histoire-sans-fin-1/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Histoire sans fin 1/2 — '
+runtime: file
+file: access.log
+flag:
+  format: FCSC{...}
+  value: 04c90c192d26e711edfef51704db0fce1305a19cbb035739e3e835890d530711
+writeup: writeups/hackropole_histoire_sans_fin_1.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_cte2025_web_bucket_master
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/cte2025-web-bucket-master/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge BucketMaster — '
+runtime: file
+file: cte2025-web-bucketmaster.tar.xz
+flag:
+  format: FCSC{...}
+  value: 31b67e93567efdbb424eaa8476d451c4ea99e4bb5e2afcafae7a48bc9c94cd81
+writeup: writeups/hackropole_cte2025_web_bucket_master.md
+enabled: true

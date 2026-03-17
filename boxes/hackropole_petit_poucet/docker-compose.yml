@@ -1,0 +1,5 @@
+services:
+  petit-poucet:
+    image: anssi/fcsc2019-misc-petit-poucet:latest
+    ports:
+      - "4000:4000"

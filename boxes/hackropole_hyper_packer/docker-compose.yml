@@ -1,0 +1,5 @@
+services:
+  hyper-packer:
+    image: anssi/fcsc2022-reverse-hyper-packer:latest
+    ports:
+      - "4000:4000"

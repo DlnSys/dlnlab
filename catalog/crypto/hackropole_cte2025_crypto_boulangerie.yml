@@ -1,0 +1,14 @@
+name: hackropole_cte2025_crypto_boulangerie
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/cte2025-crypto-boulangerie/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Boulangerie — '
+runtime: file
+file: boulangerie.py
+flag:
+  format: FCSC{...}
+  value: 9b5f41b06374d86d83a7bc42f9e227c2643257936e05e338f3819b8fcccb7a43
+writeup: writeups/hackropole_cte2025_crypto_boulangerie.md
+enabled: true

@@ -1,0 +1,16 @@
+name: hackropole_gaston_la_paffe
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2022-crypto-gaston-la-paffe/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Gaston La Paffe — '
+runtime: file
+file:
+- gaston.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 32c6483c098d7ca6939cf6abb456e2ac0568e3f68018dfa5e06859d98a3a99a1
+writeup: writeups/hackropole_gaston_la_paffe.md
+enabled: true

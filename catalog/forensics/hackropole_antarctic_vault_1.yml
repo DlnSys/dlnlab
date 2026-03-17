@@ -1,0 +1,14 @@
+name: hackropole_antarctic_vault_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2022-forensics-antarctic-vault-1/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Antarctic Vault 1/2 — '
+runtime: file
+file: capture1.pcap
+flag:
+  format: FCSC{...}
+  value: 2a23767e88a89cb4301545421dbd6472a95fbce37869aaa32b16a8806a20e330
+writeup: writeups/hackropole_antarctic_vault_1.md
+enabled: true

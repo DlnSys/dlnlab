@@ -1,0 +1,16 @@
+name: hackropole_tv_hacks_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-tv-hacks-1/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge TV Hacks 1/2 — '
+runtime: file
+file:
+- ipopt.ko
+- capture.pcap
+flag:
+  format: FCSC{...}
+  value: f1efe006720c379342df512bcef68a9de9e67c3ef8b747cae4fc7374a242c1e5
+writeup: writeups/hackropole_tv_hacks_1.md
+enabled: true

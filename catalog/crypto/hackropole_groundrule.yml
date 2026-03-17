@@ -1,0 +1,17 @@
+name: hackropole_groundrule
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2020-crypto-groundrule/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge GroundRule — '
+runtime: file
+file:
+- client.py
+- read_info_sign
+- read_flag_sign
+flag:
+  format: FCSC{...}
+  value: 228827154d6d89a24bec09559bcf6a0875b865b396580cce473d052b93d7db32
+writeup: writeups/hackropole_groundrule.md
+enabled: true

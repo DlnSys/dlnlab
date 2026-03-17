@@ -1,0 +1,15 @@
+name: hackropole_salty_authentication
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2023-web-salty-authentication/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Salty authentication — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: ffd9097ee1a4357156384231ee08484842d7ae9e93adb550d08627e4937dd893
+writeup: writeups/hackropole_salty_authentication.md
+enabled: true

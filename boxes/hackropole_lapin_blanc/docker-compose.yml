@@ -1,0 +1,5 @@
+services:
+  lapin-blanc:
+    image: anssi/fcsc2023-hardware-lapin-blanc:latest
+    ports:
+      - "4000:4000"

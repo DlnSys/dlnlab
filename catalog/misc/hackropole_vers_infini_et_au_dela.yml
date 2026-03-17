@@ -1,0 +1,14 @@
+name: hackropole_vers_infini_et_au_dela
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-vers-infini-et-au-dela/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Vers l&#39;infini et au delà — '
+runtime: file
+file: vers-infini-et-au-dela.py
+flag:
+  format: FCSC{...}
+  value: a8a532cc07fb1870901fea9d092a91cf8d0ebc50b6f6b77822c96eb8a514d4af
+writeup: writeups/hackropole_vers_infini_et_au_dela.md
+enabled: true

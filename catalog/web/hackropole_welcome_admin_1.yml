@@ -1,0 +1,14 @@
+name: hackropole_welcome_admin_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2024-web-welcome-admin-1/
+theme: "\n            "
+category: web
+difficulty: easy
+description: 'Challenge Welcome Admin 1/2 — '
+runtime: file
+file: welcome-admin.tar.xz
+flag:
+  format: FCSC{...}
+  value: 8c1e133bc6e4ad9f6aed415c02a3515ae2104b4a1bfa04843ccf76d19eb96147
+writeup: writeups/hackropole_welcome_admin_1.md
+enabled: true

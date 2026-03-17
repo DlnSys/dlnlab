@@ -1,0 +1,13 @@
+name: hackropole_coq_en_stock
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2020-misc-coq-en-stock/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Coq en Stock — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 4ce77d132e9b3d7eb593d5dd7e8df7956d51672f2459bc4ddf711846df3f8a80
+writeup: writeups/hackropole_coq_en_stock.md
+enabled: true

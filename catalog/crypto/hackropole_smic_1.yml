@@ -1,0 +1,13 @@
+name: hackropole_smic_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2020-crypto-smic-1/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge SMIC (1) — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 709a520dd8b2fe88adb35ee5bd6580d30b131b226d1a5235de45b4ab9a4dc5f0
+writeup: writeups/hackropole_smic_1.md
+enabled: true

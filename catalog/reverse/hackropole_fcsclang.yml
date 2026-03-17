@@ -1,0 +1,14 @@
+name: hackropole_fcsclang
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-fcsclang/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge fcsclang — '
+runtime: file
+file: fcsclang.tar.xz
+flag:
+  format: FCSC{...}
+  value: e7f9084ad4ebc4ae6aae6758bc9575f18011e354c499373bc224a07a5b0b1c6f
+writeup: writeups/hackropole_fcsclang.md
+enabled: true

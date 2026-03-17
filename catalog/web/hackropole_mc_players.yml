@@ -1,0 +1,14 @@
+name: hackropole_mc_players
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2022-web-mc-players/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge MC Players — '
+runtime: file
+file: fcsc2022-mc-players.tar.xz
+flag:
+  format: FCSC{...}
+  value: 2924ff5378dd13d7064a2f7a8c50893891732f6d4b2e1b2e4d175db66b33100f
+writeup: writeups/hackropole_mc_players.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_evil_plant
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2023-misc-evil-plant/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Evil Plant — '
+runtime: docker
+compose: docker-compose.yml
+flag:
+  format: FCSC{...}
+  value: 4e61e306cc0eaa58981636b4b263eba1fde14d6cfc96ad449d7bc050303b0bf0
+writeup: writeups/hackropole_evil_plant.md
+enabled: true

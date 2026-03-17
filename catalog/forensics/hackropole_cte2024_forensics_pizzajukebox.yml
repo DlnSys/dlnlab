@@ -1,0 +1,13 @@
+name: hackropole_cte2024_forensics_pizzajukebox
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/cte2024-forensics-pizzajukebox/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge PizzaJukebox — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: abc84a5c2a2b6566186d42ccac5bcb234eadc128a9ebef92ec1661ea412c0b01
+writeup: writeups/hackropole_cte2024_forensics_pizzajukebox.md
+enabled: true

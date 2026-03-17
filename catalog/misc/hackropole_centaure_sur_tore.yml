@@ -1,0 +1,17 @@
+name: hackropole_centaure_sur_tore
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-centaure-sur-tore/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Centaure sur Tore — '
+runtime: file
+file:
+- example-empty.png
+- example-directions.png
+- example-solved.png
+flag:
+  format: FCSC{...}
+  value: 557048dd95cdd61360d711e2cbd025838ecc6f6d4f08122e6d7b22d709bcc16c
+writeup: writeups/hackropole_centaure_sur_tore.md
+enabled: true

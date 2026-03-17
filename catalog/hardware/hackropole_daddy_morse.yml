@@ -1,0 +1,17 @@
+name: hackropole_daddy_morse
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2022-hardware-daddy-morse/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Daddy Morse — '
+runtime: file
+file:
+- daddy-morse.py
+- client.py
+- signal.iq
+flag:
+  format: FCSC{...}
+  value: f8284e070a24c3fcbd60511ac9a2fbfe6163c676e2737042e1b45ad6c9c29deb
+writeup: writeups/hackropole_daddy_morse.md
+enabled: true

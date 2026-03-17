@@ -1,0 +1,17 @@
+name: hackropole_it_security_101
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2020-misc-it-security-101/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge IT Security 101 — '
+runtime: file
+file:
+- message.tex
+- message.pdf
+- flag.pdf
+flag:
+  format: FCSC{...}
+  value: 1a802517886c80e9269ab63ce8077d348aeeb560e328bfb87823d0f5adbb53c1
+writeup: writeups/hackropole_it_security_101.md
+enabled: true

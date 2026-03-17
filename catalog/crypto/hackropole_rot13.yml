@@ -1,0 +1,13 @@
+name: hackropole_rot13
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2023-crypto-rot13/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge ROT13 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 733ce2f4ac188b3428bf135b4e02de95cc0cf38b17099d205574ede3fe6ef384
+writeup: writeups/hackropole_rot13.md
+enabled: true

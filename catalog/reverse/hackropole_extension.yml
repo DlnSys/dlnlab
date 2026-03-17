@@ -1,0 +1,14 @@
+name: hackropole_extension
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-extension/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Extension — '
+runtime: file
+file: extension.elf
+flag:
+  format: FCSC{...}
+  value: 783e7d8bf58e410ee5b2456e4fc9c19502af3a69094a7450fcbf91dab2a865dd
+writeup: writeups/hackropole_extension.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_mega_sudoku
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-mega-sudoku/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Mega Sudoku — '
+runtime: file
+file: mega-sudoku.py
+flag:
+  format: FCSC{...}
+  value: 6fbf8659289069042978223078c4646b439d3bed3f4b1c48406a9208078b83b8
+writeup: writeups/hackropole_mega_sudoku.md
+enabled: true

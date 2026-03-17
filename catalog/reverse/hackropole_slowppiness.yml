@@ -1,0 +1,19 @@
+name: hackropole_slowppiness
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2020-reverse-slowppiness/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Slowppiness — '
+runtime: file
+file:
+- slowppiness
+- data16.u32
+- data128.u32
+- data256.u32
+- data4096.u32
+flag:
+  format: FCSC{...}
+  value: 03267b0fa61863efd38de8e7ec50e7d74a3f2bd0555597abb2efc346a3f41c38
+writeup: writeups/hackropole_slowppiness.md
+enabled: true

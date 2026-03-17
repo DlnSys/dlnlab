@@ -1,0 +1,16 @@
+name: hackropole_horreur_malheur_5
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2024-forensics-horreur-malheur-5/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Horreur, malheur 5/5 - Un peu de CTI — '
+runtime: file
+file:
+- archive.encrypted
+- horreur-malheur.tar.xz
+flag:
+  format: FCSC{...}
+  value: fdb3b0ca469c3df787c6c0936c1475fa959193aa14d3533d91d984720780055e
+writeup: writeups/hackropole_horreur_malheur_5.md
+enabled: true

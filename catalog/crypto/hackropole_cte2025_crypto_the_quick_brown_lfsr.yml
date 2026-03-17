@@ -1,0 +1,17 @@
+name: hackropole_cte2025_crypto_the_quick_brown_lfsr
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/cte2025-crypto-the-quick-brown-lfsr/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge The quick brown LFSR — '
+runtime: file
+file:
+- the-quick-brown-lfsr.py
+- output.codec
+- output.txt
+flag:
+  format: FCSC{...}
+  value: d0a569919562f2959a71b57e154698746386867fc343780c301f6a5419ea204f
+writeup: writeups/hackropole_cte2025_crypto_the_quick_brown_lfsr.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_shrimp_say
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2025-web-shrimp-say/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Shrimp Say — '
+runtime: file
+file: shrimp-say.tar.xz
+flag:
+  format: FCSC{...}
+  value: f4c2bcda6061b4392dfffdb78960b2697cdbe728c0fc43ab1542c305482e4485
+writeup: writeups/hackropole_shrimp_say.md
+enabled: true

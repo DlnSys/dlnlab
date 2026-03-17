@@ -1,0 +1,15 @@
+name: hackropole_sacre_jeton
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2021-web-sacre-jeton/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Sacré jeton — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 930f2dbc12020477113d5f6adaf56c67fd502af4b1d2bb29cd7eba01de6f0837
+writeup: writeups/hackropole_sacre_jeton.md
+enabled: true

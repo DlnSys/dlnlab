@@ -1,0 +1,14 @@
+name: hackropole_svartalfheim
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-svartalfheim/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge svartalfheim — '
+runtime: file
+file: svartalfheim
+flag:
+  format: FCSC{...}
+  value: 711a1358d75c97442d54a7a0f7d839f8dd5bf2fe7e11a74f8671381c101abcbc
+writeup: writeups/hackropole_svartalfheim.md
+enabled: true

@@ -1,0 +1,6 @@
+services:
+  bashi-bouzouk:
+    hostname: bashi-bouzouk
+    image: anssi/fcsc2020-pwn-bashi-bouzouk:latest
+    ports:
+      - "2222:22"

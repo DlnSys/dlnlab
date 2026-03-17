@@ -1,0 +1,14 @@
+name: hackropole_abyssal_odds
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2024-web-abyssal-odds/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Abyssal Odds — '
+runtime: file
+file: abyssal-odds.tar.xz
+flag:
+  format: FCSC{...}
+  value: ff7de7485afbc94ed617a0bc4eac74cda1bcbf99bee6d395e3d89509970880ea
+writeup: writeups/hackropole_abyssal_odds.md
+enabled: true

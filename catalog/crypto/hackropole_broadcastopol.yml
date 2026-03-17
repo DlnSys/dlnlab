@@ -1,0 +1,17 @@
+name: hackropole_broadcastopol
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-broadcastopol/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge broadcastopol — '
+runtime: file
+file:
+- flag.wav.enc
+- known.wav
+- known.wav.enc
+flag:
+  format: FCSC{...}
+  value: bf17cc1ed8bb6f970e63467e646e8525475c7097ccb5365f0fe8542b6ea2444a
+writeup: writeups/hackropole_broadcastopol.md
+enabled: true

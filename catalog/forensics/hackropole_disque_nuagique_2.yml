@@ -1,0 +1,13 @@
+name: hackropole_disque_nuagique_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2021-forensics-disque-nuagique-2/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Disque nuagique 2/2 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: e4f4a3979a16a3d479b8d9a0b32e3de80e996a1f73abe559271916ac4156a7ed
+writeup: writeups/hackropole_disque_nuagique_2.md
+enabled: true

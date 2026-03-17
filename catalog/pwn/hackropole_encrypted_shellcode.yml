@@ -1,0 +1,17 @@
+name: hackropole_encrypted_shellcode
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2021-pwn-encrypted-shellcode/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Encrypted Shellcode — '
+runtime: file
+file:
+- esc
+- stereogram.png
+- stereogram.png.enc
+flag:
+  format: FCSC{...}
+  value: 57721658306b0af6d3a1d9079f84d685a40145b8dcd52c6a037febb27fa4d659
+writeup: writeups/hackropole_encrypted_shellcode.md
+enabled: true

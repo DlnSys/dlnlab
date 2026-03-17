@@ -1,0 +1,5 @@
+services:
+  bestiary:
+    image: anssi/fcsc2020-web-bestiary:latest
+    ports:
+      - "8000:80"

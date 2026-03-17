@@ -1,0 +1,16 @@
+name: hackropole_factorial
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2019-misc-factorial/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Factorial — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 15945e3913711730bf6b1bf419410a7507c5fca9ab9ab84ab349b6064961054c
+writeup: writeups/hackropole_factorial.md
+enabled: true

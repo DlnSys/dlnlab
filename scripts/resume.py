@@ -1,5 +1,8 @@
+from InquirerPy import inquirer
+
 from scripts.state import load_current, load_progress
 from scripts.catalog import load_catalog
+from scripts.colors import CYAN, YELLOW, RED, RESET
 
 
 def get_challenge(name):
@@ -15,34 +18,29 @@ def resume_challenge():
     unfinished = progress.get("unfinished", [])
 
     if not unfinished:
-        print("\n   No Unfinished challenges:\n")
+        print(f"{RED}\n   No Unfinished challenges.\n{RESET}")
         return
     
-    print("\n   Unfinished challenges:\n")
-    for i, name in enumerate(unfinished, 1):
+    choices = []
+    for name in unfinished:
         challenge = get_challenge(name)
         if challenge:
             hints_used = progress.get("hints_used", {}).get(name, [])
             hints_total = len(challenge.get("hints", []))
-            print(f"    {i} - {name}  [{challenge.get('theme', '')} / {challenge.get('difficulty', '')}]   hints used: {len(hints_used)}/{hints_total}")
+            label = f"{name}  [{challenge.get('theme', '')} / {challenge.get('difficulty', '')}]  hints: {len(hints_used)}/{hints_total}"
+            choices.append({"name": label, "value": name})
         
         else:
-            print(f"    {i} - {name}")
-    
-    print()
-    choice = input("  > ").strip()
+            choices.append({"name": name, "value": name})
 
-    if choice.isdigit():
-        idx = int(choice) - 1
-        if 0 <= idx < len(unfinished):
-            name = unfinished[idx]
-            challenge = get_challenge(name)
-            if challenge:
-                from scripts.start import launch_challenges
-                launch_challenges(challenge)
-            else:
-                print(f"\n  Challenge {name} not found in catalog.\n")
-        else:
-            print("\n   Invalid choice.\n")
+    selection = inquirer.select(
+        message="Resume which challenge ?",
+        choices=choices,
+    ).execute()
+
+    challenge = get_challenge(selection)
+    if challenge:
+        from scripts.start import launch_challenges
+        launch_challenges(challenge)
     else:
-        print("\n   Invalide choice.\n")
+        print(f"{RED}\n  Challenge {selection} not found in catalog.\n{RESET}")

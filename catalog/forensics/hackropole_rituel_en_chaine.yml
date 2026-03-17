@@ -1,0 +1,13 @@
+name: hackropole_rituel_en_chaine
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2021-forensics-rituel-en-chaine/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge Rituel en chaine — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: aeb3975a8523f114f7d79350d4174af48c327142c78a925d02e6108fc1c51d4c
+writeup: writeups/hackropole_rituel_en_chaine.md
+enabled: true

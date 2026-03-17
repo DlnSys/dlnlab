@@ -1,0 +1,17 @@
+name: hackropole_zarby_write
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2024-pwn-zarby-write/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Zarby Write — '
+runtime: file
+file:
+- zarby-write
+- ld-2.37.so
+- libc-2.37.so
+flag:
+  format: FCSC{...}
+  value: 077d3b83afd6ffa0f9efa879e0d3f0b0c6b6db1696b55429a5df67dad821d2fb
+writeup: writeups/hackropole_zarby_write.md
+enabled: true

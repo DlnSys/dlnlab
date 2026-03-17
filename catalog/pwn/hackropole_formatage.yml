@@ -1,0 +1,16 @@
+name: hackropole_formatage
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2022-pwn-formatage/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge formatage — '
+runtime: file
+file:
+- formatage
+- libc.2-34.so
+flag:
+  format: FCSC{...}
+  value: 1f9c1c9096f93f8752adedb4045657357b8e637649a442a6a5e5c7fb8ca465e3
+writeup: writeups/hackropole_formatage.md
+enabled: true

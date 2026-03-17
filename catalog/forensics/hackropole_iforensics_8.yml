@@ -1,0 +1,13 @@
+name: hackropole_iforensics_8
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-iforensics-8/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge iForensics - iC2 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 2d707398f2cbcafd9a791093421aef55211da8180062774ebc93387b16266147
+writeup: writeups/hackropole_iforensics_8.md
+enabled: true

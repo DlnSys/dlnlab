@@ -1,0 +1,5 @@
+services:
+  le-rustique-v2:
+    image: anssi/fcsc2021-misc-le-rustique-v2:latest
+    ports:
+      - "8000:8000"

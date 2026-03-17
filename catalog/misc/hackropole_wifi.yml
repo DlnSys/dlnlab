@@ -1,0 +1,14 @@
+name: hackropole_wifi
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2022-misc-wifi/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge Wi-Fi — '
+runtime: file
+file: intro-wifi.pcap.xz
+flag:
+  format: FCSC{...}
+  value: 9ba2bad43e3f88b8af45b73527e5ef90565f85a4e2d17c88e41a45c057909de6
+writeup: writeups/hackropole_wifi.md
+enabled: true

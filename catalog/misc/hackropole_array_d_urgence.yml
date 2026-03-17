@@ -1,0 +1,14 @@
+name: hackropole_array_d_urgence
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-array-d-urgence/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Array d&#39;urgence — '
+runtime: file
+file: array-d-urgence.py
+flag:
+  format: FCSC{...}
+  value: 46bfaa7faf8a100d9d0780aca3af47150b7f06e2193d1c3ae2c6c3145f4780a9
+writeup: writeups/hackropole_array_d_urgence.md
+enabled: true

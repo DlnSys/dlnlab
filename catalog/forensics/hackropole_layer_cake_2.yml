@@ -1,0 +1,13 @@
+name: hackropole_layer_cake_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2024-forensics-layer-cake-2/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge Layer Cake 2/3 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 1ee31deef1313f28533fbeefc9c48fbfe3defe2989be3f6552510ea3bf0f0879
+writeup: writeups/hackropole_layer_cake_2.md
+enabled: true

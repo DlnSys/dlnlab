@@ -1,0 +1,13 @@
+name: hackropole_academie_de_l_investigation_4
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-academie-de-l-investigation-4/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Académie de l&#39;investigation - Porte dérobée — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 2cf2ca9371cddfd9af7fa8aeaaf809fe41613355051318fecca663c300ccf15b
+writeup: writeups/hackropole_academie_de_l_investigation_4.md
+enabled: true

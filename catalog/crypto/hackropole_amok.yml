@@ -1,0 +1,14 @@
+name: hackropole_amok
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-amok/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Amok — '
+runtime: file
+file: ciphertext.txt
+flag:
+  format: FCSC{...}
+  value: f8fa7ccc9594793b5593f9ee71a78327455e31faaf2c4927aa59fd1621589b04
+writeup: writeups/hackropole_amok.md
+enabled: true

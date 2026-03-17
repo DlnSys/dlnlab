@@ -1,0 +1,14 @@
+name: hackropole_macaque
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2021-crypto-macaque/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Macaque — '
+runtime: file
+file: macaque.py
+flag:
+  format: FCSC{...}
+  value: 1102143d7923fb43f9132fd815ba5f429917c19b709a959d75ac64422056161d
+writeup: writeups/hackropole_macaque.md
+enabled: true

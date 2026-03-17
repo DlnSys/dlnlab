@@ -1,0 +1,18 @@
+name: hackropole_call_me_blah
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2024-pwn-call-me-blah/
+theme: "\n            "
+category: pwn
+difficulty: easy
+description: 'Challenge Call Me Blah — '
+runtime: file
+file:
+- call-me-blah
+- call-me-blah.c
+- ld-2.36.so
+- libc-2.36.so
+flag:
+  format: FCSC{...}
+  value: b51154fdd9a31fc97c20fe31e4a6a8149d9e3aa894c791bae800307f9f1a3aa9
+writeup: writeups/hackropole_call_me_blah.md
+enabled: true

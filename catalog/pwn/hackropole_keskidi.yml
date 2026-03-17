@@ -1,0 +1,14 @@
+name: hackropole_keskidi
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2023-pwn-keskidi/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Keskidi — '
+runtime: file
+file: keskidi
+flag:
+  format: FCSC{...}
+  value: 4e72049c0a966a5d7be8cc86478e57b1064f3998be2d2c4eeaa60ed9eb52724c
+writeup: writeups/hackropole_keskidi.md
+enabled: true

@@ -1,0 +1,17 @@
+name: hackropole_hello_rootkitty
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-hello-rootkitty/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Hello Rootkitty — '
+runtime: file
+file:
+- bzImage
+- initramfs.example.cpio
+- ecsc.ko
+flag:
+  format: FCSC{...}
+  value: ced67ea26fa54b7f7dec9d91c286b53b12eb492326167180267dd2d344531a33
+writeup: writeups/hackropole_hello_rootkitty.md
+enabled: true

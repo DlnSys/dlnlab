@@ -1,0 +1,14 @@
+name: hackropole_old_is_better_than_new
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2025-web-old-is-better-than-new/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Old is better than new — '
+runtime: file
+file: old-is-better-than-new.tar.xz
+flag:
+  format: FCSC{...}
+  value: 3fe7539450a0e7ec4d3dde173403d58f5149f8c88e9ffd6648f60031b5f39e7c
+writeup: writeups/hackropole_old_is_better_than_new.md
+enabled: true

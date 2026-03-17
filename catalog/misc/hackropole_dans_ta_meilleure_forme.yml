@@ -1,0 +1,13 @@
+name: hackropole_dans_ta_meilleure_forme
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-dans-ta-meilleure-forme/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Dans Ta Meilleure Forme — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 7424ecf2abffacfc67da6b6f2b9440f3569a7bc0caccd9bc06107375a0406c8d
+writeup: writeups/hackropole_dans_ta_meilleure_forme.md
+enabled: true

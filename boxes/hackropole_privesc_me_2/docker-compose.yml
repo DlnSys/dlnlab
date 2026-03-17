@@ -1,0 +1,5 @@
+services:
+  privesc-me:
+    image: anssi/fcsc2021-misc-privesc-me:latest
+    ports:
+      - "2222:22"

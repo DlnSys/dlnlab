@@ -1,0 +1,38 @@
+services:
+  fuss-1-www:
+    image: anssi/fcsc2020-web-fuss-1-www:latest
+    ports:
+      - "8000:80"
+    depends_on:
+      - fuss-1-mongodb
+    networks:
+      - fuss-1-external
+      - fuss-1-internal
+
+  fuss-1-mongodb:
+    image: mongo:4.2.6
+    ports:
+      - "27017:27017"
+    hostname: "fuss-1-mongodb"
+    networks:
+      - fuss-1-internal
+
+  fuss-1-bot:
+    image: anssi/fcsc2020-web-fuss-1-bot:latest
+    environment:
+      - MONGO_DB=fcsc2020
+      - MONGO_HOST=fuss-1-mongodb
+      - CHALLENGE_URL=http://fuss-1-www/
+      - ADMIN_TOKEN=1Du3gUvvneLT5pAGRhBCrrIoaBYX8Ost1VG4muIpBjvNZeEySqjnBw0g69QtLB5X
+      - BOT_TIMEOUT=10000 #in ms
+    depends_on:
+      - fuss-1-mongodb
+      - fuss-1-www
+    networks:
+      - fuss-1-external
+      - fuss-1-internal
+
+networks:
+  fuss-1-external:
+  fuss-1-internal:
+    internal: true

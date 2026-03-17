@@ -1,0 +1,16 @@
+name: hackropole_schaiku
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2021-hardware-schaiku/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge SCHaiku — '
+runtime: file
+file:
+- challenges.txt
+- SCHaiku.png
+flag:
+  format: FCSC{...}
+  value: bf3cd1c9e01536d484b2fc96462c097ba81214a70784d1b7a87786640632a5b0
+writeup: writeups/hackropole_schaiku.md
+enabled: true

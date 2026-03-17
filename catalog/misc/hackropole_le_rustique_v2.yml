@@ -1,0 +1,15 @@
+name: hackropole_le_rustique_v2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-le-rustique-v2/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Le Rustique v2 — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 05cab5cb600259da4426e766ee56173fe20bab7b5f0fc71a3ab3bf0a527890d7
+writeup: writeups/hackropole_le_rustique_v2.md
+enabled: true

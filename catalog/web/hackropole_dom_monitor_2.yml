@@ -1,0 +1,14 @@
+name: hackropole_dom_monitor_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2025-web-dom-monitor-2/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge DOM Monitor (Part 2) — '
+runtime: file
+file: dom-monitor.tar.xz
+flag:
+  format: FCSC{...}
+  value: ab7281ec287a5d55f30186f7ff9d9ddded199a5b4f86a831cb480f996b7300e6
+writeup: writeups/hackropole_dom_monitor_2.md
+enabled: true

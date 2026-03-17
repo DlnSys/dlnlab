@@ -1,0 +1,16 @@
+name: hackropole_cte2024_crypto_pineapple_baguette
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/cte2024-crypto-pineapple-baguette/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Pineapple Baguette — '
+runtime: file
+file:
+- baguette
+- capture.pcap
+flag:
+  format: FCSC{...}
+  value: 6568144bd8cb23afe88fe885fdf2aa5520e5b4cbd4efdf8ec8f89fa50e17870b
+writeup: writeups/hackropole_cte2024_crypto_pineapple_baguette.md
+enabled: true

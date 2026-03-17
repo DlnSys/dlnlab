@@ -1,0 +1,16 @@
+name: hackropole_bluetooth_low_energy
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2020-hardware-bluetooth-low-energy/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Bluetooth Low Energy — '
+runtime: file
+file:
+- ble.sig
+- gr_waterfall_tuto.png
+flag:
+  format: FCSC{...}
+  value: ec7842c5e230863f1a96c6f5b8860d6449ea13ba8ef56ea25755c2566aea384c
+writeup: writeups/hackropole_bluetooth_low_energy.md
+enabled: true

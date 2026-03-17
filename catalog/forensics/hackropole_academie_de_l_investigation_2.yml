@@ -1,0 +1,14 @@
+name: hackropole_academie_de_l_investigation_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-academie-de-l-investigation-2/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Académie de l&#39;investigation - Administration — '
+runtime: file
+file: flag.txt.enc
+flag:
+  format: FCSC{...}
+  value: 7f48da2a33bb1606df690ca2f847f2c23410433ab6fa8b8dba3d282557385f1e
+writeup: writeups/hackropole_academie_de_l_investigation_2.md
+enabled: true

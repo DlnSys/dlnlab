@@ -1,0 +1,14 @@
+name: hackropole_chatouille
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-chatouille/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Chatouille — '
+runtime: file
+file: chatouille
+flag:
+  format: FCSC{...}
+  value: 8d744e5c6371b2d636acac1587343ae31d0a75b43e3d8ed43119553bbb4b6cef
+writeup: writeups/hackropole_chatouille.md
+enabled: true

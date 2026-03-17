@@ -1,43 +1,27 @@
 import random
 
+from InquirerPy import inquirer
+
 from scripts.catalog import load_catalog
-from scripts.state import load_progress, load_current, save_current
-from scripts.config import load_config
+from scripts.state import load_progress, load_current, save_current, save_progress, clear_current
+from scripts.stop import stop_runtime
+from scripts.colors import CYAN, RED, RESET, BOLD, YELLOW
 
 
 CATEGORIES = ["web", "reverse", "crypto", "forensics", "pwn", "misc"]
 DIFFICULTIES = ["easy", "medium", "hard"]
 
 
-def select_category():
-    print("\nCategory:")
-    for i, cat in enumerate(CATEGORIES, 1):
-        print(f"  {i} - {cat.capitalize()}")
-    print(f"  {len(CATEGORIES)+1} - Random")
-    choice = input("\n> ").strip()
-    if choice.isdigit():
-        idx = int(choice) - 1
-        if 0 <= idx < len(CATEGORIES):
-            return CATEGORIES[idx]
-    return None # Random
-
-
-def select_difficulty():
-    print("\nDifficulty:")
-    for i, diff in enumerate(DIFFICULTIES, 1):
-        print(f"  {i} - {diff.capitalize()}")
-    print(f"  {len(DIFFICULTIES)+1} - Random")
-    choice = input("\n> ").strip()
-    if choice.isdigit():
-        idx = int(choice) - 1
-        if 0 <= idx < len(DIFFICULTIES):
-            return DIFFICULTIES[idx]
-    return None # Random
-
-
 def start_challenge():
-    category = select_category()
-    difficulty = select_difficulty()
+    category = inquirer.select(
+        message="Category:",
+        choices=[c.capitalize() for c in CATEGORIES] + ["Random"],
+    ).execute()
+
+    difficulty = inquirer.select(
+        message="Difficulty:",
+        choices=[d.capitalize() for d in DIFFICULTIES] + ["Random"],
+    ).execute()
 
     catalog = load_catalog()
     progress = load_progress()
@@ -46,10 +30,13 @@ def start_challenge():
     current = load_current()
     current_name = current.get("name")
 
+    cat_filter = None if category == "Random" else category.lower()
+    diff_filter = None if difficulty == "Random" else difficulty.lower()
+
     candidates = [
         c for c in catalog
-        if (category is None or c.get("theme") == category or c.get("category") == category)
-        and (difficulty is None or c.get("difficulty") == difficulty)
+        if (cat_filter is None or c.get("theme") == cat_filter or c.get("category") == cat_filter)
+        and (diff_filter is None or c.get("difficulty") == diff_filter)
         and c.get("name") not in completed
         and c.get("name") != current_name 
     ]
@@ -58,7 +45,33 @@ def start_challenge():
         print("\nNo challenges available for this selection.")
         return
     
-    challenge = random.choice(candidates)
+    choices = ["Random"] + [c["name"] for c in candidates]
+
+    selection = inquirer.select(
+        message="Challenge:",
+        choices=choices,
+    ).execute()
+
+    if selection == "Random":
+        challenge = random.choice(candidates)
+    else:
+        challenge = next(c for c in candidates if c["name"] == selection)
+    
+    if current_name:
+        confirm = inquirer.confirm(
+            message=f"'{current_name}' is active. Replace it (kept as unfinished)?",
+            default=False,
+        ).execute()
+        if not confirm:
+            return
+        progress = load_progress()
+        if current_name not in progress.get("unfinished", []):
+            progress.setdefault("unfinished", []).append(current_name)
+
+        save_progress(progress)
+        stop_runtime(current)
+        clear_current()
+        
     launch_challenges(challenge)
 
 
@@ -68,20 +81,20 @@ def launch_challenges(challenge):
     runtime_info = launch_runtime(challenge)
 
     print()                                                                                                                                                                                                     
-    print("╔══════════════════════════════════════════╗") 
-    print("║           CHALLENGE STARTED              ║")                                                                                                                                                       
-    print("╚══════════════════════════════════════════╝")                                                                                                                                                       
-    print()                                                                                                                                                                                                     
+    print(f"{CYAN}╔══════════════════════════════════════════╗{RESET}")
+    print(f"{CYAN}║{RESET}  {BOLD}         CHALLENGE STARTED            {RESET}  {CYAN}║{RESET}")
+    print(f"{CYAN}╚══════════════════════════════════════════╝{RESET}")
+    print()
     print(f"  Name       : {challenge['name']}")                                                                                                                                                                
     print(f"  Category   : {challenge.get('theme', '')} / {challenge.get('category', '')}")                                                                                                                     
-    print(f"  Difficulty : {challenge.get('difficulty', '').capitalize()}")                                                                                                                                     
+    print(f"  Difficulty : {YELLOW}{challenge.get('difficulty', '').capitalize()}{RESET}")                                                                                                                                     
     print(f"  Source     : {challenge.get('source', '').capitalize()}")                                                                                                                                         
     print()                                                                                                                                                                                                     
     print(f"  Brief :\n    {challenge.get('description', '').strip()}")
     print() 
 
     if runtime_info.get("target"):
-        print(f"  Target     : {runtime_info['target']}")
+        print(f"  Target     : {BOLD}{runtime_info['target']}{RESET}")
 
     print(f"  Flag format: {challenge.get('flag', {}).get('format', '???')}")                                                                                                                                   
     print()                                                                                                                                                                                                     

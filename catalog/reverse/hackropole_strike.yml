@@ -1,0 +1,14 @@
+name: hackropole_strike
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-strike/
+theme: "\n            "
+category: reverse
+difficulty: easy
+description: 'Challenge Strike — '
+runtime: file
+file: strike
+flag:
+  format: FCSC{...}
+  value: e24f083331aade84f80c98b5f7a65ede9e083001ad7711d7a4b95ae57e2fedec
+writeup: writeups/hackropole_strike.md
+enabled: true

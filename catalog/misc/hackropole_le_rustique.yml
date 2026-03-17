@@ -1,0 +1,15 @@
+name: hackropole_le_rustique
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2020-misc-le-rustique/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Le Rustique — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 3d03b0444b4a361003b02f9f95349c75f14c5704bae5f37d1bd30d445a3fb6d5
+writeup: writeups/hackropole_le_rustique.md
+enabled: true

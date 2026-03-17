@@ -1,0 +1,13 @@
+name: hackropole_3615_incident_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2019-forensics-3615-incident-2/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge 3615 Incident 2/3 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 3d1472d56ea8a93c5aeac719a71d6fcfce44c068814dd05aee104b98e29ff8c8
+writeup: writeups/hackropole_3615_incident_2.md
+enabled: true

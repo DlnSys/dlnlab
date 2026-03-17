@@ -1,0 +1,14 @@
+name: hackropole_simple_fm
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-simple-fm/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Simple FM — '
+runtime: file
+file: simple-fm.iq.tar.xz
+flag:
+  format: FCSC{...}
+  value: f32722ee5aafa69f0c9b82440312992faf5668d21f76dd28aefb77d611f65acf
+writeup: writeups/hackropole_simple_fm.md
+enabled: true

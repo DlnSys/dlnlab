@@ -1,0 +1,14 @@
+name: hackropole_suspicious_sms
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2021-hardware-suspicious-sms/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Suspicious SMS — '
+runtime: file
+file: jc_dump.bin
+flag:
+  format: FCSC{...}
+  value: 388a5028597a2a82ca428977e12145b3362aac7c852bc3a90f1cdad7e417d260
+writeup: writeups/hackropole_suspicious_sms.md
+enabled: true

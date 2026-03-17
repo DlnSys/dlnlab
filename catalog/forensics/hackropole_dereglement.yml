@@ -1,0 +1,14 @@
+name: hackropole_dereglement
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2021-forensics-dereglement/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge Dérèglement — '
+runtime: file
+file: 2021-fcsc-reglement_de_participation.docx
+flag:
+  format: FCSC{...}
+  value: 89dcca9238c885e12c5d0c70538fe31459de61697eb7a90358ae973e5e88e7ed
+writeup: writeups/hackropole_dereglement.md
+enabled: true

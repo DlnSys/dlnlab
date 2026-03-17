@@ -1,0 +1,16 @@
+name: hackropole_touillette
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-touillette/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge Touillette — '
+runtime: file
+file:
+- touillette.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 69cd74eb9379dd2a6e784092132c8a81f142d63a831b9e64ccbcec019889d6d0
+writeup: writeups/hackropole_touillette.md
+enabled: true

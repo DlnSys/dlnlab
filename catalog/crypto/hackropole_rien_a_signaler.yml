@@ -1,0 +1,16 @@
+name: hackropole_rien_a_signaler
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-rien-a-signaler/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge Rien à signaler — '
+runtime: file
+file:
+- rien-a-signaler.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: c08bf075b84d09b635f519481ab0c4d914537dec385561ca9e6be4b2a415edac
+writeup: writeups/hackropole_rien_a_signaler.md
+enabled: true

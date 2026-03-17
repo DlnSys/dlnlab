@@ -1,0 +1,14 @@
+name: hackropole_long_prime_shellcode
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-long-prime-shellcode/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Long Prime Shellcode — '
+runtime: file
+file: long-prime-shellcode
+flag:
+  format: FCSC{...}
+  value: 5e24f37e4892c57d80a9e6cd9092948596ca690493c3fdd6f86b8dec7a63a8b8
+writeup: writeups/hackropole_long_prime_shellcode.md
+enabled: true

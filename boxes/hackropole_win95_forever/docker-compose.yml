@@ -1,0 +1,5 @@
+services:
+  win95-forever:
+    image: anssi/fcsc2025-web-win95-forever:latest
+    ports:
+      - "8000:80"

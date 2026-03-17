@@ -1,0 +1,16 @@
+name: hackropole_speak_to_me
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-speak-to-me/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Speak to Me — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 59193884154c062038a841151feb5718aff9196e82da12a9c5564b074955bc57
+writeup: writeups/hackropole_speak_to_me.md
+enabled: true

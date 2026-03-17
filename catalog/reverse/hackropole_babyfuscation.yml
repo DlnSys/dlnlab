@@ -1,0 +1,14 @@
+name: hackropole_babyfuscation
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-babyfuscation/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge babyfuscation — '
+runtime: file
+file: babyfuscation
+flag:
+  format: FCSC{...}
+  value: f4a59a9d23b98e2f165ed6fa118606f77972ba1a4fa8d221337cdc25be182bed
+writeup: writeups/hackropole_babyfuscation.md
+enabled: true

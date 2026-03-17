@@ -1,0 +1,14 @@
+name: hackropole_sadmind
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2023-forensics-sadmind/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge sadmind — '
+runtime: file
+file: sadmind.pcap
+flag:
+  format: FCSC{...}
+  value: 50e6d98b2d768b068b12a1354daf45c90fc808e38e28a6f09b5318cdeba4fefc
+writeup: writeups/hackropole_sadmind.md
+enabled: true

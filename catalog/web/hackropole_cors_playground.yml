@@ -1,0 +1,14 @@
+name: hackropole_cors_playground
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2024-web-cors-playground/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge CORS Playground — '
+runtime: file
+file: cors-playground.tar.xz
+flag:
+  format: FCSC{...}
+  value: dc81b979ebac7242d5f1497a5421e9e15dc8b2a4ce30222674c642f4292a8e02
+writeup: writeups/hackropole_cors_playground.md
+enabled: true

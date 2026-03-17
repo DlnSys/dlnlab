@@ -1,0 +1,19 @@
+name: hackropole_cte2025_hardware_uwuspy
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/cte2025-hardware-uwuspy/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge UwUspy — '
+runtime: file
+file:
+- client.py
+- hint.png
+- sample-0.f32
+- sample-1.f32
+- sample-2.f32
+flag:
+  format: FCSC{...}
+  value: ca125653efd0cd28332e1400b97864d8a1d22a038b7e507d8c9b36aaa4d2c97d
+writeup: writeups/hackropole_cte2025_hardware_uwuspy.md
+enabled: true

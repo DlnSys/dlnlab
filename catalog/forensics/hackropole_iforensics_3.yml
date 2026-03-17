@@ -1,0 +1,13 @@
+name: hackropole_iforensics_3
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-iforensics-3/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge iForensics - iWiFi — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 967f6f1d3509822e80811cef5099555bd0f22d3034d8e0c911a2d187f8f16f02
+writeup: writeups/hackropole_iforensics_3.md
+enabled: true

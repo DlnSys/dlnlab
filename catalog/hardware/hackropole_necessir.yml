@@ -1,0 +1,14 @@
+name: hackropole_necessir
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2020-hardware-necessir/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge NECessIR — '
+runtime: file
+file: ir-signal.raw
+flag:
+  format: FCSC{...}
+  value: 74ba89948b6fd6927b22c5c96bd923e557acf57bc027378a6c49e72f8c94f603
+writeup: writeups/hackropole_necessir.md
+enabled: true

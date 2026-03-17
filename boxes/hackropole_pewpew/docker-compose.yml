@@ -1,0 +1,5 @@
+services:
+  pewpew:
+    image: anssi/fcsc2024-hardware-pewpew:latest
+    ports:
+      - "4000:4000"

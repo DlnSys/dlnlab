@@ -1,0 +1,14 @@
+name: hackropole_privesc_me_3
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-privesc-me-3/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Privesc Me 3/4 - Down the rabbit hole — '
+runtime: docker
+compose: docker-compose.yml
+flag:
+  format: FCSC{...}
+  value: 09085d1333e9ffb65020c53764a28a38b84fd36da8a4bed94dc206c129875590
+writeup: writeups/hackropole_privesc_me_3.md
+enabled: true

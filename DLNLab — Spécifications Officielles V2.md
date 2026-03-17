@@ -2,7 +2,7 @@
 
 ## 1. Présentation
 
-DLNLab est un orchestrateur local de challenges de cybersécurité permettant de s’entraîner au CTF et au pentest dans un environnement entièrement local.
+DLNLab est un orchestrateur local de challenges de cybersécurité permettant de s'entraîner au CTF et au pentest dans un environnement entièrement local.
 
 ### Objectifs
 
@@ -30,7 +30,7 @@ Fonctionne entièrement en local.
 
 > Un challenge = un scénario indépendant avec un flag attendu
 
-Chaque challenge est issu d’une source externe (téléchargé manuellement) et intégré dans le catalogue DLNLab. DLNLab ne crée pas de contenu — il orchestre, valide et suit la progression.
+Chaque challenge est issu d'une source externe (téléchargé manuellement) et intégré dans le catalogue DLNLab. DLNLab ne crée pas de contenu — il orchestre, valide et suit la progression.
 
 ---
 
@@ -38,7 +38,7 @@ Chaque challenge est issu d’une source externe (téléchargé manuellement) et
 
 ### V1 — Catalogue manuel
 
-Les challenges sont téléchargés manuellement par l’utilisateur et indexés dans le catalogue YAML.
+Les challenges sont téléchargés manuellement par l'utilisateur et indexés dans le catalogue YAML.
 
 Sources recommandées :
 
@@ -49,10 +49,6 @@ Sources recommandées :
 | pwn.college                  | pwn.college   | pwn, système                          |
 | CTFd self-hosted             | —             | multi                                 |
 | Toute source avec flag natif | —             | multi                                 |
-
-### V2 — Intégration API (roadmap)
-
-Synchronisation automatique du catalogue via les APIs officielles des plateformes.
 
 ---
 
@@ -66,12 +62,12 @@ Synchronisation automatique du catalogue via les APIs officielles des plateforme
 | `idor`              | Insecure Direct Object Reference                 |
 | `lfi` / `rfi`         | Local/Remote File Inclusion                      |
 | `upload`            | File upload abuse                                |
-| `auth-bypass`       | Contournement d’authentification                 |
+| `auth-bypass`       | Contournement d'authentification                 |
 | `jwt`               | JSON Web Token exploitation                      |
 | `xxe`               | XML External Entity                              |
 | `ssti`              | Server-Side Template Injection                   |
 | `command-injection` | Injection de commandes                           |
-| `api`               | Exploitation d’API                               |
+| `api`               | Exploitation d'API                               |
 | `reverse`           | Reverse engineering                              |
 | `crypto`            | Cryptographie                                    |
 | `forensics`         | Analyse forensique                               |
@@ -87,7 +83,7 @@ Synchronisation automatique du catalogue via les APIs officielles des plateforme
 
 - Vulnérabilité visible ou peu cachée
 - Exploitation directe
-- Peu d’étapes
+- Peu d'étapes
 
 ### Medium
 
@@ -98,8 +94,8 @@ Synchronisation automatique du catalogue via les APIs officielles des plateforme
 ### Hard
 
 - Vulnérabilité logique ou complexe
-- Chaîne d’exploitation avancée
-- Peu d’indices visibles
+- Chaîne d'exploitation avancée
+- Peu d'indices visibles
 
 ---
 
@@ -110,7 +106,7 @@ DLNLab supporte 3 types de runtime selon le challenge :
 ### `file`
 
 Challenge statique sous forme de fichier local (binaire, image, pcap, archive…).
-Aucun service à lancer — l’utilisateur travaille directement sur le fichier.
+Aucun service à lancer — l'utilisateur travaille directement sur le fichier.
 
 ```yaml
 runtime: file
@@ -149,8 +145,7 @@ dlnlab/
 │
 ├── catalog/
 │   ├── web/
-│   │   ├── picoctf_sqli_easy.yml
-│   │   └── hackropole_jwt_medium.yml
+│   │   └── hackropole_babel_web.yml
 │   ├── reverse/
 │   ├── crypto/
 │   ├── forensics/
@@ -166,28 +161,34 @@ dlnlab/
 │   └── misc/
 │
 ├── boxes/
-│   ├── picoctf_webnet0/
-│   │   └── docker-compose.yml
-│   └── pwncollege_format_string/
+│   └── hackropole_babel_web/
 │       └── docker-compose.yml
 │
 ├── writeups/
-│   ├── picoctf_sqli_easy.md
-│   └── hackropole_jwt_medium.md
+│   └── hackropole_babel_web.md
 │
 ├── state/
 │   ├── progress.json
 │   └── current.json
 │
 ├── scripts/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── catalog.py
+│   ├── state.py
+│   ├── menu.py
 │   ├── start.py
-│   ├── stop.py
+│   ├── runtime.py
 │   ├── submit.py
+│   ├── hints.py
+│   ├── stop.py
 │   ├── resume.py
-│   ├── progress.py
-│   └── hints.py
+│   └── progress.py
 │
 ├── config.yml
+├── ROADMAP.md
+├── requirements.txt
+├── README.md
 └── dlnlab
 ```
 
@@ -198,28 +199,28 @@ dlnlab/
 Chaque challenge est décrit par un fichier YAML indépendant.
 
 ```yaml
-name: picoctf_sqli_easy
-source: picoctf
-url: https://picoctf.org/challenges
+name: hackropole_babel_web
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-babel-web/
 theme: web
-category: sqli
+category: web
 difficulty: easy
 description: >
-  A login form is exposed on an internal service.
-  No credentials are provided.
-runtime: file
-file: challenge/login_form.zip
+  An audit of a website under construction is requested to find a flag.
+  The target is accessible via http://localhost:8000/.
+runtime: docker
+compose: docker-compose.yml
+port: 8000
 
 flag:
-  format: picoCTF{...}
-  value: picoCTF{th1s_1s_th3_fl4g}   # hashé en SHA256 dans le fichier réel
+  format: FCSC{...}
+  value: a061095c06bc5a7f89fcdf5762f9f3c253dfe4952e9fd296f0e5921bd8f668c0  # SHA256 du flag
 
 hints:
-  - "Essaie d'insérer un caractère spécial dans le champ username"
-  - "Les commentaires SQL peuvent être utiles ici"
-  - "Tente une injection de type ' OR 1=1--"
+  - "Inspecte les différentes pages et ressources du site."
+  - "Cherche des fichiers ou endpoints non listés."
 
-writeup: writeups/picoctf_sqli_easy.md  # vide = non disponible
+writeup: writeups/hackropole_babel_web.md
 
 enabled: true
 ```
@@ -235,7 +236,7 @@ enabled: true
 | `difficulty`  | easy / medium / hard            |
 | `description` | Brief affiché au lancement      |
 | `runtime`     | file / docker / netcat          |
-| `flag.format` | Format du flag (ex: picoCTF{…}) |
+| `flag.format` | Format du flag (ex: FCSC{…})    |
 | `flag.value`  | Hash SHA256 du flag attendu     |
 
 ### Champs optionnels
@@ -268,15 +269,10 @@ flag brut → SHA256 → stocké dans flag.value
 ```json
 {
   "completed": [
-    "picoctf_sqli_easy",
-    "hackropole_rsa_easy"
+    "hackropole_babel_web"
   ],
-  "unfinished": [
-    "picoctf_webnet0"
-  ],
-  "hints_used": {
-    "picoctf_webnet0": [0, 1]
-  }
+  "unfinished": [],
+  "hints_used": {}
 }
 ```
 
@@ -284,9 +280,9 @@ flag brut → SHA256 → stocké dans flag.value
 
 ```json
 {
-  "name": "picoctf_webnet0",
+  "name": "hackropole_babel_web",
   "runtime": "docker",
-  "started_at": "2025-03-11T14:32:00",
+  "started_at": "2026-03-14T14:32:00",
   "container_id": "abc123"
 }
 ```
@@ -316,9 +312,24 @@ Menu principal :
 > _
 ```
 
+### Commandes disponibles
+
+| Commande                  | Description                                        |
+|---------------------------|----------------------------------------------------|
+| `dlnlab`                  | Ouvre le menu principal                            |
+| `dlnlab submit <flag>`    | Soumet un flag                                     |
+| `dlnlab hint`             | Affiche le prochain hint                           |
+| `dlnlab stop`             | Arrête le challenge en cours                       |
+| `dlnlab resume`           | Reprend un challenge non terminé                   |
+| `dlnlab progress`         | Affiche la progression globale                     |
+| `dlnlab list`             | Liste tous les challenges avec leur statut *(V2)*  |
+| `dlnlab info <nom>`       | Affiche les détails d'un challenge *(V2)*          |
+| `dlnlab add`              | Ajoute un challenge de façon interactive *(V2)*    |
+| `dlnlab history`          | Historique des challenges complétés *(V2)*         |
+
 ---
 
-## 12. Démarrage d’un challenge
+## 12. Démarrage d'un challenge
 
 ### Sélection
 
@@ -345,7 +356,8 @@ Difficulty:
 2. Filtrer par difficulté
 3. Exclure les challenges terminés
 4. Exclure le challenge en cours si existant
-5. Choisir aléatoirement parmi les restants
+5. Confirmation si un challenge est déjà en cours
+6. Choisir aléatoirement parmi les restants
 
 ### Affichage au lancement
 
@@ -354,17 +366,16 @@ Difficulty:
 ║           CHALLENGE STARTED              ║
 ╚══════════════════════════════════════════╝
 
-Name       : picoctf_webnet0
-Category   : web / sqli
+Name       : hackropole_babel_web
+Category   : web / web
 Difficulty : Easy
-Source     : PicoCTF
+Source     : Hackropole
 
 Brief :
-  A login form is exposed on an internal service.
-  No credentials are provided.
+  An audit of a website under construction is requested to find a flag.
 
-Target     : http://127.0.0.1:8080
-Flag format: picoCTF{...}
+Target     : http://127.0.0.1:8000
+Flag format: FCSC{...}
 
 Commands:
   dlnlab submit <flag>   → submit a flag
@@ -374,18 +385,19 @@ Commands:
 
 ---
 
-## 13. Soumission d’un flag
+## 13. Soumission d'un flag
 
 ```
-dlnlab submit picoCTF{th1s_1s_th3_fl4g}
+dlnlab submit FCSC{...}
 ```
 
 ### Si correct
 
 ```
 ✓ Correct flag! Challenge completed.
+  Time: 12m 34s
 
-Write-up unlocked → writeups/picoctf_sqli_easy.md
+Write-up unlocked → writeups/hackropole_babel_web.md
 Open write-up? [y/N]
 ```
 
@@ -403,10 +415,10 @@ Open write-up? [y/N]
 dlnlab hint
 ```
 
-Les hints sont débloqués un par un dans l’ordre.
+Les hints sont débloqués un par un dans l'ordre.
 
 ```
-Hint 1/3 : Essaie d'insérer un caractère spécial dans le champ username
+Hint 1/3 : Inspecte les différentes pages et ressources du site.
 
 Unlock next hint? [y/N]
 ```
@@ -419,15 +431,15 @@ Les hints utilisés sont enregistrés dans `progress.json`.
 
 Chaque challenge peut avoir un fichier `writeup.md` associé.
 
-- **Verrouillé** tant que le flag n’est pas validé
+- **Verrouillé** tant que le flag n'est pas validé
 - **Déverrouillé** automatiquement après `dlnlab submit` validé
-- **Manuel** : rédigé par l’utilisateur après avoir fait le challenge
-- Si le fichier est vide : message “No write-up available for this challenge yet.”
+- **Manuel** : rédigé par l'utilisateur après avoir fait le challenge
+- Si le fichier est vide : message "No write-up available for this challenge yet."
 
-### Structure recommandée d’un write-up
+### Structure recommandée d'un write-up
 
 ```markdown
-# Write-up : picoctf_sqli_easy
+# Write-up : hackropole_babel_web
 
 ## Contexte
 ...
@@ -439,7 +451,7 @@ Chaque challenge peut avoir un fichier `writeup.md` associé.
 ...
 
 ## Flag
-picoCTF{...}
+FCSC{...}
 
 ## Ce que j'ai appris
 ...
@@ -447,14 +459,14 @@ picoCTF{...}
 
 ---
 
-## 16. Arrêt d’un challenge
+## 16. Arrêt d'un challenge
 
 ```
 dlnlab stop
 ```
 
 ```
-Stop current challenge: picoctf_webnet0
+Stop current challenge: hackropole_babel_web
 
   1 - Mark as completed
   2 - Keep as unfinished
@@ -469,7 +481,7 @@ Stop current challenge: picoctf_webnet0
 
 ---
 
-## 17. Reprise d’un challenge
+## 17. Reprise d'un challenge
 
 ```
 dlnlab resume
@@ -478,8 +490,7 @@ dlnlab resume
 ```
 Unfinished challenges:
 
-  1 - picoctf_webnet0     [web / easy]   hints used: 2/3
-  2 - hackropole_elf_rev  [reverse / medium]   hints used: 0/3
+  1 - hackropole_babel_web  [web / easy]   hints used: 1/2
 
 > _
 ```
@@ -530,7 +541,7 @@ default_category: random
 
 ## 20. Roadmap
 
-### Version 1 — MVP (actuelle spec)
+### Version 1 — MVP
 
 - Catalogue YAML de challenges indexés manuellement
 - 3 runtimes : file, docker, netcat
@@ -544,11 +555,19 @@ default_category: random
 
 ### Version 2 — Améliorations
 
-- Write-ups générés par IA (Claude API) avec wrapper shell optionnel
-- Briefs immersifs (contexte narratif au lancement)
+- Commande `dlnlab list` avec statut des challenges
+- Commande `dlnlab info <nom>`
+- Couleurs dans le terminal
+- Confirmation avant d'écraser un challenge en cours
+- Commande `dlnlab add` interactive
+- Validation du catalogue au démarrage
+- Vérification de l'accessibilité Docker avant lancement
 - Port aléatoire pour les runtimes Docker/netcat
-- Intégration API Hackropole et PicoCTF (sync automatique du catalogue)
-- Mode `dlnlab create` pour assister la création de scénarios custom
+- Briefs immersifs (contexte narratif au lancement)
+- Timer affiché à la validation du flag
+- Commande `dlnlab history`
+- Fichier `requirements.txt`
+- Fichier `README.md`
 
 ### Version 3 — Avancé
 
@@ -556,7 +575,6 @@ default_category: random
 - Multi-flags par challenge
 - Statistiques avancées (temps moyen, taux de réussite par catégorie)
 - Intégration CTFd self-hosted
-- Génération de challenges via IA
 
 ---
 

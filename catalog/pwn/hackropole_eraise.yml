@@ -1,0 +1,17 @@
+name: hackropole_eraise
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-eraise/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge eraise — '
+runtime: file
+file:
+- eraise
+- ld-2.40.so
+- libc-2.40.so
+flag:
+  format: FCSC{...}
+  value: e22b08e9db7aa3c0f6dca6f38ccc39ce5cb06014a8163a8b597c373f78627db9
+writeup: writeups/hackropole_eraise.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_keykoolol
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2020-reverse-keykoolol/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge keykoolol — '
+runtime: file
+file: keykoolol
+flag:
+  format: FCSC{...}
+  value: 468a643b233e40d0328891363af2575e2118cf812ded684d50009ad3b3ddeaac
+writeup: writeups/hackropole_keykoolol.md
+enabled: true

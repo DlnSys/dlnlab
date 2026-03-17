@@ -1,0 +1,14 @@
+name: hackropole_pain_in_the_hash
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2023-crypto-pain-in-the-hash/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Pain in the Hash — '
+runtime: file
+file: pain-in-the-hash.py
+flag:
+  format: FCSC{...}
+  value: 4df236d3c43be5bc446fb7ac8b29aedaf0e3739e8a3462dee01575d64a9555b5
+writeup: writeups/hackropole_pain_in_the_hash.md
+enabled: true

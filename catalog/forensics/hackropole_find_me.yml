@@ -1,0 +1,13 @@
+name: hackropole_find_me
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-find-me/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Find Me — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 7237673a2dd812a95c6bbe6cfbf583a390cff574a2fc8d02d3eccdf33833b448
+writeup: writeups/hackropole_find_me.md
+enabled: true

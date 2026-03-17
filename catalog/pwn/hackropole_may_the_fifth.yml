@@ -1,0 +1,16 @@
+name: hackropole_may_the_fifth
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2023-pwn-may-the-fifth/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge May the Fifth — '
+runtime: file
+file:
+- may-the-fifth
+- may-the-fifth-public.tar.xz
+flag:
+  format: FCSC{...}
+  value: e0295b314d376b5cc132776a9c93a446aa06d09d5725283a613acea6fe04747f
+writeup: writeups/hackropole_may_the_fifth.md
+enabled: true

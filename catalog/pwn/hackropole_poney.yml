@@ -1,0 +1,14 @@
+name: hackropole_poney
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-poney/
+theme: "\n            "
+category: pwn
+difficulty: easy
+description: 'Challenge Poney — '
+runtime: file
+file: poney
+flag:
+  format: FCSC{...}
+  value: 1fdc4cc45d9368c149a9b580066a07f3d386f9942951e88c18687b985aa185fa
+writeup: writeups/hackropole_poney.md
+enabled: true

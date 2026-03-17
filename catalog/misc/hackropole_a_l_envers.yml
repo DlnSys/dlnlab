@@ -1,0 +1,16 @@
+name: hackropole_a_l_envers
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2022-misc-a-l-envers/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge A l&#39;envers — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 2b34e1e3b2c45b299fdabe358a1180e51602950e9cff04588fb82c217a836d46
+writeup: writeups/hackropole_a_l_envers.md
+enabled: true

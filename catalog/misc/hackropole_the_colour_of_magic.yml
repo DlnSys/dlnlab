@@ -1,0 +1,14 @@
+name: hackropole_the_colour_of_magic
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2023-misc-the-colour-of-magic/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge The Colour of Magic — '
+runtime: file
+file: the-colour-of-magic.tar.xz
+flag:
+  format: FCSC{...}
+  value: b75851ee40fb7b388ee3ec135fe0b09d3b837188f338fee4aae3af29642b349f
+writeup: writeups/hackropole_the_colour_of_magic.md
+enabled: true

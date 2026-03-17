@@ -1,0 +1,16 @@
+name: hackropole_carotte_radis_tomate
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-carotte-radis-tomate/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge Carotte Radis Tomate — '
+runtime: file
+file:
+- carotte-radis-tomate.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: de760e9e93a531331b1c3c8be28a79b404d313c1e479c974aad058c28d738e2c
+writeup: writeups/hackropole_carotte_radis_tomate.md
+enabled: true

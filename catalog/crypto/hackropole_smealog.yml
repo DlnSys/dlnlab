@@ -1,0 +1,16 @@
+name: hackropole_smealog
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2021-crypto-smealog/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge SmeaLog — '
+runtime: file
+file:
+- SmeaLog.sage
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 1162a3e7067e837f8792785bcbb7f71a05d8cf97257991d2cd7a34c59864c8af
+writeup: writeups/hackropole_smealog.md
+enabled: true

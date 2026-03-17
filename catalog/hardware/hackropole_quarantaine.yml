@@ -1,0 +1,14 @@
+name: hackropole_quarantaine
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2020-hardware-quarantaine/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Quarantaine — '
+runtime: file
+file: circuit.pdf
+flag:
+  format: FCSC{...}
+  value: 9bb649092aafc03bde93132ff4761f8aeef91d9be8304634981018c2079dc1c3
+writeup: writeups/hackropole_quarantaine.md
+enabled: true

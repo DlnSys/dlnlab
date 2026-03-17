@@ -1,0 +1,14 @@
+name: hackropole_coloratops
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-coloratops/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Coloratops — '
+runtime: file
+file: coloratops
+flag:
+  format: FCSC{...}
+  value: dcf0ba7c462d020158375b55d61b49fbd69506d19b894417ff8a626db99c68e0
+writeup: writeups/hackropole_coloratops.md
+enabled: true

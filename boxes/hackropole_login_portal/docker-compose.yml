@@ -1,0 +1,5 @@
+services:
+  login-portal:
+    image: anssi/fcsc2022-web-login-portal:latest
+    ports:
+      - "8000:8000"

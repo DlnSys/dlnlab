@@ -1,0 +1,16 @@
+name: hackropole_lapin
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2021-crypto-lapin/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge La PIN — '
+runtime: file
+file:
+- lapin.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 302ed652f8b455a61e3afe192138d4fcb137f167a4c9d3c7638263fcf4ba6022
+writeup: writeups/hackropole_lapin.md
+enabled: true

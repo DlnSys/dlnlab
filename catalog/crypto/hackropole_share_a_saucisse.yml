@@ -1,0 +1,16 @@
+name: hackropole_share_a_saucisse
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-share-a-saucisse/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Share a Saucisse — '
+runtime: file
+file:
+- share-a-saucisse.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: efa67c21aa169c89b4361b09580c285df064d5cb289a4c341780e953a1198aa6
+writeup: writeups/hackropole_share_a_saucisse.md
+enabled: true

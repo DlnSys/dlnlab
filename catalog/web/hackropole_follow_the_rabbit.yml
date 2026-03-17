@@ -1,0 +1,14 @@
+name: hackropole_follow_the_rabbit
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2023-web-follow-the-rabbit/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Follow the Rabbit — '
+runtime: file
+file: follow-the-rabbit-public.tar.xz
+flag:
+  format: FCSC{...}
+  value: 1d83f27ab919bacd57f0fc605ac5c2d1a0f4af15401941aadfd41babf94bc578
+writeup: writeups/hackropole_follow_the_rabbit.md
+enabled: true

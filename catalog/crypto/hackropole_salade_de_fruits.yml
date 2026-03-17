@@ -1,0 +1,14 @@
+name: hackropole_salade_de_fruits
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-salade-de-fruits/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Salade de fruits — '
+runtime: file
+file: salade-de-fruits.py
+flag:
+  format: FCSC{...}
+  value: 3d08a11a08a2f21c083bf9e8b4dd955702c8f4605b9d506dcb290d3b42854399
+writeup: writeups/hackropole_salade_de_fruits.md
+enabled: true

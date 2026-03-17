@@ -1,0 +1,14 @@
+name: hackropole_bofbof
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2021-pwn-bofbof/
+theme: "\n            "
+category: pwn
+difficulty: easy
+description: 'Challenge bofbof — '
+runtime: file
+file: bofbof
+flag:
+  format: FCSC{...}
+  value: 3786a15eb32c64cb9f18370c0fba7a4ebcd58d90356fcc8c59809e8f5389cb0e
+writeup: writeups/hackropole_bofbof.md
+enabled: true

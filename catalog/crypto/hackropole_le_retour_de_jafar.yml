@@ -1,0 +1,14 @@
+name: hackropole_le_retour_de_jafar
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-le-retour-de-jafar/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Le retour de Jafar — '
+runtime: file
+file: le-retour-de-jafar.py
+flag:
+  format: FCSC{...}
+  value: a0750fd7b00a7821a611b5288d5c7f5fdc13da143dd80bf78307b57bb59f8885
+writeup: writeups/hackropole_le_retour_de_jafar.md
+enabled: true

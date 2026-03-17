@@ -1,0 +1,14 @@
+name: hackropole_soupe_miso
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-soupe-miso/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Soupe MISO — '
+runtime: file
+file: soupe-miso.vcd.tar.xz
+flag:
+  format: FCSC{...}
+  value: 72efb7b6b636b0743a73642962e236525eaab77bc53cb7dee953d07b8f0648ce
+writeup: writeups/hackropole_soupe_miso.md
+enabled: true

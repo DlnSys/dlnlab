@@ -1,0 +1,14 @@
+name: hackropole_shuffle_me
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2021-reverse-shuffle-me/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge ShuffleMe — '
+runtime: file
+file: shuffleMe
+flag:
+  format: FCSC{...}
+  value: b5049a0d3ab096f0d96cb8ea55a4757cbe7f7ffc9e3882ff4abcdb8901a6fbbc
+writeup: writeups/hackropole_shuffle_me.md
+enabled: true

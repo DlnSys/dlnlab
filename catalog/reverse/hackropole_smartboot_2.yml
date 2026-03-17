@@ -1,0 +1,16 @@
+name: hackropole_smartboot_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2022-reverse-smartboot-2/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Smartboot 2/2 — '
+runtime: file
+file:
+- schema.png
+- pic.hex
+flag:
+  format: FCSC{...}
+  value: 6fbd390c11d758f95d902a8ac5de30d14d714f65064593fa37c52175e12d8137
+writeup: writeups/hackropole_smartboot_2.md
+enabled: true

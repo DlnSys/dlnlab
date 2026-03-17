@@ -1,0 +1,13 @@
+name: hackropole_ja4a4a4do0o0re_ssh
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-ja4a4a4do0o0re-ssh/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge ja4a4a4do0o0ore SSH ! — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 312e7079aee8066f857ab601e691bb2ce320c3177819f28c2fa136edabe80335
+writeup: writeups/hackropole_ja4a4a4do0o0re_ssh.md
+enabled: true

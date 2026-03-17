@@ -1,0 +1,14 @@
+name: hackropole_zigoto
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2022-reverse-zigoto/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Zigoto — '
+runtime: file
+file: zigoto
+flag:
+  format: FCSC{...}
+  value: 392a94c819d580b9a60f612d7ffe1e5d644b0853c4b6e422ae8fc661ea825e75
+writeup: writeups/hackropole_zigoto.md
+enabled: true

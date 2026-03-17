@@ -1,0 +1,14 @@
+name: hackropole_transient_protector
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-transient-protector/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Transient Protector — '
+runtime: file
+file: protector
+flag:
+  format: FCSC{...}
+  value: 52b6f986160a63e78626e7128bc5d38a0a00de4c20fedc5899800e4801cf75f4
+writeup: writeups/hackropole_transient_protector.md
+enabled: true

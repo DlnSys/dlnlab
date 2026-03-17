@@ -1,0 +1,5 @@
+services:
+  php-sandbox:
+    image: anssi/fcsc2019-web-php-sandbox:latest
+    ports:
+      - "8000:80"

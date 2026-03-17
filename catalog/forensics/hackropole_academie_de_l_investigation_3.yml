@@ -1,0 +1,13 @@
+name: hackropole_academie_de_l_investigation_3
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-academie-de-l-investigation-3/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Académie de l&#39;investigation - Premiers artéfacts — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 092cf06ba52e877f96c90c37fcdad3cf52ee8c46f5c071024c9ceba229dcaa94
+writeup: writeups/hackropole_academie_de_l_investigation_3.md
+enabled: true

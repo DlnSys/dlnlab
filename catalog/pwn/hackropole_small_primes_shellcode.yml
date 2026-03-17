@@ -1,0 +1,14 @@
+name: hackropole_small_primes_shellcode
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-small-primes-shellcode/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Small Primes Shellcode — '
+runtime: file
+file: small-primes-shellcode
+flag:
+  format: FCSC{...}
+  value: e7ffe73bcf8f6c7082d3400cec4ec93ce020b3b25c04d61c2aa6cc3a3c6f3e20
+writeup: writeups/hackropole_small_primes_shellcode.md
+enabled: true

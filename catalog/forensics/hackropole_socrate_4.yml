@@ -1,0 +1,13 @@
+name: hackropole_socrate_4
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-socrate-4/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge SOCrate 4/6 - Latéralisation — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: c695d3155e1374ef8c39fc554f820c2d137e0f523a4b26f74206417a4333ef48
+writeup: writeups/hackropole_socrate_4.md
+enabled: true

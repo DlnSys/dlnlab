@@ -1,0 +1,14 @@
+name: hackropole_la_gazette_de_windows
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2023-forensics-la-gazette-de-windows/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge La gazette de Windows — '
+runtime: file
+file: Microsoft-Windows-PowerShell%254Operational.evtx
+flag:
+  format: FCSC{...}
+  value: a8603c7f9d2e09297649afe29951f518c3c8ba267135b7f75a3efdaf7e656fc7
+writeup: writeups/hackropole_la_gazette_de_windows.md
+enabled: true

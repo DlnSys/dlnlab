@@ -1,0 +1,16 @@
+name: hackropole_xortp
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-xortp/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge XORTP — '
+runtime: file
+file:
+- xortp
+- xortp.c
+flag:
+  format: FCSC{...}
+  value: ba06c536d2e9366f3bf56e7826d3f7f4892de841e3511177562d692bb14c8c88
+writeup: writeups/hackropole_xortp.md
+enabled: true

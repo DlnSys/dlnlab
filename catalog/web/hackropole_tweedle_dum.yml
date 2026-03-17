@@ -1,0 +1,14 @@
+name: hackropole_tweedle_dum
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2023-web-tweedle-dum/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Tweedle Dum — '
+runtime: file
+file: tweedle-dum-public.tar.xz
+flag:
+  format: FCSC{...}
+  value: f78d2249533e0fb3357d2881e1632c1819ecd6c14dda2a600494935815573dee
+writeup: writeups/hackropole_tweedle_dum.md
+enabled: true

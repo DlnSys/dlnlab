@@ -1,0 +1,14 @@
+name: hackropole_sushi
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2020-misc-sushi/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge SuSHi — '
+runtime: docker
+compose: docker-compose.yml
+flag:
+  format: FCSC{...}
+  value: bceb79b0ff67280f74994e627e59e51df8363259c5575e463fc610933eb796bb
+writeup: writeups/hackropole_sushi.md
+enabled: true

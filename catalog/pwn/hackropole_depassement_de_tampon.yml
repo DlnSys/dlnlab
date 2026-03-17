@@ -1,0 +1,14 @@
+name: hackropole_depassement_de_tampon
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2022-pwn-depassement-de-tampon/
+theme: "\n            "
+category: pwn
+difficulty: easy
+description: 'Challenge Dépassement de tampon — '
+runtime: file
+file: pwn
+flag:
+  format: FCSC{...}
+  value: ee4c77e8c0e5af91c6d71b5681ef7036aa2e10fcf8a2e2229e96cc68541942be
+writeup: writeups/hackropole_depassement_de_tampon.md
+enabled: true

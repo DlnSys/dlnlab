@@ -1,0 +1,14 @@
+name: hackropole_revision
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-revision/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Revision — '
+runtime: file
+file: comparator.py
+flag:
+  format: FCSC{...}
+  value: 7496ff8f5df1fbe274a15e201897a3ebb3beb3e74ff7c86c7782ec2a3b05a7e0
+writeup: writeups/hackropole_revision.md
+enabled: true

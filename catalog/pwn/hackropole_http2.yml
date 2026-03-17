@@ -1,0 +1,14 @@
+name: hackropole_http2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2023-pwn-http2/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge HTTP 2 — '
+runtime: file
+file: http2-public.tar.xz
+flag:
+  format: FCSC{...}
+  value: 44b6c9e5a7fb671a6bc95ea19356fae8dc04c430e8e7df70add56bce8056888c
+writeup: writeups/hackropole_http2.md
+enabled: true

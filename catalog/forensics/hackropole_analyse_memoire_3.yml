@@ -1,0 +1,13 @@
+name: hackropole_analyse_memoire_3
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-analyse-memoire-3/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Analyse mémoire 1/5 - Exfiltration — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: af6195e4b25283acc4eaded2033b623a48e9dc5f960a51f30d5a4c2d735e0a02
+writeup: writeups/hackropole_analyse_memoire_3.md
+enabled: true

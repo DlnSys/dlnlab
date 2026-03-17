@@ -1,0 +1,16 @@
+name: hackropole_black_block
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2023-crypto-black-block/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Black Block — '
+runtime: file
+file:
+- BlackBlock.sage
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 3a92fda24f449b9b51332f302959616c4f019c3dcd4f6395e8fa865f4341c6f8
+writeup: writeups/hackropole_black_block.md
+enabled: true

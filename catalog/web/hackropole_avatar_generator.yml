@@ -1,0 +1,15 @@
+name: hackropole_avatar_generator
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2022-web-avatar-generator/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Avatar Generator — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 2d10bd64c5f07ddbf6fa21c492c5440f601ca3156dbfe1d356216c479ee49a45
+writeup: writeups/hackropole_avatar_generator.md
+enabled: true

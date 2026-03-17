@@ -1,0 +1,15 @@
+name: hackropole_ceci_n_est_pas_une_pipe
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2019-web-ceci-n-est-pas-une-pipe/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Ceci n&#39;est pas une pipe — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: fea0689855d84e8d8bc4a8402f135728b90d0222c0f7c7b17f0a2855755d6791
+writeup: writeups/hackropole_ceci_n_est_pas_une_pipe.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_un_cercle_est_un_carre
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-un-cercle-est-un-carre/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Un cercle est un carré — '
+runtime: file
+file: un-cercle-est-un-carre.py
+flag:
+  format: FCSC{...}
+  value: a058589006c3e407160ba637c566131f92ef4b2148d294cd34d930e6c5dd9969
+writeup: writeups/hackropole_un_cercle_est_un_carre.md
+enabled: true

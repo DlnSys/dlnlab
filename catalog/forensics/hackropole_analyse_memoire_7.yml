@@ -1,0 +1,14 @@
+name: hackropole_analyse_memoire_7
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-analyse-memoire-7/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Analyse mémoire 5/5 - Le commencement — '
+runtime: file
+file: analyse-memoire-efi-fatinfo.csv
+flag:
+  format: FCSC{...}
+  value: df5bc58d64f5e95a6fe4959df586c4185ea926d2d2df9e0d472850a607390bff
+writeup: writeups/hackropole_analyse_memoire_7.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_whiskers_in_the_dark
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2023-web-whiskers-in-the-dark/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Whiskers in the dark — '
+runtime: file
+file: whiskers-in-the-dark-public.tar.xz
+flag:
+  format: FCSC{...}
+  value: bcedf574c84c1aac29165e724ae7fe716c297991614de3cb05d7f89eef4102e4
+writeup: writeups/hackropole_whiskers_in_the_dark.md
+enabled: true

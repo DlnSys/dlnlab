@@ -1,0 +1,16 @@
+name: hackropole_millenium
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2022-crypto-millenium/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Millenium — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 84f525fa86c49eb0e5373ff5eb5f11ed62cff0ca6e7e10c9d40fbd7075a47c52
+writeup: writeups/hackropole_millenium.md
+enabled: true

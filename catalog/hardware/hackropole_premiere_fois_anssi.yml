@@ -1,0 +1,16 @@
+name: hackropole_premiere_fois_anssi
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2021-hardware-premiere-fois-anssi/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Première Fois à l&#39;ANSSI — '
+runtime: file
+file:
+- ciphertexts.txt
+- flag.enc.json
+flag:
+  format: FCSC{...}
+  value: 27a0c4208bcce088219dba3563269c84b404b207915145cbff32099ff53f8cac
+writeup: writeups/hackropole_premiere_fois_anssi.md
+enabled: true

@@ -1,0 +1,13 @@
+name: hackropole_academie_de_l_investigation_5
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-academie-de-l-investigation-5/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Académie de l&#39;investigation - Rédaction — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 47f2ec9829a29b834209368c107105e652835a2efc745a1ca0bcb7e6e36f7a76
+writeup: writeups/hackropole_academie_de_l_investigation_5.md
+enabled: true

@@ -1,0 +1,16 @@
+name: hackropole_un_controleur_scandaleux
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2020-hardware-un-controleur-scandaleux/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Un contrôleur sCANdALeux — '
+runtime: file
+file:
+- open-the-door.iq
+- gr_waterfall_tuto.png
+flag:
+  format: FCSC{...}
+  value: ffcafe5a766de806f3b7e8f171e84350023d06bfae7e5ec7f321c2f54766d597
+writeup: writeups/hackropole_un_controleur_scandaleux.md
+enabled: true

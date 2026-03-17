@@ -1,0 +1,14 @@
+name: hackropole_chip_and_fish
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-chip-and-fish/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Chip and Fish — '
+runtime: file
+file: emulator.zip
+flag:
+  format: FCSC{...}
+  value: 2b11aa2e2444dba8044858fc0e2a4eab05100ffabaf41e1f2a158dbfab424776
+writeup: writeups/hackropole_chip_and_fish.md
+enabled: true

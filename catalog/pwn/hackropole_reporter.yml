@@ -1,0 +1,14 @@
+name: hackropole_reporter
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2021-pwn-reporter/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Reporter — '
+runtime: file
+file: fcsc_browser
+flag:
+  format: FCSC{...}
+  value: 159124e8dd8fae3791288d936791b57a76cf9f92e8d15bcfc9ccbf2155e317f6
+writeup: writeups/hackropole_reporter.md
+enabled: true

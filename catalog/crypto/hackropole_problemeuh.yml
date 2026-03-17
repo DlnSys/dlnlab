@@ -1,0 +1,14 @@
+name: hackropole_problemeuh
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-problemeuh/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Problèmeuh — '
+runtime: file
+file: problemeuh.py
+flag:
+  format: FCSC{...}
+  value: 1badb13b6ed838e08c384dfb321231eac4a608dae334a72f35ab6c401ea82af4
+writeup: writeups/hackropole_problemeuh.md
+enabled: true

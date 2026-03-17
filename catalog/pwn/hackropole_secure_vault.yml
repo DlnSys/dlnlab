@@ -1,0 +1,16 @@
+name: hackropole_secure_vault
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2019-pwn-secure-vault/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Secure Vault — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: bb853c1a5fdd3665ec37475bb488ce78d268b1af0c05ec2dcc7a6d65f0061a57
+writeup: writeups/hackropole_secure_vault.md
+enabled: true

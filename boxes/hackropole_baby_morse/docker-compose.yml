@@ -1,0 +1,5 @@
+services:
+  baby-morse:
+    image: anssi/fcsc2022-hardware-baby-morse:latest
+    ports:
+      - "4000:4000"

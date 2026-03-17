@@ -1,0 +1,16 @@
+name: hackropole_smolkkey
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-smolkkey/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge Smölkkey — '
+runtime: file
+file:
+- smolkkey.py
+- smolkkey.txt
+flag:
+  format: FCSC{...}
+  value: b1c28febac46d5435122d24673811accc284fdf003c3c95b88a970d58699d7a0
+writeup: writeups/hackropole_smolkkey.md
+enabled: true

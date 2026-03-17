@@ -1,0 +1,14 @@
+name: hackropole_chrominausor
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-chrominausor/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Chrominausor — '
+runtime: file
+file: dino.wasm
+flag:
+  format: FCSC{...}
+  value: 67d837b23654e5daa1221a9dc18cb78f309b836efd0cadcc0778b8e21af5daf9
+writeup: writeups/hackropole_chrominausor.md
+enabled: true

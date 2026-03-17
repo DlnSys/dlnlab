@@ -1,0 +1,14 @@
+name: hackropole_hashed_shellcode
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2024-pwn-hashed-shellcode/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Hashed Shellcode — '
+runtime: file
+file: hashed-shellcode
+flag:
+  format: FCSC{...}
+  value: 7dce5623529fb7dc32861be6645677dd4c897257f374d91c59f2679adfd27ab7
+writeup: writeups/hackropole_hashed_shellcode.md
+enabled: true

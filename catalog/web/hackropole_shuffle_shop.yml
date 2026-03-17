@@ -1,0 +1,15 @@
+name: hackropole_shuffle_shop
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-shuffle-shop/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Shuffle Shop — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: c44197f6b470b204766b62986e317ea6a9a7f8b34f3b11a708bba89f6104da63
+writeup: writeups/hackropole_shuffle_shop.md
+enabled: true

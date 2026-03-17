@@ -1,0 +1,14 @@
+name: hackropole_encryptor2000
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2020-crypto-encryptor2000/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Encryptor 2000 — '
+runtime: file
+file: encryptor2000.py
+flag:
+  format: FCSC{...}
+  value: 0dad1755e152a04c2c7c81fd7b974b62a0afa8a88982e0b06323538c79486a83
+writeup: writeups/hackropole_encryptor2000.md
+enabled: true

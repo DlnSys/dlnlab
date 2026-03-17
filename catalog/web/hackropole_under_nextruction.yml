@@ -1,0 +1,14 @@
+name: hackropole_under_nextruction
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2025-web-under-nextruction/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Under Nextruction — '
+runtime: file
+file: under-nextruction.tar.xz
+flag:
+  format: FCSC{...}
+  value: 6be9ebe5cea1f6370f3aaf7f7c401992036fb3bf02f09ddc66f560c1bc04e30d
+writeup: writeups/hackropole_under_nextruction.md
+enabled: true

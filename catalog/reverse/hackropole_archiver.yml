@@ -1,0 +1,16 @@
+name: hackropole_archiver
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-archiver/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Archiver — '
+runtime: file
+file:
+- result.fcsc
+- archiver.exe
+flag:
+  format: FCSC{...}
+  value: ceca67531944651329bda3b123ffd937a8a81838b0d07540c018dd04f1815ffa
+writeup: writeups/hackropole_archiver.md
+enabled: true

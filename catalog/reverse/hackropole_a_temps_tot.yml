@@ -1,0 +1,14 @@
+name: hackropole_a_temps_tot
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-a-temps-tot/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge À temps tôt — '
+runtime: file
+file: time.exe
+flag:
+  format: FCSC{...}
+  value: 2ea190a606e72bb44a4fc8d0fd93c2dbc592c4ac196a78bb1775839e310c86f0
+writeup: writeups/hackropole_a_temps_tot.md
+enabled: true

@@ -1,0 +1,40 @@
+services:
+  avatar-generator-rabbitmq:
+    image: anssi/fcsc2022-web-avatar-generator-rabbitmq:latest
+    environment:
+      RABBITMQ_DEFAULT_USER: neiSh3oonai3ATh8
+      RABBITMQ_DEFAULT_PASS: Leijae2ahmoo3ohl
+      RABBITMQ_LOGS: "-"
+    networks:
+      - avatar_internal
+
+  avatar-generator-php:
+    image: anssi/fcsc2022-web-avatar-generator-php:latest
+    environment:
+      RABBITMQ_HOST: avatar-generator-rabbitmq
+      RABBITMQ_DEFAULT_USER: neiSh3oonai3ATh8
+      RABBITMQ_DEFAULT_PASS: Leijae2ahmoo3ohl
+    networks:
+      - avatar_internal
+
+  avatar-generator-web:
+    image: anssi/fcsc2022-web-avatar-generator-web:latest
+    ports:
+      - 8000:8000
+    networks:
+      - avatar_internal
+      - avatar_external
+
+  avatar-generator-bot:
+    image: anssi/fcsc2022-web-avatar-generator-bot:latest
+    environment:
+      RABBITMQ_HOST: avatar-generator-rabbitmq
+      RABBITMQ_DEFAULT_USER: neiSh3oonai3ATh8
+      RABBITMQ_DEFAULT_PASS: Leijae2ahmoo3ohl
+    networks:
+      - avatar_internal
+
+networks:
+  avatar_external:
+  avatar_internal:
+    internal: true

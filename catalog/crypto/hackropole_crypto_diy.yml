@@ -1,0 +1,13 @@
+name: hackropole_crypto_diy
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-crypto-diy/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Crypto DIY — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 2ce137ea113d976123f8aef3866b48d8b8684f1c5337fc1d8ec2db90838b3450
+writeup: writeups/hackropole_crypto_diy.md
+enabled: true

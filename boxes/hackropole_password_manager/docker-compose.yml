@@ -1,0 +1,5 @@
+services:
+  password-manager:
+    image: anssi/fcsc2022-reverse-password-manager:latest
+    ports:
+      - "4000:4000"

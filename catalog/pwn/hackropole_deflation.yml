@@ -1,0 +1,17 @@
+name: hackropole_deflation
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2022-pwn-deflation/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge deflation — '
+runtime: file
+file:
+- deflation
+- libc-2.31.so
+- ld-linux-x86-64.so.2
+flag:
+  format: FCSC{...}
+  value: ce68ba1587530784541d4796e71b26d230a538c78c185a54881dd45b9175474a
+writeup: writeups/hackropole_deflation.md
+enabled: true

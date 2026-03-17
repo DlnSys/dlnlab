@@ -1,0 +1,14 @@
+name: hackropole_los_polllos_hermanos
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-los-polllos-hermanos/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Los Polllos Hermanos — '
+runtime: file
+file: los-polllos-hermanos
+flag:
+  format: FCSC{...}
+  value: bed478a607ba84ac48db61d4d8463bad0873dda0ebd4695adfed0348e570cce0
+writeup: writeups/hackropole_los_polllos_hermanos.md
+enabled: true

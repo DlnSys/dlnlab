@@ -1,0 +1,14 @@
+name: hackropole_tweedle_dee
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2023-web-tweedle-dee/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Tweedle Dee — '
+runtime: file
+file: tweedle-dee-public.tar.xz
+flag:
+  format: FCSC{...}
+  value: b58a1a63cf60891cc306c2e9fdbf2274aff098895f9a25e74eccce286172df12
+writeup: writeups/hackropole_tweedle_dee.md
+enabled: true

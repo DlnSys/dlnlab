@@ -1,0 +1,16 @@
+name: hackropole_baby_xdp
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-baby-xdp/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Baby XDP — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: be7f99d0a31235c7b3f1d64f4c48569d04084f7f98c63eab81fb4e58229bd059
+writeup: writeups/hackropole_baby_xdp.md
+enabled: true

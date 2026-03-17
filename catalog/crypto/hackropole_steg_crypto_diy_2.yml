@@ -1,0 +1,16 @@
+name: hackropole_steg_crypto_diy_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-steg-crypto-diy-2/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge StegCryptoDIY - RNG — '
+runtime: file
+file:
+- leHACK19_chall.png
+- leHACK19_ref.png
+flag:
+  format: FCSC{...}
+  value: c38d76bdfa1934f980e6d64ff31b70ae563c93ebcaaacd2b8445bab9e16647ee
+writeup: writeups/hackropole_steg_crypto_diy_2.md
+enabled: true

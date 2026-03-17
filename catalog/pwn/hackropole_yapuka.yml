@@ -1,0 +1,17 @@
+name: hackropole_yapuka
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-yapuka/
+theme: "\n            "
+category: pwn
+difficulty: easy
+description: 'Challenge yapuka — '
+runtime: file
+file:
+- yapuka
+- libc-2.36.so
+- ld-2.36.so
+flag:
+  format: FCSC{...}
+  value: 79fec2b3c9cbb1ff059b50582c9d40955a03e9beccecdd9dd0ef0bdcfaebb11c
+writeup: writeups/hackropole_yapuka.md
+enabled: true

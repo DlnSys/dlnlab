@@ -1,0 +1,13 @@
+name: hackropole_soc_simulator_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2024-forensics-soc-simulator-1/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge SOC Simulator 1/5 - Vecteur initial — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 5a3f5adf67741eaac1f3942d02969b24d2e2a2b965f55bc34eacc05d43b68308
+writeup: writeups/hackropole_soc_simulator_1.md
+enabled: true

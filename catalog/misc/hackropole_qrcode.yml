@@ -1,0 +1,14 @@
+name: hackropole_qrcode
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2022-misc-qrcode/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge QRCode — '
+runtime: file
+file: flag.png
+flag:
+  format: FCSC{...}
+  value: abe0a5b5d2a73813c62ceda70175fde9265e9040d506ec44283dd898decb552c
+writeup: writeups/hackropole_qrcode.md
+enabled: true

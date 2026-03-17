@@ -1,0 +1,17 @@
+name: hackropole_back_to_basic
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-back-to-basic/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Back to BASIC — '
+runtime: file
+file:
+- back-to-basic
+- my_basic-master.zip
+- back-to-basic.patch
+flag:
+  format: FCSC{...}
+  value: f7df320226403bac9d3350f9bf8f8e1bd6f18ddc1245ea29d3147e27b4bea130
+writeup: writeups/hackropole_back_to_basic.md
+enabled: true

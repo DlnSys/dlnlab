@@ -1,0 +1,253 @@
+diff --git a/tools/linux/module.c b/tools/linux/module.c
+index cd9410d6..aa128a92 100644
+--- a/tools/linux/module.c
++++ b/tools/linux/module.c
+@@ -5,6 +5,8 @@ symbols and then read the DWARF symbols from it.
+ #include <linux/module.h>
+ #include <linux/version.h>
+ 
++MODULE_LICENSE("GPL");
++
+ #include <linux/ioport.h>
+ #include <linux/fs_struct.h>
+ #include <linux/fs.h>
+@@ -122,68 +124,6 @@ struct kthread_create_info
+ 
+ struct kthread_create_info kthread_create_info;
+ 
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,24)
+-#include <net/net_namespace.h>
+-#endif
+-
+-#include <net/ip.h>
+-#include <net/sock.h>
+-#include <net/ip_fib.h>
+-#include <linux/compiler.h>
+-
+-#define EMBEDDED_HASH_SIZE (L1_CACHE_BYTES / sizeof(struct hlist_head))
+-
+-#define __rcu
+-
+-struct fn_zone {
+-  struct fn_zone     *fz_next;       /* Next not empty zone  */
+-  struct hlist_head  *fz_hash;       /* Hash table pointer   */
+-  seqlock_t               fz_lock;
+-  u32                     fz_hashmask;    /* (fz_divisor - 1)     */
+-  u8                      fz_order;       /* Zone order (0..32)   */
+-  u8                      fz_revorder;    /* 32 - fz_order        */
+-  __be32                  fz_mask;        /* inet_make_mask(order) */
+-
+-  struct hlist_head       fz_embedded_hash[EMBEDDED_HASH_SIZE];
+-
+-  int                     fz_nent;        /* Number of entries    */
+-  int                     fz_divisor;     /* Hash size (mask+1)   */
+-} fn_zone;
+-
+-struct fn_hash {
+-  struct fn_zone    *fn_zones[33];
+-  struct fn_zone    *fn_zone_list;
+-} fn_hash;
+-
+-struct fib_alias 
+-{
+-    struct list_head        fa_list;
+-    struct fib_info         *fa_info;
+-    u8                      fa_tos;
+-    u8                      fa_type;
+-    u8                      fa_scope;
+-    u8                      fa_state;
+-#ifdef CONFIG_IP_FIB_TRIE
+-        struct rcu_head         rcu;
+-#endif
+-};
+-
+-struct fib_node 
+-{
+-    struct hlist_node       fn_hash;
+-    struct list_head        fn_alias;
+-    __be32                  fn_key;
+-    struct fib_alias        fn_embedded_alias;
+-};
+-
+-
+-struct fib_node fib_node;
+-struct fib_alias fib_alias;
+-
+-struct rt_hash_bucket {
+-  struct rtable __rcu     *chain;
+-} rt_hash_bucket;
+-
+ #ifndef RADIX_TREE_MAP_SHIFT
+ 
+ #if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,18)
+@@ -214,10 +154,13 @@ struct radix_tree_node {
+ #endif
+ 
+ #ifdef OUR_OWN_MOD_STRUCTS
+-struct module_sect_attr
+-{
++struct module_sect_attr {
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,8,0)
++        struct bin_attribute battr;
++#else
+         struct module_attribute mattr;
+         char *name;
++#endif
+         unsigned long address;
+ };
+ 
+@@ -508,6 +451,70 @@ struct timekeeper {
+ 
+ struct timekeeper my_timekeeper;
+ 
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,10,0)
++
++struct printk_info {
++	u64	seq;		/* sequence number */
++	u64	ts_nsec;	/* timestamp in nanoseconds */
++	u16	text_len;	/* length of text message */
++	u8	facility;	/* syslog facility */
++	u8	flags:5;	/* internal record flags */
++	u8	level:3;	/* syslog level */
++	u32	caller_id;	/* thread id or processor id */
++
++	struct dev_printk_info	dev_info;
++};
++
++struct printk_info my_printk_info;
++
++struct printk_record {
++	struct printk_info	*info;
++	char			*text_buf;
++	unsigned int		text_buf_size;
++};
++
++struct printk_record my_printk_record;
++
++/* Specifies the logical position and span of a data block. */
++struct prb_data_blk_lpos {
++	unsigned long	begin;
++	unsigned long	next;
++};
++
++struct prb_desc {
++	atomic_long_t			state_var;
++	struct prb_data_blk_lpos	text_blk_lpos;
++};
++
++struct prb_desc my_prb_desc;
++
++/* A ringbuffer of "ID + data" elements. */
++struct prb_data_ring {
++	unsigned int	size_bits;
++	char		*data;
++	atomic_long_t	head_lpos;
++	atomic_long_t	tail_lpos;
++};
++
++/* A ringbuffer of "struct prb_desc" elements. */
++struct prb_desc_ring {
++	unsigned int		count_bits;
++	struct prb_desc		*descs;
++	struct printk_info	*infos;
++	atomic_long_t		head_id;
++	atomic_long_t		tail_id;
++};
++
++struct printk_ringbuffer {
++	struct prb_desc_ring	desc_ring;
++	struct prb_data_ring	text_data_ring;
++	atomic_long_t		fail;
++};
++
++struct printk_ringbuffer my_printk_ringbuffer;
++
++#else
++
+ struct log {
+          u64 ts_nsec;            /* timestamp in nanoseconds */
+          u16 len;                /* length of entire record */
+@@ -522,6 +529,8 @@ struct log my_log;
+ 
+ #endif
+ 
++#endif
++
+ #if LINUX_VERSION_CODE >= KERNEL_VERSION(3,3,0)
+ 
+ struct mnt_namespace {
+@@ -578,7 +587,13 @@ struct mount {
+ 
+ #endif
+ 
+-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,13,0)
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,13,0)
++#define RANDOMIZE_STRUCT __randomize_layout
++#else
++#define RANDOMIZE_STRUCT
++#endif
++
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,10,0)
+ #if LINUX_VERSION_CODE < KERNEL_VERSION(3,19,0)
+     struct proc_dir_entry {
+         unsigned int low_ino;
+@@ -600,7 +615,7 @@ struct mount {
+         u8 namelen;
+         char name[];
+     };
+-#else
++#elif LINUX_VERSION_CODE < KERNEL_VERSION(4,16,0)
+    struct proc_dir_entry {
+         unsigned int low_ino;
+         umode_t mode;
+@@ -622,7 +637,49 @@ struct mount {
+         spinlock_t pde_unload_lock; /* proc_fops checks and pde_users bumps */
+         u8 namelen;
+         char name[];
+-   };
++   } RANDOMIZE_STRUCT;
++#else
++   struct proc_dir_entry {
++        atomic_t in_use;    /* number of callers into module in progress; */
++                /* negative -> it's going away RSN */
++        atomic_t count;     /* use count */
++        struct list_head pde_openers;   /* who did ->open, but not ->release */
++        spinlock_t pde_unload_lock; /* proc_fops checks and pde_users bumps */
++        struct completion *pde_unload_completion;
++        const struct inode_operations *proc_iops;
++        const struct file_operations *proc_fops;
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
++        const struct dentry_operations *proc_dops;
++#endif
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,18,0)
++        const struct seq_operations *seq_ops;
++#endif
++        void *data;
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,18,0)
++        unsigned int state_size;
++#endif
++        unsigned int low_ino;
++        nlink_t nlink;
++        kuid_t uid;
++        kgid_t gid;
++        loff_t size;
++        struct proc_dir_entry *parent;
++        struct rb_root subdir;
++        struct rb_node subdir_node;
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,17,0)
++        char *name;
++        umode_t mode;
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,7,0)
++        u8 flags;
++#endif
++        u8 namelen;
++        char inline_name[];
++#else
++        umode_t mode;
++        u8 namelen;
++        char name[];
++#endif
++   } RANDOMIZE_STRUCT;
+ #endif
+ #endif
+ 

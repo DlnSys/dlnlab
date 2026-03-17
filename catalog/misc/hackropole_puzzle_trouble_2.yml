@@ -1,0 +1,14 @@
+name: hackropole_puzzle_trouble_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-puzzle-trouble-2/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Puzzle Trouble 2/2 — '
+runtime: file
+file: puzzle-trouble-hard.jpg
+flag:
+  format: FCSC{...}
+  value: d3e6d0c40185fad6530e4870b516f6817b298ee3a2f6212b1ac4fc72c29e4ce5
+writeup: writeups/hackropole_puzzle_trouble_2.md
+enabled: true

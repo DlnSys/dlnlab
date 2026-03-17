@@ -1,0 +1,15 @@
+name: hackropole_header
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2022-web-header/
+theme: "\n            "
+category: web
+difficulty: easy
+description: 'Challenge Header — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: cb21888c4efa63cfabaf1d2700e5bf66a57f2ce3f4f6ab3d2406d24f62642600
+writeup: writeups/hackropole_header.md
+enabled: true

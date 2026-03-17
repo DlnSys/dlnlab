@@ -1,0 +1,14 @@
+name: hackropole_http3
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2025-pwn-http3/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge http3 — '
+runtime: file
+file: http3.tar.xz
+flag:
+  format: FCSC{...}
+  value: bcce547f19e7457388fb2b9113b33c3aecebf4faf5f5a0413f4a74724a3a64cb
+writeup: writeups/hackropole_http3.md
+enabled: true

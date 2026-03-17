@@ -1,0 +1,14 @@
+name: hackropole_intro_to_pwntools
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-intro-to-pwntools/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge Intro to pwntools — '
+runtime: file
+file: template.py
+flag:
+  format: FCSC{...}
+  value: a542dfb0099facfaac35707e8195701e9d8c9fe3d6118e5966dd671089b8349d
+writeup: writeups/hackropole_intro_to_pwntools.md
+enabled: true

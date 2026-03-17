@@ -1,0 +1,14 @@
+name: hackropole_chaussette_xs
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2023-reverse-chaussette-xs/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Chaussette (XS) — '
+runtime: file
+file: chaussette-xs
+flag:
+  format: FCSC{...}
+  value: d68897fb33bcd144a5b66dc0e734012344804a2d9864c5d20dd4565b10d1be1d
+writeup: writeups/hackropole_chaussette_xs.md
+enabled: true

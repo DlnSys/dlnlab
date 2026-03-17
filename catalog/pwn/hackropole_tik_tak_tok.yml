@@ -1,0 +1,17 @@
+name: hackropole_tik_tak_tok
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-tik-tak-tok/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Tik Tak Tok — '
+runtime: file
+file:
+- tiktaktok.c
+- tiktaktok
+- libc-2.28.so
+flag:
+  format: FCSC{...}
+  value: a59e714ed560d0e1ca41d2c3561445c8c9e1e5c5e3482d0e1852a9bef41ed02b
+writeup: writeups/hackropole_tik_tak_tok.md
+enabled: true

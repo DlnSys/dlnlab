@@ -1,0 +1,14 @@
+name: hackropole_sbox
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2020-hardware-sbox/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge Sbox — '
+runtime: file
+file: sbox.png
+flag:
+  format: FCSC{...}
+  value: b5becc0426a3dd96c410dadc327336265f0a6d8fb1fd351173024ac20f5d562c
+writeup: writeups/hackropole_sbox.md
+enabled: true

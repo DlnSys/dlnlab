@@ -1,0 +1,15 @@
+name: hackropole_flag_checker_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2020-reverse-flag-checker-2/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Flag Checker 2 — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 36de4ce2dbf5ae76d1202ec7a60b1588ecaf71b532880e5b693a712a6d31496d
+writeup: writeups/hackropole_flag_checker_2.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_picasso
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2023-reverse-picasso/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Picasso — '
+runtime: file
+file: picasso
+flag:
+  format: FCSC{...}
+  value: 54a984caed36d956001dc48a46e5156b2c8755f7ff817f0a1cb500f883b296c4
+writeup: writeups/hackropole_picasso.md
+enabled: true

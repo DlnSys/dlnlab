@@ -1,0 +1,19 @@
+name: hackropole_kraken
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-kraken/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Kraken — '
+runtime: file
+file:
+- docker-compose.yml
+- Dockerfile.kraken
+- kraken
+- Makefile
+- README.md
+flag:
+  format: FCSC{...}
+  value: 8a8db228a1209611e84da30736d425941be4d127ae1287b295d974f97dbb02a0
+writeup: writeups/hackropole_kraken.md
+enabled: true

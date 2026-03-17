@@ -1,0 +1,16 @@
+name: hackropole_color_plant_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2022-misc-color-plant-2/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Color Plant 2/2 — '
+runtime: file
+file:
+- README.md
+- colorplant.png
+flag:
+  format: FCSC{...}
+  value: c0f40df33eb5ab3319ff5e53096a44e18c02efb126b2efa968d5ce8ecb68b611
+writeup: writeups/hackropole_color_plant_2.md
+enabled: true

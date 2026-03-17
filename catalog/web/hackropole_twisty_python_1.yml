@@ -1,0 +1,14 @@
+name: hackropole_twisty_python_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2024-web-twisty-python-1/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Twisty Python — '
+runtime: file
+file: twisty-python.tar.xz
+flag:
+  format: FCSC{...}
+  value: 2dcb0a54c4e5d2d8e884a2ce61eb857ed617e261e6fb32815e77252f046e141b
+writeup: writeups/hackropole_twisty_python_1.md
+enabled: true

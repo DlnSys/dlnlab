@@ -1,0 +1,14 @@
+name: hackropole_privesc_me_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-privesc-me-2/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Privesc Me 2/4 - Randomness checker — '
+runtime: docker
+compose: docker-compose.yml
+flag:
+  format: FCSC{...}
+  value: e9f3b166fda019dfb695f319b2f2976da0ca67c3f26fc48e56a54e531d354636
+writeup: writeups/hackropole_privesc_me_2.md
+enabled: true

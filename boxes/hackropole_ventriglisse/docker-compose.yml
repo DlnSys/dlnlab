@@ -1,0 +1,5 @@
+services:
+  ventriglisse:
+    image: anssi/fcsc2021-misc-ventriglisse:latest
+    ports:
+      - "4000:4000"

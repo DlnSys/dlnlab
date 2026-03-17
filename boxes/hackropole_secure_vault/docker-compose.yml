@@ -1,0 +1,5 @@
+services:
+  securevault:
+    image: anssi/fcsc2019-pwn-secure-vault:latest
+    ports:
+      - "4000:4000"

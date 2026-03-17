@@ -1,0 +1,5 @@
+services:
+  millenium:
+    image: anssi/fcsc2022-crypto-millenium:latest
+    ports:
+      - "4000:4000"

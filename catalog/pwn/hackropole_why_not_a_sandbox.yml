@@ -1,0 +1,16 @@
+name: hackropole_why_not_a_sandbox
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-why-not-a-sandbox/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Why not a Sandbox? — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 570c238b7f568311ddbb3f882f191bb0d6a3e7386daecb3fbd722de2b0a2b7a1
+writeup: writeups/hackropole_why_not_a_sandbox.md
+enabled: true

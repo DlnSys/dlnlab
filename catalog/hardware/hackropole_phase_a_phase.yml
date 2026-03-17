@@ -1,0 +1,14 @@
+name: hackropole_phase_a_phase
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2021-hardware-phase-a-phase/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Phase à Phase — '
+runtime: file
+file: phase-a-phase.iq
+flag:
+  format: FCSC{...}
+  value: 5d074626dd48c4c9e7965b28f4e57540778e3d7a5b20751ddd4a516b4b5256f5
+writeup: writeups/hackropole_phase_a_phase.md
+enabled: true

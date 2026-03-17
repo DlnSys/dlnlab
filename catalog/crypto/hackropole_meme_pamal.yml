@@ -1,0 +1,16 @@
+name: hackropole_meme_pamal
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-meme-pamal/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Même Pamal — '
+runtime: file
+file:
+- meme-pamal.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: b23d16bec444019459cf283d714d17a399497fbf3f540d0c698cadc3b4627111
+writeup: writeups/hackropole_meme_pamal.md
+enabled: true

@@ -1,0 +1,16 @@
+name: hackropole_snake
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-snake/
+theme: "\n            "
+category: misc
+difficulty: easy
+description: 'Challenge Snake — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 76a80440662b66191b198ac4c3925dbcd83654f72f85d03fbe68d796b5307701
+writeup: writeups/hackropole_snake.md
+enabled: true

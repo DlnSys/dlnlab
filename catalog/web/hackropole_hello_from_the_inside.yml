@@ -1,0 +1,15 @@
+name: hackropole_hello_from_the_inside
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2023-web-hello-from-the-inside/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Hello from the inside — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 2eca5684c15e2f76f0e7b036b75d70b85cd9a3b04d91da7c19b89681ca366b19
+writeup: writeups/hackropole_hello_from_the_inside.md
+enabled: true

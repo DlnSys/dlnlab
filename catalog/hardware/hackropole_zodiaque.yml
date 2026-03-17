@@ -1,0 +1,14 @@
+name: hackropole_zodiaque
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2021-hardware-zodiaque/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Zodiaque — '
+runtime: file
+file: zodiaque.iq
+flag:
+  format: FCSC{...}
+  value: 4e55ac36bc342bc6be20a43c7f1bfb45a4a9665b315ab8b6912790d4d3e66a17
+writeup: writeups/hackropole_zodiaque.md
+enabled: true

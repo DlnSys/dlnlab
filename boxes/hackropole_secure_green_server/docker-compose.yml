@@ -1,0 +1,5 @@
+services:
+  secure-green-server:
+    image: anssi/fcsc2022-hardware-secure-green-server:latest
+    ports:
+      - "4000:4000"

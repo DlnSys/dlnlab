@@ -1,0 +1,14 @@
+name: hackropole_nightwish
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2020-reverse-nightwish/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Nightwish — '
+runtime: file
+file: nightwish.exe
+flag:
+  format: FCSC{...}
+  value: 6904ad74009737dd0f5f79fe761628af56970d6fea82fc77597f6e183149d897
+writeup: writeups/hackropole_nightwish.md
+enabled: true

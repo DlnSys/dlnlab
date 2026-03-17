@@ -1,0 +1,5 @@
+services:
+  jajaja:
+    image: anssi/fcsc2019-web-jajaja:latest
+    ports:
+      - "8000:8000"

@@ -1,0 +1,15 @@
+name: hackropole_enter_the_dungeon
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-enter-the-dungeon/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Enter The Dungeon — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 7b675faa4deabbef8e261000cd9b47e447df28541cf6d2a0c80d28204ed73d03
+writeup: writeups/hackropole_enter_the_dungeon.md
+enabled: true

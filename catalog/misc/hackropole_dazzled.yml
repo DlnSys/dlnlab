@@ -1,0 +1,16 @@
+name: hackropole_dazzled
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2024-misc-dazzled/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Dazzled — '
+runtime: file
+file:
+- capture.pcap
+- projector.pdf
+flag:
+  format: FCSC{...}
+  value: ab93bc29eb7af3ef5068ba4a3a547965aeacc4c5da57e60907783eddf8bccb00
+writeup: writeups/hackropole_dazzled.md
+enabled: true

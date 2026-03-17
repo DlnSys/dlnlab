@@ -1,0 +1,17 @@
+name: hackropole_mommy_morse
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2022-hardware-mommy-morse/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Mommy Morse — '
+runtime: file
+file:
+- mommy-morse.py
+- client.py
+- signal.iq
+flag:
+  format: FCSC{...}
+  value: 26620ad731b4c532c9c5ab6ae7e97c4637fd02f446a4780ffb5e6086f2256c54
+writeup: writeups/hackropole_mommy_morse.md
+enabled: true

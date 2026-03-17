@@ -1,0 +1,15 @@
+name: hackropole_login_portal
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2022-web-login-portal/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Login Portal — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: cf112c41ae6c26ad18da29596ebe187bc883ee03540a4430c6a8e93dbb452637
+writeup: writeups/hackropole_login_portal.md
+enabled: true

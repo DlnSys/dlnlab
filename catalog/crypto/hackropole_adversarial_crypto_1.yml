@@ -1,0 +1,16 @@
+name: hackropole_adversarial_crypto_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-adversarial-crypto-1/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge AdveRSArial Crypto (Infant) — '
+runtime: file
+file:
+- infant/adversarial-crypto-infant.py
+- infant/output.txt
+flag:
+  format: FCSC{...}
+  value: 65455d538028e4afd3ea78023a8bfa76f1a1f6d105492c06ca7224c41eb15008
+writeup: writeups/hackropole_adversarial_crypto_1.md
+enabled: true

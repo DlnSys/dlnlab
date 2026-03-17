@@ -1,0 +1,17 @@
+name: hackropole_rsca
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2019-misc-rsca/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge RScA — '
+runtime: file
+file:
+- Protocole_de_communication.md
+- sniff_0
+- sniff_1
+flag:
+  format: FCSC{...}
+  value: c59a818f499ece30c136b6a5f24d5dd1e7c2a0f4f6801707c3f554edb648b809
+writeup: writeups/hackropole_rsca.md
+enabled: true

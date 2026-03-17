@@ -1,0 +1,14 @@
+name: hackropole_petites_notes
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2019-forensics-petites-notes/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge Petites Notes — '
+runtime: file
+file: petites-notes.pcapng
+flag:
+  format: FCSC{...}
+  value: 4301d3da315a459f88da656012412664b1ab78f0141f6e6df481f120229e7f2d
+writeup: writeups/hackropole_petites_notes.md
+enabled: true

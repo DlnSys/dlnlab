@@ -1,0 +1,14 @@
+name: hackropole_sloubi
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2025-reverse-sloubi/
+theme: "\n            "
+category: reverse
+difficulty: easy
+description: 'Challenge Sloubi — '
+runtime: file
+file: sloubi
+flag:
+  format: FCSC{...}
+  value: acfddb4d22df696054d2906e3da3db5963c87862493c3b2932c6fd1527f70990
+writeup: writeups/hackropole_sloubi.md
+enabled: true

@@ -1,0 +1,13 @@
+name: hackropole_not_so_fat
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2019-forensics-not-so-fat/
+theme: "\n            "
+category: forensics
+difficulty: easy
+description: 'Challenge Not so FAT — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: af940ebac5297a6cb9c8601d38820cb13d400fded1406f9f28e9f3aeabacec95
+writeup: writeups/hackropole_not_so_fat.md
+enabled: true

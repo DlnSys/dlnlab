@@ -1,0 +1,14 @@
+name: hackropole_guess_me
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2022-misc-guess-me/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Guess Me — '
+runtime: file
+file: guess-me.py
+flag:
+  format: FCSC{...}
+  value: 3437768a337b32f71210afeeb346ebdc1f1d97c8f54b596711fe2599e8618141
+writeup: writeups/hackropole_guess_me.md
+enabled: true

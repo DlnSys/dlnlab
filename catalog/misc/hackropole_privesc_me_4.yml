@@ -1,0 +1,14 @@
+name: hackropole_privesc_me_4
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2021-misc-privesc-me-4/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Privesc Me 4/4 - Cyrano — '
+runtime: docker
+compose: docker-compose.yml
+flag:
+  format: FCSC{...}
+  value: b978d077e9b802c647be7d9a0d9781434110c498cfcd97dd33c7562c5fd68236
+writeup: writeups/hackropole_privesc_me_4.md
+enabled: true

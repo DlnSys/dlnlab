@@ -1,0 +1,14 @@
+name: hackropole_rechatdrage
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2023-misc-rechatdrage/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Rechatdrage — '
+runtime: file
+file: rechatdrage.jpg
+flag:
+  format: FCSC{...}
+  value: acd701c68a36c16adce64f0d8689d5460bd3bddc6c4d6b820eb66529a5d4af54
+writeup: writeups/hackropole_rechatdrage.md
+enabled: true

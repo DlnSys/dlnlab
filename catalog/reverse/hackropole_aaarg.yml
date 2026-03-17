@@ -1,0 +1,14 @@
+name: hackropole_aaarg
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2023-reverse-aaarg/
+theme: "\n            "
+category: reverse
+difficulty: easy
+description: 'Challenge Aaarg — '
+runtime: file
+file: aaarg
+flag:
+  format: FCSC{...}
+  value: e0c23359b0ff893eee9b35ba6ca9367979349132386bdb86dca3786b1adf9769
+writeup: writeups/hackropole_aaarg.md
+enabled: true

@@ -1,0 +1,16 @@
+name: hackropole_holy_cow
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2024-pwn-holy-cow/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Holy Cow — '
+runtime: file
+file:
+- holy-cow.patch
+- snapshot_blob.bin
+flag:
+  format: FCSC{...}
+  value: 7dc1165347225aabd3a8e334f3a8ed757be26052799b700f461cd5d53044c2ff
+writeup: writeups/hackropole_holy_cow.md
+enabled: true

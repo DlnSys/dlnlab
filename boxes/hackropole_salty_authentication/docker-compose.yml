@@ -1,0 +1,5 @@
+services:
+  salty-authentication:
+    image: anssi/fcsc2023-web-salty-authentication:latest
+    ports:
+      - "8000:80"

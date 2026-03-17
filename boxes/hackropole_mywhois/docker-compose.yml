@@ -1,0 +1,5 @@
+services:
+  mywhois:
+    image: anssi/fcsc2021-misc-mywhois:latest
+    ports:
+      - "8000:80"

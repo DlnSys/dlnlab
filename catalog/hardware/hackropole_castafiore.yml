@@ -1,0 +1,14 @@
+name: hackropole_castafiore
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-castafiore/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Castafiore — '
+runtime: file
+file: silent.wav
+flag:
+  format: FCSC{...}
+  value: f4a39c2b494ee910329bfaa47dfeb64f7776c5b45a72c4c607744533dbc9ee7a
+writeup: writeups/hackropole_castafiore.md
+enabled: true

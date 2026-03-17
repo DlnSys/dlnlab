@@ -1,0 +1,14 @@
+name: hackropole_cocorico
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-cocorico/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge CocoRiCo — '
+runtime: file
+file: cocorico.py
+flag:
+  format: FCSC{...}
+  value: 4a5219dff5cfbc03da72d8fb876617a1817a6283a60e5095f60be4db400b6127
+writeup: writeups/hackropole_cocorico.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_fun_with_hash
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-fun-with-hash/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Fun with Hash — '
+runtime: file
+file: fun-with-hash.py
+flag:
+  format: FCSC{...}
+  value: 614d608aa51168c4e806300ef352b236f3b3087058f8224423c391d932dead3f
+writeup: writeups/hackropole_fun_with_hash.md
+enabled: true

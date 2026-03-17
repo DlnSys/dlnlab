@@ -1,0 +1,21 @@
+name: hackropole_mille_fautes
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-mille-fautes/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge Mille Fautes — '
+runtime: file
+file:
+- assembly.py
+- crypto_accelerator.py
+- machine.py
+- machine_faulted.py
+- mille-fautes.py
+- mille-fautes.txt
+- RSA.asm
+flag:
+  format: FCSC{...}
+  value: eef1fa5bd5c73a97de8121d650c1f14cd6835a589707c60ad6aa8784ecbe5761
+writeup: writeups/hackropole_mille_fautes.md
+enabled: true

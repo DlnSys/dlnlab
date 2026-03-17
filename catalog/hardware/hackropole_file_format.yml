@@ -1,0 +1,14 @@
+name: hackropole_file_format
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2021-hardware-file-format/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge File Format — '
+runtime: file
+file: file-format.iq
+flag:
+  format: FCSC{...}
+  value: a1e46be755e273132980d4d138d4371de1eca46cb65eb06281d3dda373c64254
+writeup: writeups/hackropole_file_format.md
+enabled: true

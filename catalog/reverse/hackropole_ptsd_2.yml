@@ -1,0 +1,21 @@
+name: hackropole_ptsd_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2024-reverse-ptsd-2/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge PTSD - Encore une fois — '
+runtime: file
+file:
+- server
+- libcrypto.so.3
+- libssl.so.3
+- records.txt
+- data/keys.db
+- data/lv1.flag
+- data/lv2.flag
+flag:
+  format: FCSC{...}
+  value: 79d5331b2f520d0fbdb3f8b72113ac0d14639e49c1499aa3182f7a7abcd371bc
+writeup: writeups/hackropole_ptsd_2.md
+enabled: true

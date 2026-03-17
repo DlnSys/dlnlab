@@ -1,0 +1,16 @@
+name: hackropole_hola_amigo
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2023-reverse-hola-amigo/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Hola Amigo — '
+runtime: file
+file:
+- ransomware_floppy.adf
+- flag_floppy_enc.adf
+flag:
+  format: FCSC{...}
+  value: bb14bd069bb8ad096792d5946d1dbe41d605cee7569e50eb6f1a5e9d5b2e4f90
+writeup: writeups/hackropole_hola_amigo.md
+enabled: true

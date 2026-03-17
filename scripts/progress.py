@@ -1,5 +1,6 @@
 from scripts.state import load_progress
 from scripts.catalog import load_catalog
+from scripts.colors import CYAN, GREEN, BOLD, RESET
 
 
 def show_progress():
@@ -12,11 +13,11 @@ def show_progress():
     remaining = total - len(completed) - len(unfinished)
 
     print()                                                                                                                                                                                                     
-    print("╔══════════════════════════════════════════╗") 
-    print("║              PROGRESSION                 ║")                                                                                                                                                       
-    print("╚══════════════════════════════════════════╝")                                                                                                                                                       
+    print(f"{CYAN}╔══════════════════════════════════════════╗{RESET}")
+    print(f"{CYAN}║{RESET}  {BOLD}            PROGRESSION               {RESET}  {CYAN}║{RESET}")
+    print(f"{CYAN}╔══════════════════════════════════════════╗{RESET}")
     print()                                                                                                                                                                                                     
-    print(f"  Completed   : {len(completed)}")                                                                                                                                                                  
+    print(f"  {GREEN}Completed{RESET}   : {len(completed)}")
     print(f"  Unfinished  : {len(unfinished)}")                                                                                                                                                                 
     print(f"  Remaining   : {remaining}")                 
     print(f"  Total       : {total}")                                                                                                                                                                           
@@ -36,7 +37,7 @@ def show_progress():
             bar = "░" * 10
         else:
             filled = int((done_cat / total_cat) * 10)
-            bar = "█" * filled + "░" * (10 - filled)
+            bar = f"{GREEN}" + "█" * filled + f"{RESET}" + "░" * (10 - filled)
 
         print(f"  {cat:<12} {bar}  {done_cat}/{total_cat}")
 

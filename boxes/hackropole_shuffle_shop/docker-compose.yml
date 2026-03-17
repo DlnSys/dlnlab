@@ -1,0 +1,5 @@
+services:
+  shuffle-shop:
+    image: anssi/fcsc2020-web-shuffle-shop:latest
+    ports:
+      - "8000:80"

@@ -1,0 +1,16 @@
+name: hackropole_surinosaur_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-surinosaur-2/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Surinausor (Winds of the past) — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 9c5b612a1705b92b363492d8704ae57692cd0fae93c173a76374c7e79c39f172
+writeup: writeups/hackropole_surinosaur_2.md
+enabled: true

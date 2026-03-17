@@ -1,0 +1,16 @@
+name: hackropole_unknown_public_key
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-unknown-public-key/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Unknown Public Key — '
+runtime: file
+file:
+- unknown-public-key.tar.xz
+- output.txt
+flag:
+  format: FCSC{...}
+  value: 6594a3b51c367724955dbc92eafc9e8d55c4b856fca9b7d6f904d429cc965ef1
+writeup: writeups/hackropole_unknown_public_key.md
+enabled: true

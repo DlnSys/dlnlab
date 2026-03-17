@@ -1,0 +1,15 @@
+name: hackropole_chatpristi_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2022-web-chatpristi-2/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Chatpristi 2/2 — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 6bc9c9ec5856e24d45bf91f2a8efdc3aa3a555e6850a91ef13003697354b1be0
+writeup: writeups/hackropole_chatpristi_2.md
+enabled: true

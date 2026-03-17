@@ -1,0 +1,13 @@
+name: hackropole_iforensics_7
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-iforensics-7/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge iForensics - iBackdoor 2/2 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 040177984c57a3e4daf2572781fef735f941e0fe9854930c321408b9c8381bd1
+writeup: writeups/hackropole_iforensics_7.md
+enabled: true

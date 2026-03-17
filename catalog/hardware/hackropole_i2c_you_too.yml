@@ -1,0 +1,14 @@
+name: hackropole_i2c_you_too
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2022-hardware-i2c-you-too/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge I2CyouToo — '
+runtime: file
+file: capture.vcd
+flag:
+  format: FCSC{...}
+  value: 6769888672c9274b194765ee42f2b62d4f88e78493d9a128459ca558a7a7d21e
+writeup: writeups/hackropole_i2c_you_too.md
+enabled: true

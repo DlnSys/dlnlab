@@ -1,0 +1,5 @@
+services:
+  welcome-docker:
+    image: anssi/fcsc2024-misc-welcome-docker:latest
+    ports:
+      - "4000:4000"

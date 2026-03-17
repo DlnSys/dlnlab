@@ -1,0 +1,14 @@
+name: hackropole_seguin
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2021-pwn-seguin/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Seguin — '
+runtime: file
+file: seguin
+flag:
+  format: FCSC{...}
+  value: 0d8d2e55e2f51290cad239decd3bc901c4a2757112c5775c254c34c803a09879
+writeup: writeups/hackropole_seguin.md
+enabled: true

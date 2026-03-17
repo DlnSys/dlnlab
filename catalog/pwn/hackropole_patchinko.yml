@@ -1,0 +1,14 @@
+name: hackropole_patchinko
+source: hackropole
+url: https://hackropole.fr/fr/challenges/pwn/fcsc2020-pwn-patchinko/
+theme: "\n            "
+category: pwn
+difficulty: medium
+description: 'Challenge Patchinko — '
+runtime: file
+file: patchinko.bin
+flag:
+  format: FCSC{...}
+  value: d2e6e00eb43a92ac0b9f1da73c49dcf5206257e0abc76da333d299be88b2a667
+writeup: writeups/hackropole_patchinko.md
+enabled: true

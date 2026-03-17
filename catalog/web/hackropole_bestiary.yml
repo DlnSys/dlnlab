@@ -1,0 +1,15 @@
+name: hackropole_bestiary
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-bestiary/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Bestiary — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: b2c4857607bd6fb9f6784e4694fab4b5d87982dc3344eda406e71f33896ea388
+writeup: writeups/hackropole_bestiary.md
+enabled: true

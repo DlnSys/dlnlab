@@ -1,0 +1,13 @@
+name: hackropole_chapardeur_de_mots_de_passe
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-chapardeur-de-mots-de-passe/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Chapardeur de mots de passe — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 8c540d20a319fa4d58a6ce4a295d709133e4c9d1155f32c5b0e05acdab5c08ba
+writeup: writeups/hackropole_chapardeur_de_mots_de_passe.md
+enabled: true

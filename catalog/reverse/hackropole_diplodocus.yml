@@ -1,0 +1,14 @@
+name: hackropole_diplodocus
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2022-reverse-diplodocus/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Diplodocus — '
+runtime: file
+file: diplodocus
+flag:
+  format: FCSC{...}
+  value: d31be1da87e6166ceb908ea6c8daa8590f1f07c6c9e836b6780c80a2093749d0
+writeup: writeups/hackropole_diplodocus.md
+enabled: true

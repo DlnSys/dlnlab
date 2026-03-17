@@ -1,0 +1,19 @@
+name: hackropole_proof_of_elapsed_time
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2025-hardware-proof-of-elapsed-time/
+theme: "\n            "
+category: hardware
+difficulty: easy
+description: 'Challenge Poète — '
+runtime: file
+file:
+- assembly.py
+- crypto_accelerator.py
+- proof-of-elapsed-time.asm
+- proof-of-elapsed-time.py
+- machine.py
+flag:
+  format: FCSC{...}
+  value: 3e397da9767de87150694f88e3ca71a5219deba3b43643af55d270d8ef9c2dd7
+writeup: writeups/hackropole_proof_of_elapsed_time.md
+enabled: true

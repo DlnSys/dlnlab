@@ -1,0 +1,15 @@
+name: hackropole_flag_checker_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-flag-checker-1/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Flag Checker — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: 969028b305f23bbd46d1be50a467524204268bc2660e35ae87b17d872ab6f54b
+writeup: writeups/hackropole_flag_checker_1.md
+enabled: true

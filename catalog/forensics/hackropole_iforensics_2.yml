@@ -1,0 +1,13 @@
+name: hackropole_iforensics_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2025-forensics-iforensics-2/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge iForensics - iDevice — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: db1148a60d54472a41527ba2d44140c613a4990e4c6d7a024de21c3580b4cc0d
+writeup: writeups/hackropole_iforensics_2.md
+enabled: true

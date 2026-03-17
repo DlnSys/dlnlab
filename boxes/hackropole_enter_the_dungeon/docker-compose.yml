@@ -1,0 +1,5 @@
+services:
+  enter-the-dungeon:
+    image: anssi/fcsc2020-web-enter-the-dungeon:latest
+    ports:
+      - "8000:80"

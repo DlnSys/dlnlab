@@ -1,0 +1,49 @@
+services:
+  shared-notes-www:
+    image: anssi/fcsc2021-web-shared-notes-www:latest
+    ports:
+      - "8000:8000"
+    links:
+      - shared-notes-mongodb
+    networks:
+      sharednotes_external:
+        ipv4_address: 192.168.200.2
+      sharednotes_internal:
+        ipv4_address: 192.168.201.2
+
+  shared-notes-bot:
+    image: anssi/fcsc2021-web-shared-notes-bot:latest
+    environment:
+      - HOST_WEB=http://192.168.200.2:8000/
+      - ADMIN_COOKIE=37c802806bf9dda3cd4f843f4f507a52333b3fa136e02bcc7860740f58530184d8b74bc4d14fdfce38406f5e7ede44540de12787c71c017f1e983e14da2d81d5
+    networks:
+      sharednotes_external:
+        ipv4_address: 192.168.200.3
+      sharednotes_internal:
+        ipv4_address: 192.168.201.3
+
+  shared-notes-mongodb:
+    image: mongo:latest
+    command: mongod --quiet --logpath /dev/null
+    ports:
+      - "27017:27017"
+    networks:
+      sharednotes_internal:
+        ipv4_address: 192.168.201.4
+
+networks:
+  sharednotes_external:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.200.0/24
+          gateway: 192.168.200.1
+  sharednotes_internal:
+    internal: true
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.201.0/24
+          gateway: 192.168.201.1

@@ -1,0 +1,17 @@
+name: hackropole_asm_fibonacci
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2023-hardware-asm-fibonacci/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Fibonacci — '
+runtime: file
+file:
+- assembly.py
+- challenge.py
+- machine.py
+flag:
+  format: FCSC{...}
+  value: 746a777a73883bae951eab106b3ffbe5652cb79c6473464375a1d231a7f01942
+writeup: writeups/hackropole_asm_fibonacci.md
+enabled: true

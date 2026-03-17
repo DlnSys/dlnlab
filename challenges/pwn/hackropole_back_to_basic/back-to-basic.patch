@@ -1,0 +1,116 @@
+diff --git a/core/my_basic.c b/core/my_basic.c
+index 7855f6a..04066a1 100755
+--- a/core/my_basic.c
++++ b/core/my_basic.c
+@@ -3675,6 +3675,7 @@ static _object_t* _operate_operand(mb_interpreter_t* s, _object_t* optr, _object
+ 	tp.e3 = result;
+ 	tpptr = &tp;
+ 
++	mb_assert(optr->data.func->pointer && "Null function pointer!!1");
+ 	ret = (optr->data.func->pointer)(s, (void**)&tpptr);
+ 	if(status)
+ 		*status = ret;
+@@ -4951,7 +4952,7 @@ static void _print_string(mb_interpreter_t* s, _object_t* obj) {
+ 
+ /* Read all content of a file into a buffer */
+ static char* _load_file(mb_interpreter_t* s, const char* f, const char* prefix, bool_t importing) {
+-#ifndef MB_DISABLE_LOAD_FILE
++#if 0
+ 	FILE* fp = 0;
+ 	char* buf = 0;
+ 	long curpos = 0;
+@@ -10425,7 +10426,7 @@ static int _public_value_to_internal_object(mb_value_t* pbl, _object_t* itn) {
+ 
+ 		break;
+ 	case MB_DT_DICT:
+-		itn->type = _DT_DICT;
++		itn->type = _DT_INT; /* for GC debug */
+ 		itn->data.dict = (_dict_t*)pbl->value.dict;
+ 
+ 		break;
+diff --git a/makefile b/makefile
+index 5bcc5f8..dabe06e 100755
+--- a/makefile
++++ b/makefile
+@@ -17,12 +17,15 @@ my_basic_arm.o: core/my_basic.c core/my_basic.h
+ main_arm.o: shell/main.c core/my_basic.h
+ 	cc -Os -c shell/main.c -Wno-unused-result -o main_arm.o -target arm64-apple-macos11
+ else
++CC=clang
++CFLAGS=-g -O3 -fPIE -fstack-protector-all -D_FORTIFY_SOURCE=2 -Wformat-security -Werror=format-security
++LDFLAGS=-Wl,-z,relro -Wl,-z,now -pie
+ my_basic: my_basic.o main.o
+-	cc -o output/my_basic my_basic.o main.o -lm -lrt
++	$(CC) $(LDFLAGS) -o output/back-to-basic my_basic.o main.o -lm -lrt
+ my_basic.o: core/my_basic.c core/my_basic.h
+-	cc -Os -c core/my_basic.c -Wno-multichar -Wno-overflow -Wno-unused-result
++	$(CC) $(CFLAGS) -c core/my_basic.c -Wno-multichar -Wno-overflow -Wno-unused-result
+ main.o: shell/main.c core/my_basic.h
+-	cc -Os -c shell/main.c -Wno-unused-result
++	$(CC) $(CFLAGS) -c shell/main.c -Wno-unused-result
+ endif
+ 
+ clean:
+diff --git a/shell/main.c b/shell/main.c
+index 9cabce3..ad7e2b0 100755
+--- a/shell/main.c
++++ b/shell/main.c
+@@ -38,6 +38,7 @@
+ #	include <Windows.h>
+ #elif !defined MB_CP_BORLANDC && !defined MB_CP_TCC
+ #	include <unistd.h>
++#	include <sys/mman.h>
+ #endif /* MB_CP_VC */
+ #ifdef MB_CP_BORLANDC
+ #	include <Windows.h>
+@@ -107,6 +108,9 @@ static struct mb_interpreter_t* bas = 0;
+ 
+ static jmp_buf mem_failure_point;
+ 
++#define PAGE_SIZE 4096
++unsigned char *JIT_buffer;
++
+ #define _CHECK_MEM(__p) do { if(!(__p)) { longjmp(mem_failure_point, 1); } } while(0)
+ 
+ /* ========================================================} */
+@@ -1075,17 +1079,9 @@ static int _do_line(void) {
+ 		else if(_str_eq(no, "-R"))
+ 			_alter_program(ne);
+ 	} else if(_str_eq(line, "LOAD")) {
+-		char* path = line + strlen(line) + 1;
+-		_load_program(path);
+ 	} else if(_str_eq(line, "SAVE")) {
+-		char* path = line + strlen(line) + 1;
+-		_save_program(path);
+ 	} else if(_str_eq(line, "KILL")) {
+-		char* path = line + strlen(line) + 1;
+-		_kill_program(path);
+ 	} else if(_str_eq(line, "DIR")) {
+-		char* path = line + strlen(line) + 1;
+-		_list_directory(path);
+ 	} else {
+ 		_append_one_line(dup);
+ 	}
+@@ -1597,7 +1593,6 @@ static void _on_startup(void) {
+ #endif /* _HAS_TICKS */
+ 	mb_reg_fun(bas, now);
+ 	mb_reg_fun(bas, os);
+-	mb_reg_fun(bas, sys);
+ 	mb_reg_fun(bas, trace);
+ 	mb_reg_fun(bas, raise);
+ 	mb_reg_fun(bas, gc);
+@@ -1635,8 +1630,14 @@ static void _on_exit(void) {
+ int main(int argc, char* argv[]) {
+ 	int status = 0;
+ 
++	setvbuf(stdout, NULL, _IONBF, 0);
++
+ #ifdef MB_CP_VC
+ 	_CrtSetBreakAlloc(0);
++#else
++	/* preparing future works: implement JIT compiler on Lunix */
++	JIT_buffer = malloc(PAGE_SIZE);
++	mprotect((void *)(((unsigned int)JIT_buffer) & 0xFFFFF000), -1, PROT_READ|PROT_WRITE|PROT_EXEC);
+ #endif /* MB_CP_VC */
+ 
+ 	atexit(_on_exit);

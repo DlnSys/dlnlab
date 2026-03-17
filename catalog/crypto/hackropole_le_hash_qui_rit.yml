@@ -1,0 +1,14 @@
+name: hackropole_le_hash_qui_rit
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2023-crypto-le-hash-qui-rit/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Le hash qui rit — '
+runtime: file
+file: le-hash-qui-rit.py
+flag:
+  format: FCSC{...}
+  value: baba5025c7ab596384c8b026caab6f12ba539288e6978f0780514ce02cf6ea44
+writeup: writeups/hackropole_le_hash_qui_rit.md
+enabled: true

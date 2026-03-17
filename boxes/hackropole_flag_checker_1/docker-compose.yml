@@ -1,0 +1,5 @@
+services:
+  flag-checker-1:
+    image: anssi/fcsc2020-web-flag-checker-1:latest
+    ports:
+      - "8000:80"

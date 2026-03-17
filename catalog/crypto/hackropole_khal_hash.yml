@@ -1,0 +1,14 @@
+name: hackropole_khal_hash
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2022-crypto-khal-hash/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Khal Hash — '
+runtime: file
+file: khalhash.py
+flag:
+  format: FCSC{...}
+  value: 480c82d9780016c601ba601162bf74991de3f7d17881e7c8a16585bca62eaa5c
+writeup: writeups/hackropole_khal_hash.md
+enabled: true

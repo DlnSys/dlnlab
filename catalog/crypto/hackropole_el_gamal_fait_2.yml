@@ -1,0 +1,14 @@
+name: hackropole_el_gamal_fait_2
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-el-gamal-fait-2/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge El Gamal Fait 2/2 — '
+runtime: file
+file: el-gamal-fait-2.py
+flag:
+  format: FCSC{...}
+  value: 8193a4fa685a7afafb8b6085376d60513928d806cab8e5f806c8b34160149c01
+writeup: writeups/hackropole_el_gamal_fait_2.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_infiltrate
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2020-reverse-infiltrate/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Infiltrate — '
+runtime: file
+file: infiltrate.png
+flag:
+  format: FCSC{...}
+  value: a9050ec746878069fc71dead3eaadd00d417b59c378c78516e99e177de597555
+writeup: writeups/hackropole_infiltrate.md
+enabled: true

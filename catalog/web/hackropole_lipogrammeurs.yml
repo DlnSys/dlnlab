@@ -1,0 +1,15 @@
+name: hackropole_lipogrammeurs
+source: hackropole
+url: https://hackropole.fr/fr/challenges/web/fcsc2020-web-lipogrammeurs/
+theme: "\n            "
+category: web
+difficulty: medium
+description: 'Challenge Lipogrammeurs — '
+runtime: docker
+compose: docker-compose.yml
+port: 8000
+flag:
+  format: FCSC{...}
+  value: fc142ee32cf19dd945eac8a4a2d8204267999b20c73fd2c246b95edcdd838365
+writeup: writeups/hackropole_lipogrammeurs.md
+enabled: true

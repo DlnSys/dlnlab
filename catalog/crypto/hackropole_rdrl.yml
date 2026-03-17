@@ -1,0 +1,16 @@
+name: hackropole_rdrl
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-rdrl/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge RDRL — '
+runtime: file
+file:
+- cipher.py
+- flag.png.enc
+flag:
+  format: FCSC{...}
+  value: 03d233dc92a520f6d4496e0aa7ceacfeef41dac185c0d46e6df3a57c88712e50
+writeup: writeups/hackropole_rdrl.md
+enabled: true

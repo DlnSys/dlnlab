@@ -1,0 +1,16 @@
+name: hackropole_take_it_down
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2019-forensics-take-it-down/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Take It Down — '
+runtime: file
+file:
+- client.py
+- sinkhole_capture.pcap
+flag:
+  format: FCSC{...}
+  value: 81ff66977f565f3dc8332ebf5b820f26e417cca0766c8ccea56c384ffcfd1770
+writeup: writeups/hackropole_take_it_down.md
+enabled: true

@@ -1,0 +1,14 @@
+name: hackropole_guess_me_too
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2022-misc-guess-me-too/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Guess Me Too — '
+runtime: file
+file: guess-me-too.py
+flag:
+  format: FCSC{...}
+  value: eeb29eff915ed20e0fd5592f70b23aaa825af9bb2106fdfd3bfe21f00184bc5e
+writeup: writeups/hackropole_guess_me_too.md
+enabled: true

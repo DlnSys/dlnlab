@@ -1,0 +1,14 @@
+name: hackropole_hvitur_kassi_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-hvitur-kassi-1/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Hvítur Kassi 1 — '
+runtime: file
+file: wb.py
+flag:
+  format: FCSC{...}
+  value: 7bed6860a7a41a666f86cf9b0032d325ede4280b1a0aa653456e49806e76efaa
+writeup: writeups/hackropole_hvitur_kassi_1.md
+enabled: true

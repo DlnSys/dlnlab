@@ -1,0 +1,14 @@
+name: hackropole_super_sudoku
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2025-misc-super-sudoku/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Super Sudoku — '
+runtime: file
+file: sudoku.py
+flag:
+  format: FCSC{...}
+  value: 0f8e0215cd5d81d43488b754228ceabc9a4258f6c45d4ddb156eb7b21bb44346
+writeup: writeups/hackropole_super_sudoku.md
+enabled: true

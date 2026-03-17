@@ -1,0 +1,28 @@
+services:
+  televerseur-nuagique-web:
+    image: anssi/fcsc2021-web-televerseur-nuagique-web:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - televerseur-nuagique:/app/public/telechargements/
+    depends_on:
+      - televerseur-nuagique-php
+
+  televerseur-nuagique-bot:
+    image: anssi/fcsc2021-web-televerseur-nuagique-bot:latest
+    environment:
+      - HOST_WEB=televerseur-nuagique-web
+    expose:
+      - "80"
+
+  televerseur-nuagique-php:
+    image: anssi/fcsc2021-web-televerseur-nuagique-php:latest
+    volumes:
+      - televerseur-nuagique:/app/public/telechargements/
+    environment:
+      - BOT_REPORT_URL=http://televerseur-nuagique-bot/report
+    depends_on:
+      - televerseur-nuagique-bot
+
+volumes:
+  televerseur-nuagique:

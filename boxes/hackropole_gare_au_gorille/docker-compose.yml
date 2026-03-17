@@ -1,0 +1,44 @@
+services:
+  gare-au-gorille-www:
+    image: anssi/fcsc2022-web-gare-au-gorille-www:latest
+    container_name: gare-au-gorille-www
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_HOST=gare-au-gorille-db
+      - POSTGRES_USER=fcsc2022
+      - POSTGRES_PASSWORD=noo6eegun7AhgoMie5SiengeiSh9ieXe
+      - POSTGRES_DB=fcsc2022
+      - WWW_PREFIX=http://gare-au-gorille-www:8000
+      - ADMIN_TOKEN=O9Mv3sFaQD1UpQRLCXVOCzCi0dRbpz4Wy4kGPngZt36MZnR6xZpbHLQRWfDi6T45
+    networks:
+      - gare-au-gorille-internal
+      - gare-au-gorille-external
+
+  gare-au-gorille-db:
+    image: anssi/fcsc2022-web-gare-au-gorille-db:latest
+    container_name: gare-au-gorille-db
+    environment:
+      - POSTGRES_USER=fcsc2022
+      - POSTGRES_PASSWORD=noo6eegun7AhgoMie5SiengeiSh9ieXe
+      - POSTGRES_DB=fcsc2022
+    networks:
+      - gare-au-gorille-internal
+
+  bot:
+    image: anssi/fcsc2022-web-gare-au-gorille-bot:latest
+    container_name: bot
+    environment:
+      - POSTGRES_USER=fcsc2022
+      - POSTGRES_PASSWORD=noo6eegun7AhgoMie5SiengeiSh9ieXe
+      - POSTGRES_DB=fcsc2022
+      - BOT_TIMEOUT=2000 # in ms
+      - ADMIN_TOKEN=O9Mv3sFaQD1UpQRLCXVOCzCi0dRbpz4Wy4kGPngZt36MZnR6xZpbHLQRWfDi6T45
+      - CHALLENGE_URL=http://gare-au-gorille-www:5000/
+    networks:
+      - gare-au-gorille-internal
+      - gare-au-gorille-external
+networks:
+  gare-au-gorille-external:
+  gare-au-gorille-internal:
+    internal: true

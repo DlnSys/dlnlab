@@ -1,0 +1,14 @@
+name: hackropole_weak_rsa
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-weak-rsa/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Weak RSA — '
+runtime: file
+file: output.txt
+flag:
+  format: FCSC{...}
+  value: 1b5a13fca90977f7aa0d2fdc959c4651e840da3c79ae03aa85a88fdb457a8b7f
+writeup: writeups/hackropole_weak_rsa.md
+enabled: true

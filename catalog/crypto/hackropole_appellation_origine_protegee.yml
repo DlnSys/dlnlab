@@ -1,0 +1,14 @@
+name: hackropole_appellation_origine_protegee
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-appellation-origine-protegee/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Appellation d&#39;Origine Protégée — '
+runtime: file
+file: appellation-origine-protegee.py
+flag:
+  format: FCSC{...}
+  value: f82e6cc3b0aae51f15b2eee58b87e6aa0fe4134ebe2ec66ddd0fe5590bcd37f5
+writeup: writeups/hackropole_appellation_origine_protegee.md
+enabled: true

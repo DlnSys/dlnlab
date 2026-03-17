@@ -1,0 +1,16 @@
+name: hackropole_steg_diy
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-steg-diy/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge StegDIY — '
+runtime: file
+file:
+- ECSC.png
+- ECSC_ref.png
+flag:
+  format: FCSC{...}
+  value: aabccbfcf9de42e2bc16ba01c433ab664bbd657faae3f5e00ea224468e8814bd
+writeup: writeups/hackropole_steg_diy.md
+enabled: true

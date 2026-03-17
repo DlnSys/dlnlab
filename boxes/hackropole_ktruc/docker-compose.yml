@@ -1,0 +1,6 @@
+services:
+  ktruc:
+    image: anssi/fcsc2023-pwn-ktruc:latest
+    read_only: true
+    ports:
+      - "4000:4000"

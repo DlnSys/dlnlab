@@ -1,5 +1,6 @@
 from scripts.state import load_current, load_progress, save_progress
 from scripts.catalog import load_catalog
+from scripts.colors import YELLOW, RED, RESET
 
 
 def get_challenge(name):
@@ -13,17 +14,17 @@ def get_challenge(name):
 def show_hint():
     current = load_current()
     if not current:
-        print("No active challenge. Start one with: dlnlab start")
+        print(f"{RED}\n   No active challenge. Start one with: dlnlab start{RESET}")
         return
     
     challenge = get_challenge(current["name"])
     if not challenge:
-        print("Error: current challenge not found in catalog.")
+        print(f"{RED}\n   Error: current challenge not found in catalog.{RESET}")
         return
     
     hints = challenge.get("hints", [])
     if not hints:
-        print("\n   No hints available for this challenge.\n")
+        print(f"{RED}\n   No hints available for this challenge.\n{RESET}")
         return
     
     progress = load_progress()
@@ -33,11 +34,11 @@ def show_hint():
     next_index = len(used)
 
     if next_index >= len(hints):
-        print("\n All hints have been used.\n")
+        print(f"{RED}\n   All hints have been used.\n{RESET}")
         return
     
     hint = hints[next_index]
-    print(f"\n Hint {next_index + 1}/{len(hints)} : {hint}\n")
+    print(f"\n {YELLOW}Hint {next_index + 1}/{len(hints)}{RESET} : {hint}\n")
 
     if next_index + 1 < len(hints):
         answer = input("    Unlock next hint ? [y/N] ").strip().lower()

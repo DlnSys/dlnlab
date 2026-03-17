@@ -1,0 +1,14 @@
+name: hackropole_iconic_license
+source: hackropole
+url: https://hackropole.fr/fr/challenges/reverse/fcsc2022-reverse-iconic-license/
+theme: "\n            "
+category: reverse
+difficulty: medium
+description: 'Challenge Iconic license — '
+runtime: file
+file: FCSCLIC.EXE
+flag:
+  format: FCSC{...}
+  value: ca702a77657788699da9358a1e5e180e01c71bf006bbf2d3cfee9092a48192c0
+writeup: writeups/hackropole_iconic_license.md
+enabled: true

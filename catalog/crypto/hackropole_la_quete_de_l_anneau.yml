@@ -1,0 +1,16 @@
+name: hackropole_la_quete_de_l_anneau
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-la-quete-de-l-anneau/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge La quête de l&#39;anneau — '
+runtime: file
+file:
+- output.txt
+- la-quete-de-l-anneau.py
+flag:
+  format: FCSC{...}
+  value: 83d0b464d5ca9c4a57153c0c3b0a6ce60b774f3013ecc799cbe6aad92ce5fc06
+writeup: writeups/hackropole_la_quete_de_l_anneau.md
+enabled: true

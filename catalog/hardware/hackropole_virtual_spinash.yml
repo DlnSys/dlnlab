@@ -1,0 +1,16 @@
+name: hackropole_virtual_spinash
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/fcsc2024-hardware-virtual-spinash/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Virtual SPInash — '
+runtime: netcat
+compose: docker-compose.yml
+port: 4000
+host: 127.0.0.1
+flag:
+  format: FCSC{...}
+  value: 52e915e2ce439bc9b75e99eefd4a8bc2032e8e319b9d8976f60f33bf7e7a7916
+writeup: writeups/hackropole_virtual_spinash.md
+enabled: true

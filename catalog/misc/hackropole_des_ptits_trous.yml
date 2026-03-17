@@ -1,0 +1,14 @@
+name: hackropole_des_ptits_trous
+source: hackropole
+url: https://hackropole.fr/fr/challenges/misc/fcsc2023-misc-des-ptits-trous/
+theme: "\n            "
+category: misc
+difficulty: medium
+description: 'Challenge Des p&#39;tits trous — '
+runtime: file
+file: cards.tar.xz
+flag:
+  format: FCSC{...}
+  value: 3bac6d49a01e0a61d6c65751c1cf9be31e5230ff7f38987f4fa1fc034671cea6
+writeup: writeups/hackropole_des_ptits_trous.md
+enabled: true

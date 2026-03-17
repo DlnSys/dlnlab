@@ -1,0 +1,13 @@
+name: hackropole_lehack2024_hardware_emojisaurus
+source: hackropole
+url: https://hackropole.fr/fr/challenges/hardware/lehack2024-hardware-emojisaurus/
+theme: "\n            "
+category: hardware
+difficulty: medium
+description: 'Challenge Emojisaurus — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 3653151b7ac7af8ac6fe34f0267da143902d75272bf6f8b4ad275a34b80cffdf
+writeup: writeups/hackropole_lehack2024_hardware_emojisaurus.md
+enabled: true

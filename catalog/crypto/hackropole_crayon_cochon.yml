@@ -1,0 +1,14 @@
+name: hackropole_crayon_cochon
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2019-crypto-crayon-cochon/
+theme: "\n            "
+category: crypto
+difficulty: easy
+description: 'Challenge Crayon Cochon — '
+runtime: file
+file: crayon-cochon.png
+flag:
+  format: FCSC{...}
+  value: 16f9bed331e41b481e5dcfdfd369e3a6af4391770278db5ce50acff102e8c4f9
+writeup: writeups/hackropole_crayon_cochon.md
+enabled: true

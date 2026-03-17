@@ -1,0 +1,13 @@
+name: hackropole_ransomemoire_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2023-forensics-ransomemoire-1/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Ransomémoire 0/3 - Pour commencer — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 71c13f574685f84cc9a23013e68f44a9fd179a8b6548a4a4742fb003f07692e4
+writeup: writeups/hackropole_ransomemoire_1.md
+enabled: true

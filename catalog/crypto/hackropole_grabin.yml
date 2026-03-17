@@ -1,0 +1,16 @@
+name: hackropole_grabin
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2023-crypto-grabin/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge Grabin — '
+runtime: file
+file:
+- grabin.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: e23f7a34e7fd10c935b05c88c1d124056b438716fd359f251f9f10948ec0e1b0
+writeup: writeups/hackropole_grabin.md
+enabled: true

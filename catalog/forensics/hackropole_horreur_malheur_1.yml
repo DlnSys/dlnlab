@@ -1,0 +1,14 @@
+name: hackropole_horreur_malheur_1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2024-forensics-horreur-malheur-1/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge Horreur, malheur 1/5 - Archive chiffrée — '
+runtime: file
+file: archive.encrypted
+flag:
+  format: FCSC{...}
+  value: 633cd5c8e3102c04dc9646bead37ce4c86449ef937b4d9491168ebcf77da4d90
+writeup: writeups/hackropole_horreur_malheur_1.md
+enabled: true

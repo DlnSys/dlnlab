@@ -1,0 +1,13 @@
+name: hackropole_cryptolocker_v1
+source: hackropole
+url: https://hackropole.fr/fr/challenges/forensics/fcsc2020-forensics-cryptolocker-v1/
+theme: "\n            "
+category: forensics
+difficulty: medium
+description: 'Challenge CryptoLocker v1 — '
+runtime: file
+flag:
+  format: FCSC{...}
+  value: 8169db6f925ac9349cf568c654fa9420408aa867e9dd1731e68f98d05d94b9ae
+writeup: writeups/hackropole_cryptolocker_v1.md
+enabled: true

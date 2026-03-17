@@ -1,0 +1,16 @@
+name: hackropole_rsa_wtf
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2025-crypto-rsa-wtf/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge RSA WTF — '
+runtime: file
+file:
+- output.txt
+- rsa-wtf.py
+flag:
+  format: FCSC{...}
+  value: 0977ffcb0b816ba5378309f15eaa7013f48c4ecd22ba9d72f2c09ed0ed0a56d0
+writeup: writeups/hackropole_rsa_wtf.md
+enabled: true

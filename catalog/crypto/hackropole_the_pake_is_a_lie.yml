@@ -1,0 +1,16 @@
+name: hackropole_the_pake_is_a_lie
+source: hackropole
+url: https://hackropole.fr/fr/challenges/crypto/fcsc2024-crypto-the-pake-is-a-lie/
+theme: "\n            "
+category: crypto
+difficulty: medium
+description: 'Challenge The pake is a lie — '
+runtime: file
+file:
+- the-pake-is-a-lie.py
+- output.txt
+flag:
+  format: FCSC{...}
+  value: c853a5b678e149a9ca785d9461bb5bbd9102e274e7b7900173c09d408fb30108
+writeup: writeups/hackropole_the_pake_is_a_lie.md
+enabled: true
