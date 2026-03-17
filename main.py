@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+
+import sys
+
+from scripts.validator import validate_catalog
+from scripts.menu import main_menu
+
+
+if __name__ == "__main__":
+    validate_catalog()
+    if len(sys.argv) > 1:
+        command = sys.argv[1]
+        if command == "submit":
+            from scripts.submit import submit_flag
+            submit_flag(sys.argv[2] if len(sys.argv) > 2 else None)
+        elif command == "hint":
+            from scripts.hints import show_hint
+            show_hint()
+        elif command == "stop":
+            from scripts.stop import stop_challenge
+            stop_challenge()
+        elif command == "resume":
+            from scripts.resume import resume_challenge
+            resume_challenge()
+        elif command == "progress":
+            from scripts.progress import show_progress
+            show_progress()
+        elif command == "list":
+            from scripts.list import list_challenges
+            list_challenges()
+        elif command == "info":
+            from scripts.info import show_info
+            show_info(sys.argv[2] if len(sys.argv) > 2 else None)
+        elif command == "history":
+            from scripts.history import show_history
+            show_history()
+        else:
+            print(f"Unknown command: {command}")
+            sys.exit(1)
+    else:
+        main_menu()
+        

@@ -68,7 +68,7 @@ def stop_runtime(current, cleanup=False):
         name = current.get("name", "")
         from scripts.catalog import load_catalog
         catalog = load_catalog()
-        challenge = next((c for c in catalog if c ["name"] == name), None)
+        challenge = next((c for c in catalog if c["name"] == name), None)
         if challenge:
             file_field = challenge.get("file", "")
             files = file_field if isinstance(file_field, list) else [file_field]

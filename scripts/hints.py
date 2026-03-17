@@ -28,7 +28,7 @@ def show_hint():
         return
     
     progress = load_progress()
-    hints_used = progress("hints_used", {})
+    hints_used = progress.get("hints_used", {})
     used = hints_used.get(current["name"], [])
 
     next_index = len(used)

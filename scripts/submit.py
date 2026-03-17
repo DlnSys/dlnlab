@@ -1,5 +1,6 @@
 import hashlib
 import os
+import subprocess
 
 from datetime import datetime
 
@@ -73,7 +74,7 @@ def submit_flag(flag):
                 print(f"\n  {YELLOW}Write-Up unlocked{RESET} -> {writeup_path}")
                 answer = input("    Open Write-Up? [y/N] ").strip().lower()
                 if answer == "y":
-                    os.system(f"cat '{full_path}'")
+                    subprocess.run(["cat", full_path])
             else:
                 print("\n   No Write-Up available for this challenge yet.")
         print()

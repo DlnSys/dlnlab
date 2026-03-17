@@ -15,7 +15,7 @@ def show_progress():
     print()                                                                                                                                                                                                     
     print(f"{CYAN}╔══════════════════════════════════════════╗{RESET}")
     print(f"{CYAN}║{RESET}  {BOLD}            PROGRESSION               {RESET}  {CYAN}║{RESET}")
-    print(f"{CYAN}╔══════════════════════════════════════════╗{RESET}")
+    print(f"{CYAN}╚══════════════════════════════════════════╝{RESET}")
     print()                                                                                                                                                                                                     
     print(f"  {GREEN}Completed{RESET}   : {len(completed)}")
     print(f"  Unfinished  : {len(unfinished)}")                                                                                                                                                                 
