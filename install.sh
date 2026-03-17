@@ -35,7 +35,7 @@ fi
 echo "[+] Prérequis OK"
 
 echo "[*] Clonage de DLNLab dans $DLNLAB_DIR..."
-sudo git clone <repo> "$DLNLAB_DIR"
+sudo git clone https://github.com/DlnSys/dlnlab.git "$DLNLAB_DIR"
 
 echo "[*] Création du venv..."
 sudo python3 -m venv "$DLNLAB_DIR/.venv"
