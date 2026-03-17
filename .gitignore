@@ -5,3 +5,8 @@ __pycache__/
 .venv/
 .envrc
 state/current.json
+
+challenges/
+boxes/
+catalog/
+hackropole_scraper.py

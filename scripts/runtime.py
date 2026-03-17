@@ -37,6 +37,12 @@ def get_host_ip(config):
     return host_ip
 
 
+def get_free_port():
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(("", 0))
+        return s.getsockname()[1]
+
+
 def wait_for_port(host, port, timeout=10):
     start = time.time()
     while time.time() - start < timeout:

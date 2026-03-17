@@ -52,8 +52,8 @@ Objectif : rendre DLNLab plus immersif, fluide et complet.
 - [x] Validation du catalogue au démarrage (vérifier que les fichiers référencés existent)
 
 ### Sécurité & fiabilité
-- [ ] Vérification que le conteneur Docker est accessible avant d'afficher "Challenge started"
-- [ ] Target affiche l'IP réelle de la machine plutôt que `127.0.0.1` (configurable dans `config.yml`)
+- [x] Vérification que le conteneur Docker est accessible avant d'afficher "Challenge started"
+- [x] Target affiche l'IP réelle de la machine plutôt que `127.0.0.1` (configurable dans `config.yml`)
 
 ### Runtime
 - [ ] Port aléatoire pour les runtimes `docker` / `netcat`
