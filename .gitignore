@@ -1,16 +1,48 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
+
+# Env
 .env
-.venv/
 .envrc
+.venv/
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# State (user data)
 state/*
 !state/.gitkeep
+!state/progress.json
+
+# Challenges runtime
 challenges/*
 !challenges/.gitkeep
+!challenges/templates/
+
+# Boxes runtime
 boxes/*
 !boxes/.gitkeep
+!boxes/templates/
+
+# Catalog (optionnel selon stratégie)
 catalog/*
 !catalog/.gitkeep
+
+# Writeups
 writeups/*
 !writeups/.gitkeep

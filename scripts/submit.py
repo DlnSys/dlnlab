@@ -76,7 +76,21 @@ def submit_flag(flag):
                 if answer == "y":
                     subprocess.run(["cat", full_path])
             else:
-                print("\n   No Write-Up available for this challenge yet.")
+                answer = input(f"\n  Write a Write-Up for this challenge? [y/N] ").strip().lower()
+                if answer == "y":
+                    os.makedirs(os.path.dirname(full_path), exist_ok=True)
+                    with open(full_path, "w") as f:
+                        f.write(f"# Write-Up : {current['name']}\n\n")                                                                                                                     
+                        f.write(f"**Source** : {challenge.get('source', '').capitalize()}\n")
+                        f.write(f"**Catégorie** : {challenge.get('category', '')}\n")                                                                                                      
+                        f.write(f"**Difficulté** : {challenge.get('difficulty', '').capitalize()}\n")                                                                                      
+                        f.write(f"**Temps de résolution** : {minutes}m {seconds}s\n\n")                                                                                                    
+                        f.write("---\n\n## Contexte\n\n...\n\n")                                                                                                                           
+                        f.write("---\n\n## Reconnaissance\n\n...\n\n")                                                                                                                     
+                        f.write("---\n\n## Exploitation\n\n...\n\n")                                                                                                                       
+                        f.write("---\n\n## Flag\n\n```\nFCSC{...}\n```\n\n")                                                                                                               
+                        f.write("---\n\n## Ce que j'ai appris\n\n...\n")
+                    os.system(f"nano '{full_path}'")
         print()
     else:
         print()

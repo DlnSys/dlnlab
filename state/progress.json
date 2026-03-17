@@ -1,1 +1,14 @@
-{"completed": [], "unfinished": [], "hints_used": {}, "history": []}
+{
+  "completed": [
+    "babel_web"
+  ],
+  "unfinished": [],
+  "hints_used": {},
+  "history": [
+    {
+      "name": "babel_web",
+      "completed_at": "2026-03-17T18:22:32.608420",
+      "time": "0m 8s"
+    }
+  ]
+}
