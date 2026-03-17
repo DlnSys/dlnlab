@@ -1,5 +1,7 @@
 import os
 import subprocess
+import socket
+import time
 
 from scripts.config import load_config
 
@@ -13,14 +15,37 @@ def launch_runtime(challenge):
         return launch_file(challenge, config)
     
     elif runtime == "docker":
-        return launch_docker(challenge, boxes_dir)
+        return launch_docker(challenge, boxes_dir, config)
     
     elif runtime == "netcat":
-        return launch_netcat(challenge, boxes_dir)
+        return launch_netcat(challenge, boxes_dir, config)
 
     else:
         print(f"Unknown runtime: {runtime}")
         return {}
+    
+
+def get_host_ip(config):
+    host_ip = config.get("host_ip", "auto")
+    if host_ip == "auto":
+        try:
+            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
+                s.connect(("8.8.8.8", 80))
+                return s.getsockname()[0]
+        except Exception:
+            return "127.0.0.1"
+    return host_ip
+
+
+def wait_for_port(host, port, timeout=10):
+    start = time.time()
+    while time.time() - start < timeout:
+        try:
+            with socket.create_connection((host, port), timeout=1):
+                return True
+        except (ConnectionRefusedError, OSError):
+            time.sleep(0.5)
+    return False
     
 
 def launch_file(challenge, config):
@@ -30,7 +55,7 @@ def launch_file(challenge, config):
     return {}
 
 
-def launch_docker(challenge, boxes_dir):
+def launch_docker(challenge, boxes_dir, config):
     compose_path = os.path.join(boxes_dir, challenge["name"], challenge.get("compose", "docker-compose.yml"))
     port = challenge.get("port", 8080)
 
@@ -46,11 +71,14 @@ def launch_docker(challenge, boxes_dir):
         print(f"    Error: {result.stderr}")
         return {}
     
-    print(f"    Docker Started.")
-    return {"target": f"http://127.0.0.1:{port}"}
+    if wait_for_port("127.0.0.1", port):
+        print(f"    Docker Started.")
+    else:
+        print(f"    Warning: service not reachable on port {port}.")
+    return {"target": f"http://{get_host_ip(config)}:{port}"}
 
 
-def launch_netcat(challenge, boxes_dir):
+def launch_netcat(challenge, boxes_dir, config):
     compose_path = os.path.join(boxes_dir, challenge["name"], challenge.get("compose", "docker-compose.yml"))
     host = challenge.get("host", "127.0.0.1")
     port = challenge.get("port", 4444)
@@ -67,5 +95,8 @@ def launch_netcat(challenge, boxes_dir):
         print(f"    Error: {result.stderr}")
         return {}
     
-    print(f"    Netcat Started.")
-    return {"target": f"nc {host} {port}"}
+    if wait_for_port("127.0.0.1", port):
+        print(f"    Netcat Started.")
+    else:
+        (f"    Warning: service not reachable on port {port}.")
+    return {"target": f"nc {get_host_ip(config)} {port}"}

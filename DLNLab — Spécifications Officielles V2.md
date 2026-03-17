@@ -578,7 +578,67 @@ default_category: random
 
 ---
 
-## 21. Objectif final
+## 21. Mode CTF (V4)
+
+### Objectif
+
+Permettre de lancer un CTF complet en une seule commande depuis DLNLab, sans configuration manuelle.
+
+### Rôle des composants
+
+| Composant | Rôle |
+|-----------|------|
+| **DLNLab** | Sélectionne les challenges, lance les boxes Docker/netcat, gère la logique de génération |
+| **CTFd** | Gère les joueurs/équipes, affiche les challenges, valide les flags, scoreboard |
+
+### Commandes
+
+| Commande | Description |
+|----------|-------------|
+| `dlnlab ctf` | Lance une session CTF complète |
+| `dlnlab ctf stop` | Arrête et cleanup tout |
+
+### Génération de session
+
+Au lancement de `dlnlab ctf`, DLNLab pose les questions suivantes :
+
+- Thème : web / reverse / crypto / forensics / pwn / misc / random
+- Difficulté : easy / medium / hard / mix / random
+- Nombre de challenges
+- Répartition (ex : 4 easy, 4 medium, 2 hard)
+
+Puis sélectionne les challenges correspondants dans le catalogue (manuellement ou aléatoirement).
+
+### Randomisation
+
+- **Full random** : thème + difficulté + challenges tous randomisés
+- **Semi-random** : thème fixe, difficulté et challenges aléatoires
+- **Seed rejouable** : enregistrement d'une seed pour reproduire une session identique
+
+### Réseau
+
+Les challenges doivent être accessibles via l'IP réelle de la machine (pas `127.0.0.1`) pour permettre un usage multi-utilisateurs en LAN ou VPN.
+
+```yaml
+# config.yml
+host_ip: 192.168.1.10   # IP réelle de la machine
+```
+
+### Infrastructure
+
+```
+infra/
+└── ctfd/
+    └── docker-compose.yml   # Instance CTFd
+```
+
+- CTFd est lancé automatiquement via `docker compose up`
+- Les challenges sélectionnés sont importés dans CTFd via l'API REST (nom, description, flag, points)
+- À l'arrêt, CTFd et les boxes sont stoppés et nettoyés
+
+---
+
+## 22. Objectif final
 
 Créer un cyber-range personnel permettant :
 

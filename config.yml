@@ -4,5 +4,7 @@ boxes_dir: boxes/
 writeups_dir: writeups/
 state_dir: state/
 
+host_ip: auto
+
 default_difficulty: random
 default_category: random

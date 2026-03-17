@@ -49,10 +49,11 @@ Objectif : rendre DLNLab plus immersif, fluide et complet.
 - [x] Menus interactifs avec InquirerPy (flèches clavier) — menu principal, sélection catégorie/difficulté/challenge
 
 ### Catalogue
-- [ ] Validation du catalogue au démarrage (vérifier que les fichiers référencés existent)
+- [x] Validation du catalogue au démarrage (vérifier que les fichiers référencés existent)
 
 ### Sécurité & fiabilité
 - [ ] Vérification que le conteneur Docker est accessible avant d'afficher "Challenge started"
+- [ ] Target affiche l'IP réelle de la machine plutôt que `127.0.0.1` (configurable dans `config.yml`)
 
 ### Runtime
 - [ ] Port aléatoire pour les runtimes `docker` / `netcat`
@@ -77,21 +78,19 @@ Objectif : transformer DLNLab en vraie plateforme d'entraînement CTF.
 - [ ] Option `docker.cleanup` dans `config.yml` — choisir la stratégie : `none` / `container` / `full` (container + image)
 - [ ] Commande `dlnlab docker clean` — cleanup manuel de toutes les images de challenges résolus
 
-### Gameplay avancé
-- [ ] Système de scoring
-  - points par challenge
-  - bonus de rapidité
-  - malus pour les hints
-
-- [ ] Multi-flags par challenge
-
 ### Analytics
 - [ ] Statistiques avancées
   - temps moyen de résolution
   - taux de réussite par catégorie
 
-### Intégrations
-- [ ] Intégration **CTFd self-hosted**
+### Mode CTF (CTFd self-hosted)
+- [ ] `dlnlab ctf` — lancer un CTF complet en une commande
+- [ ] Génération de session : thème, difficulté, nombre de challenges, répartition
+- [ ] Randomisation complète ou partielle avec seed rejouable
+- [ ] Lancement automatique de CTFd via Docker
+- [ ] Import automatique des challenges dans CTFd via API REST
+- [ ] Challenges accessibles via IP réelle (LAN/VPN, config dans `config.yml`)
+- [ ] `dlnlab ctf stop` — arrêt et cleanup — voir V4
 
 ---
 
