@@ -33,7 +33,7 @@ Le script vérifie et installe automatiquement les prérequis suivants :
 
 Redémarre ensuite ton terminal ou tape `source ~/.zshrc`.
 
-### Peupler le catalogue (à faire une seule fois)
+### Peupler le catalogue
 
 Une fois installé, télécharge les challenges Hackropole :
 
