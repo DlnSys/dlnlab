@@ -55,11 +55,23 @@ python hackropole_scraper.py --dry-run --limit 5
 
 Catégories disponibles : `web` `reverse` `crypto` `pwn` `misc` `hardware` `forensics`
 
-> ⚠️ **Espace disque** : la catégorie `forensics` seule peut dépasser **40 Go+** (images disque, captures réseau, fichiers binaires lourds). Le catalogue complet nécessite plusieurs dizaines de Go libres. Il est fortement recommandé de commencer sans forensics :
+> ⚠️ **Espace disque** : le catalogue complet pèse ~49 Go, dont **~48 Go rien que pour `forensics`**. Répartition indicative :
+>
+> | Catégorie   | Taille  |
+> |-------------|---------|
+> | forensics   | ~48 Go  |
+> | hardware    | ~629 Mo |
+> | misc        | ~315 Mo |
+> | reverse     | ~198 Mo |
+> | pwn         | ~163 Mo |
+> | crypto      | ~143 Mo |
+> | web         | ~27 Mo  |
+>
+> Il est fortement recommandé de commencer sans forensics :
 > ```bash
 > python hackropole_scraper.py --exclude forensics
 > ```
-> Et de l'ajouter séparément uniquement si tu as l'espace nécessaire.
+> Et de l'ajouter séparément uniquement si tu as suffisamment d'espace disque.
 
 ---
 
