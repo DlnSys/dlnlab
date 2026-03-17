@@ -2,6 +2,7 @@ import os
 import subprocess
 import socket
 import time
+import yaml
 
 from scripts.config import load_config
 
@@ -52,6 +53,27 @@ def wait_for_port(host, port, timeout=10):
         except (ConnectionRefusedError, OSError):
             time.sleep(0.5)
     return False
+
+
+def write_override(compose_dir, service, host_port, container_port):
+    override = {"services": {service: {"ports": [f"{host_port}:{container_port}"]}}}
+    override_path = os.path.join(compose_dir, "docker-compose.override.yml")
+    with open(override_path, "w") as f:
+        yaml.dump(override, f, default_flow_style=False)
+
+
+def get_container_port(compose_dir, service):
+    compose_path = os.path.join(compose_dir, "docker-compose.yml")
+    try:
+        with open(compose_path) as f:
+            data = yaml.safe_load(f)
+        ports = data.get("services", {}).get(service, {}).get("ports", [])
+        for p in ports:
+            parts = str(p).split(":")
+            return int(parts[-1])
+    except Exception:
+        pass
+    return None
     
 
 def launch_file(challenge, config):
@@ -62,13 +84,19 @@ def launch_file(challenge, config):
 
 
 def launch_docker(challenge, boxes_dir, config):
-    compose_path = os.path.join(boxes_dir, challenge["name"], challenge.get("compose", "docker-compose.yml"))
+    compose_dir = os.path.join(boxes_dir, challenge["name"])
     port = challenge.get("port", 8080)
+    service = challenge.get("service")
+
+    free_port = get_free_port() if service else port
+    if service:
+        container_port = get_container_port(compose_dir, service) or port
+        write_override(compose_dir, service, free_port, container_port)
 
     print(f"\n  Starting Docker environment...")
     result = subprocess.run(
         ["docker", "compose", "up", "-d"],
-        cwd=os.path.dirname(compose_path),
+        cwd=compose_dir,
         capture_output=True,
         text=True
     )
@@ -77,22 +105,27 @@ def launch_docker(challenge, boxes_dir, config):
         print(f"    Error: {result.stderr}")
         return {}
     
-    if wait_for_port("127.0.0.1", port):
+    if wait_for_port("127.0.0.1", free_port):
         print(f"    Docker Started.")
     else:
-        print(f"    Warning: service not reachable on port {port}.")
-    return {"target": f"http://{get_host_ip(config)}:{port}"}
+        print(f"    Warning: service not reachable on port {free_port}.")
+    return {"target": f"http://{get_host_ip(config)}:{free_port}", "port": free_port} 
 
 
 def launch_netcat(challenge, boxes_dir, config):
-    compose_path = os.path.join(boxes_dir, challenge["name"], challenge.get("compose", "docker-compose.yml"))
+    compose_dir = os.path.join(boxes_dir, challenge["name"])
     host = challenge.get("host", "127.0.0.1")
     port = challenge.get("port", 4444)
+    service = challenge.get("service")
+    free_port = get_free_port() if service else port
+    if service:
+        container_port = get_container_port(compose_dir, service) or port
+        write_override(compose_dir, service, free_port, container_port)
 
     print(f"\n  Starting netcat environment...")
     result = subprocess.run(
         ["docker", "compose", "up", "-d"],
-        cwd=os.path.dirname(compose_path),
+        cwd=compose_dir,
         capture_output=True,
         text=True
     )
@@ -101,8 +134,8 @@ def launch_netcat(challenge, boxes_dir, config):
         print(f"    Error: {result.stderr}")
         return {}
     
-    if wait_for_port("127.0.0.1", port):
+    if wait_for_port("127.0.0.1", free_port):
         print(f"    Netcat Started.")
     else:
-        (f"    Warning: service not reachable on port {port}.")
-    return {"target": f"nc {get_host_ip(config)} {port}"}
+        print(f"    Warning: service not reachable on port {free_port}.")
+    return {"target": f"nc {get_host_ip(config)} {free_port}", "port": free_port}

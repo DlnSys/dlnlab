@@ -71,7 +71,7 @@ def start_challenge():
         save_progress(progress)
         stop_runtime(current)
         clear_current()
-        
+
     launch_challenges(challenge)
 
 
@@ -108,5 +108,6 @@ def launch_challenges(challenge):
         "name": challenge["name"],
         "runtime": challenge.get("runtime"),
         "started_at": __import__("datetime").datetime.now().isoformat(),
-        "container_id": runtime_info.get("container_id")
+        "container_id": runtime_info.get("container_id"),
+        "port": runtime_info.get("port"),
     })

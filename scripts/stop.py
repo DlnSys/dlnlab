@@ -59,3 +59,6 @@ def stop_runtime(current, cleanup=False):
             if cleanup:
                 cmd += ["--rmi", "all"]
             subprocess.run(cmd, cwd=compose_dir)
+            override_path = os.path.join(compose_dir, "docker-compose.override.yml")
+            if os.path.exists(override_path):
+                os.remove(override_path)
